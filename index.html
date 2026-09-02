@@ -276,15 +276,19 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .ftr p{max-width:34ch; line-height:1.7}
 .ftr h4{color:#fff; font-size:1.2rem; margin-bottom:16px}
 .ftr ul{list-style:none; margin:0; padding:0; display:grid; gap:11px}
-.ftr a{text-decoration:none; transition:color .2s, transform .2s var(--ease); display:inline-block}
-.ftr a:hover{color:#fff; transform:translateX(3px)}
-.socials{display:flex; gap:10px; margin-top:22px}
+/* :not(.social) — otherwise `.ftr a` outranks `.social` and the icons lose
+   their grid centering and lift-on-hover to inline-block + translateX. */
+.ftr a:not(.social){text-decoration:none; transition:color .2s, transform .2s var(--ease); display:inline-block}
+.ftr a:not(.social):hover{color:#fff; transform:translateX(3px)}
+.socials{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
 .social{
-  width:46px; height:46px; border-radius:14px; display:grid; place-items:center;
+  width:46px; height:46px; border-radius:14px;
+  display:inline-flex; align-items:center; justify-content:center;
   border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:#fff;
+  text-decoration:none; line-height:0;
   transition:transform .3s var(--ease), background .3s, border-color .3s, box-shadow .3s;
 }
-.social svg{width:20px; height:20px}
+.social svg{width:20px; height:20px; display:block}
 .social:hover{transform:translateY(-3px); border-color:transparent; box-shadow:var(--shadow-m)}
 .social--ig:hover{background:linear-gradient(45deg,#F09433,#DC2743 45%,#BC1888)}
 .social--wa:hover{background:#25D366}
@@ -598,9 +602,19 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         </div>
       </div>
 
-      <form class="form rv rv-d1" id="quoteForm" novalidate>
+      <form class="form rv rv-d1" id="quoteForm"
+            action="https://formsubmit.co/Mianhousedecor@gmail.com" method="POST">
         <h3>Request a quote</h3>
         <p class="form__note">Free · No obligation · Reply within 24 hours</p>
+
+        <!-- FormSubmit control fields -->
+        <input type="hidden" name="_subject" value="New quote request — mianhousedecor.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://feliperpovera.github.io/mian-house-decor/thanks.html">
+        <!-- bots fill this; humans never see it -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
         <div class="field-row">
           <div class="field">
@@ -634,11 +648,11 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
           <textarea id="f-msg" name="message" placeholder="Tell us about the piece — type of furniture, fabric idea, measurements…"></textarea>
         </div>
 
-        <button class="btn btn--brass btn--lg btn--block" type="submit">
+        <button class="btn btn--brass btn--lg btn--block" type="submit" id="formBtn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
-          Send my request
+          <span id="formBtnText">Send my request</span>
         </button>
-        <p class="form__fine" id="formFine">Opens WhatsApp with your details ready to send.</p>
+        <p class="form__fine" id="formFine" role="status" aria-live="polite">Goes straight to our inbox. We reply within 24 hours.</p>
       </form>
 
     </div>
@@ -751,29 +765,66 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-  // quote form → prefilled WhatsApp (no backend needed)
+  // Quote form → emailed to the shop via FormSubmit's AJAX endpoint.
+  // Submitting normally (no JS) still works: the <form> posts to the same
+  // address and FormSubmit redirects to thanks.html.
   const form = $('#quoteForm'), fine = $('#formFine');
+  const btn = $('#formBtn'), btnText = $('#formBtnText');
+  const AJAX = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
   const val = id => $('#' + id).value.trim();
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!val('f-name') || !val('f-phone')) {
-      form.reportValidity();
-      fine.textContent = 'Please add your name and phone so we can reply.';
-      fine.style.color = '#B0402F';
-      return;
-    }
+
+  const say = (msg, tone) => {
+    fine.textContent = msg;
+    fine.style.color = tone === 'bad' ? '#B0402F' : tone === 'good' ? '#3F7A4C' : '';
+  };
+
+  const waLink = () => {
     const lines = [
       'Hi Mian House & Decor, I would like a free quote.',
-      '',
       'Name: ' + val('f-name'),
       'Phone: ' + val('f-phone'),
       val('f-email') && 'Email: ' + val('f-email'),
       'Service: ' + $('#f-service').value,
       val('f-msg') && ('Details: ' + val('f-msg'))
     ].filter(Boolean);
-    window.open('https://wa.me/17863488650?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
-    fine.textContent = 'Opening WhatsApp… if nothing happens, call (786) 348-8650.';
-    fine.style.color = '';
+    return 'https://wa.me/17863488650?text=' + encodeURIComponent(lines.join('\n'));
+  };
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      say('Please add your name and phone so we can reply.', 'bad');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '.7';
+    btnText.textContent = 'Sending…';
+    say('Sending your request…');
+
+    try {
+      const res = await fetch(AJAX, {
+        method: 'POST',
+        headers: {'Accept': 'application/json'},
+        body: new FormData(form)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) === 'false') throw new Error(data.message || 'rejected');
+
+      form.reset();
+      btnText.textContent = 'Request sent ✓';
+      say('Thank you — we got it. Expect a reply within 24 hours.', 'good');
+    } catch (err) {
+      // Never lose the lead: hand them straight to WhatsApp instead.
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btnText.textContent = 'Send my request';
+      fine.style.color = '#B0402F';
+      fine.innerHTML = 'We could not send that. ' +
+        '<a href="' + waLink() + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">' +
+        'Send it on WhatsApp</a> or call (786) 348-8650.';
+    }
   });
 })();
 </script>
