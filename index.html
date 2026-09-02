@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Upholstery Miami | Custom Reupholstery, Drapery &amp; Furniture Repair — Mian House &amp; Decor</title>
+<meta name="description" content="10+ years reupholstering sofas, chairs, and drapery in Miami-Dade. Free quotes, free pickup, se habla español. Call (786) 348-8650 today.">
+<link rel="icon" href="assets/img/logo-mark.png">
+<meta property="og:title" content="Upholstery Miami | Mian House &amp; Decor">
+<meta property="og:description" content="Custom reupholstery and made-to-measure drapery in Miami. Free quote in 24h · Hablamos español.">
+<meta property="og:image" content="assets/img/svc-commercial.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─────────── tokens ─────────── */
+:root{
+  --bone:#F7F4EF; --bone-2:#EFEAE1; --paper:#FFFDFA;
+  --ink:#242320; --ink-2:#4A4740; --ink-3:#7C776C;
+  --olive:#6E6F5E; --olive-d:#54554699; --brass:#A98F5F; --brass-d:#8C7444;
+  --line:#DED7CA;
+  --shadow-s:0 1px 2px rgba(36,35,32,.05), 0 2px 8px rgba(36,35,32,.04);
+  --shadow-m:0 4px 12px rgba(36,35,32,.07), 0 16px 40px rgba(36,35,32,.08);
+  --shadow-l:0 8px 24px rgba(36,35,32,.10), 0 32px 72px rgba(36,35,32,.12);
+  --r:14px; --r-l:22px;
+  --gut:clamp(20px,5vw,48px);
+  --max:1220px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --header-h:76px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html:focus-within{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bone); color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:clamp(15.5px,.42vw + 14.4px,17px); line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif; font-weight:400; margin:0; line-height:1.1; letter-spacing:-.01em}
+p{margin:0}
+::selection{background:var(--brass); color:#fff}
+:focus-visible{outline:2px solid var(--brass); outline-offset:3px; border-radius:6px}
+.wrap{width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--gut)}
+.eyebrow{
+  font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+  font-weight:500; color:var(--brass-d); margin-bottom:14px;
+}
+.section{padding:clamp(72px,9vw,128px) 0}
+.lede{color:var(--ink-2); max-width:62ch}
+
+/* ─────────── buttons ─────────── */
+.btn{
+  --bg:var(--ink); --fg:#fff; --bd:var(--ink);
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:52px; padding:0 26px; border-radius:100px; border:1px solid var(--bd);
+  background:var(--bg); color:var(--fg); text-decoration:none; cursor:pointer;
+  font-size:.94rem; font-weight:500; letter-spacing:.01em; white-space:nowrap;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .2s, color .2s, border-color .2s;
+  box-shadow:var(--shadow-s); font-family:inherit;
+}
+.btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-m)}
+.btn:active{transform:translateY(0); box-shadow:var(--shadow-s); transition-duration:.08s}
+.btn svg{width:18px; height:18px; flex:none}
+.btn--brass{--bg:var(--brass); --bd:var(--brass); --fg:#fff}
+.btn--brass:hover{--bg:var(--brass-d); --bd:var(--brass-d)}
+.btn--ghost{--bg:transparent; --fg:var(--ink); --bd:var(--line)}
+.btn--ghost:hover{--bd:var(--ink); background:var(--paper)}
+.btn--onDark{--bg:rgba(255,255,255,.10); --fg:#fff; --bd:rgba(255,255,255,.42); backdrop-filter:blur(10px)}
+.btn--onDark:hover{--bg:rgba(255,255,255,.20); --bd:#fff}
+.btn--lg{min-height:58px; padding:0 32px; font-size:1rem}
+.btn--block{width:100%}
+
+/* ─────────── header ─────────── */
+.hdr{
+  position:fixed; inset:0 0 auto; z-index:80; height:var(--header-h);
+  display:flex; align-items:center;
+  transition:background .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+  border-bottom:1px solid transparent;
+}
+.hdr::before{
+  content:""; position:absolute; inset:0; z-index:-1; opacity:0;
+  background:rgba(247,244,239,.82); backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  transition:opacity .35s var(--ease);
+}
+.hdr.is-stuck::before{opacity:1}
+.hdr.is-stuck{border-bottom-color:var(--line)}
+.hdr .wrap{display:flex; align-items:center; gap:24px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:auto}
+.brand img{height:26px; width:auto; transition:filter .35s var(--ease)}
+.hdr:not(.is-stuck) .brand img{filter:brightness(0) invert(1)}
+.nav{display:flex; gap:4px; align-items:center}
+.nav a{
+  position:relative; padding:9px 14px; border-radius:8px; text-decoration:none;
+  font-size:.9rem; font-weight:450; color:var(--ink); transition:color .2s, background .2s;
+}
+.nav a::after{
+  content:""; position:absolute; left:14px; right:14px; bottom:5px; height:1px;
+  background:currentColor; transform:scaleX(0); transform-origin:left;
+  transition:transform .3s var(--ease);
+}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr:not(.is-stuck) .nav a{color:#fff}
+.hdr:not(.is-stuck) .btn--hdr{--bg:rgba(255,255,255,.12); --fg:#fff; --bd:rgba(255,255,255,.45); backdrop-filter:blur(10px)}
+.btn--hdr{min-height:44px; padding:0 20px; font-size:.87rem}
+.burger{
+  display:none; width:44px; height:44px; border:0; background:transparent; cursor:pointer;
+  align-items:center; justify-content:center; border-radius:10px; padding:0;
+}
+.burger span{display:block; width:20px; height:1.5px; background:var(--ink); position:relative; transition:background .2s}
+.burger span::before,.burger span::after{
+  content:""; position:absolute; left:0; width:20px; height:1.5px; background:inherit;
+  transition:transform .3s var(--ease), top .3s var(--ease);
+}
+.burger span::before{top:-6px} .burger span::after{top:6px}
+.hdr:not(.is-stuck) .burger span{background:#fff}
+body.menu-open .burger span{background:transparent!important}
+body.menu-open .burger span::before{top:0; transform:rotate(45deg); background:var(--ink)}
+body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:var(--ink)}
+
+/* ─────────── hero ─────────── */
+.hero{position:relative; min-height:min(94svh,880px); display:flex; align-items:flex-end; isolation:isolate; overflow:hidden}
+.hero__bg{position:absolute; inset:0; z-index:-2}
+.hero__bg img{width:100%; height:100%; object-fit:cover; object-position:50% 46%; animation:kenburns 26s var(--ease) forwards}
+@keyframes kenburns{from{transform:scale(1.10)} to{transform:scale(1)}}
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(20,19,17,.62) 0%, rgba(20,19,17,.12) 34%, rgba(20,19,17,.55) 74%, rgba(20,19,17,.86) 100%),
+    linear-gradient(90deg, rgba(20,19,17,.45) 0%, rgba(20,19,17,0) 62%);
+}
+.hero .wrap{padding-block:clamp(48px,8vw,88px) clamp(36px,5vw,56px); color:#fff}
+.hero__inner{max-width:750px}
+.hero h1{font-size:clamp(2.7rem,7.2vw,5.1rem); letter-spacing:-.022em; text-wrap:balance; text-shadow:0 2px 30px rgba(0,0,0,.28)}
+.hero h1 em{font-style:italic; color:#F0DCB4}
+.hero__sub{margin-top:20px; font-size:clamp(1.02rem,1.5vw,1.18rem); color:rgba(255,255,255,.9); max-width:52ch; font-weight:300}
+.hero__cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.trustbar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 26px; margin-top:38px;
+  padding-top:24px; border-top:1px solid rgba(255,255,255,.2);
+  font-size:.86rem; color:rgba(255,255,255,.84); letter-spacing:.01em;
+}
+.trustbar b{font-weight:500; color:#fff}
+.stars{color:#F0C674; letter-spacing:.12em; font-size:.78rem}
+.scrollcue{
+  position:absolute; left:50%; bottom:18px; translate:-50% 0; z-index:2;
+  width:26px; height:42px; border:1px solid rgba(255,255,255,.42); border-radius:14px;
+}
+.scrollcue::after{
+  content:""; position:absolute; left:50%; top:9px; translate:-50% 0;
+  width:3px; height:7px; border-radius:2px; background:#fff; animation:cue 2.1s var(--ease) infinite;
+}
+@keyframes cue{0%,18%{opacity:0;transform:translateY(0)}35%{opacity:1}70%,100%{opacity:0;transform:translateY(13px)}}
+
+/* ─────────── services ─────────── */
+.head{max-width:640px; margin-bottom:clamp(38px,5vw,60px)}
+.head h2{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+.head p{margin-top:16px}
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,26px)}
+.card{
+  position:relative; display:flex; flex-direction:column; overflow:hidden;
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--r-l);
+  text-decoration:none; box-shadow:var(--shadow-s);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s;
+}
+.card:hover{transform:translateY(-6px); box-shadow:var(--shadow-l); border-color:#CFC5B3}
+.card__media{position:relative; aspect-ratio:4/3.4; overflow:hidden; background:var(--bone-2)}
+.card__media img{width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease)}
+.card:hover .card__media img{transform:scale(1.06)}
+.card__tag{
+  position:absolute; top:14px; left:14px; z-index:2;
+  background:rgba(255,253,250,.94); backdrop-filter:blur(8px);
+  padding:6px 13px; border-radius:100px; font-size:.7rem; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2);
+}
+.card__body{padding:26px 26px 28px; display:flex; flex-direction:column; flex:1; gap:12px}
+.card__body h3{font-size:1.72rem}
+.card__body p{color:var(--ink-2); font-size:.94rem}
+.card__link{
+  margin-top:auto; padding-top:8px; display:inline-flex; align-items:center; gap:9px;
+  font-size:.8rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--brass-d);
+}
+.card__link svg{width:15px; height:15px; transition:transform .35s var(--ease)}
+.card:hover .card__link svg{transform:translateX(5px)}
+
+/* ─────────── trust ─────────── */
+.trust{background:var(--bone-2); border-block:1px solid var(--line)}
+.trust__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,1.8vw,22px)}
+.tcard{
+  display:flex; gap:16px; align-items:flex-start; padding:24px 24px 26px;
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--r);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.tcard:hover{transform:translateY(-3px); box-shadow:var(--shadow-m)}
+.tcard__ico{
+  flex:none; width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
+  background:linear-gradient(150deg,#EFE6D2,#E2D7BE); color:var(--brass-d);
+}
+.tcard__ico svg{width:20px; height:20px}
+.tcard h4{font-size:1.22rem; margin-bottom:3px}
+.tcard p{font-size:.86rem; color:var(--ink-3); line-height:1.5}
+
+/* ─────────── about ─────────── */
+.about__grid{display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(30px,5vw,68px); align-items:center}
+.about__media{position:relative}
+.about__media img{
+  width:100%; aspect-ratio:4/4.6; object-fit:cover; border-radius:var(--r-l);
+  transform:scaleX(-1); box-shadow:var(--shadow-l);
+}
+.about__media::after{
+  content:""; position:absolute; inset:14px -14px -14px 14px; z-index:-1;
+  border:1px solid var(--brass); border-radius:var(--r-l); opacity:.42;
+}
+.about h2{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+.about__body p + p{margin-top:18px}
+.infolist{list-style:none; margin:30px 0 0; padding:0; display:grid; gap:2px}
+.infolist a, .infolist li > span{
+  display:flex; gap:14px; align-items:center; padding:14px 16px; margin-left:-16px;
+  border-radius:var(--r); text-decoration:none; color:var(--ink);
+  transition:background .2s, transform .2s var(--ease);
+}
+.infolist a:hover{background:var(--paper); transform:translateX(4px)}
+.infolist svg{width:19px; height:19px; color:var(--brass-d); flex:none}
+.infolist small{display:block; font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); margin-bottom:1px}
+.infolist strong{font-weight:500; font-size:.98rem}
+.langnote{
+  margin-top:26px; padding:16px 20px; border-left:2px solid var(--brass);
+  background:var(--paper); border-radius:0 var(--r) var(--r) 0;
+  font-size:.9rem; color:var(--ink-2); font-style:italic;
+}
+
+/* ─────────── contact ─────────── */
+.contact{background:var(--ink); color:#fff; position:relative; overflow:hidden}
+.contact::before{
+  content:""; position:absolute; width:620px; height:620px; right:-180px; top:-220px;
+  background:radial-gradient(circle,rgba(169,143,95,.22),transparent 68%); pointer-events:none;
+}
+.contact .eyebrow{color:#D9BF8C}
+.contact__grid{display:grid; grid-template-columns:1fr .82fr; gap:clamp(34px,5vw,72px); align-items:start; position:relative}
+.contact h2{font-size:clamp(2.1rem,4.4vw,3.2rem); color:#fff; max-width:15ch}
+.contact__lede{color:rgba(255,255,255,.7); margin-top:18px; max-width:46ch}
+.contact__quick{display:grid; gap:11px; margin-top:34px; max-width:380px}
+.form{
+  background:var(--paper); color:var(--ink); border-radius:var(--r-l);
+  padding:clamp(24px,3.2vw,38px); box-shadow:var(--shadow-l);
+}
+.form h3{font-size:1.55rem; margin-bottom:6px}
+.form__note{font-size:.85rem; color:var(--ink-3); margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block; font-size:.76rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:7px}
+.field input,.field textarea,.field select{
+  width:100%; font:inherit; font-size:.95rem; color:var(--ink);
+  padding:13px 15px; border:1px solid var(--line); border-radius:11px;
+  background:var(--bone); transition:border-color .2s, background .2s, box-shadow .2s;
+}
+.field textarea{resize:vertical; min-height:104px}
+.field input:hover,.field textarea:hover,.field select:hover{border-color:#CBC0AC}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none; border-color:var(--brass); background:var(--paper);
+  box-shadow:0 0 0 3px rgba(169,143,95,.16);
+}
+.field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.form .btn{margin-top:6px}
+.form__fine{margin-top:14px; font-size:.76rem; color:var(--ink-3); text-align:center; line-height:1.5}
+
+/* ─────────── footer ─────────── */
+.ftr{background:#1A1917; color:rgba(255,255,255,.62); padding:clamp(52px,6vw,76px) 0 0; font-size:.9rem}
+.ftr__grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(28px,4vw,56px); padding-bottom:48px}
+.ftr__logo{height:26px; width:auto; filter:brightness(0) invert(1); opacity:.9; margin-bottom:18px}
+.ftr p{max-width:34ch; line-height:1.7}
+.ftr h4{color:#fff; font-size:1.2rem; margin-bottom:16px}
+.ftr ul{list-style:none; margin:0; padding:0; display:grid; gap:11px}
+.ftr a{text-decoration:none; transition:color .2s, transform .2s var(--ease); display:inline-block}
+.ftr a:hover{color:#fff; transform:translateX(3px)}
+.socials{display:flex; gap:10px; margin-top:22px}
+.social{
+  width:46px; height:46px; border-radius:14px; display:grid; place-items:center;
+  border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:#fff;
+  transition:transform .3s var(--ease), background .3s, border-color .3s, box-shadow .3s;
+}
+.social svg{width:20px; height:20px}
+.social:hover{transform:translateY(-3px); border-color:transparent; box-shadow:var(--shadow-m)}
+.social--ig:hover{background:linear-gradient(45deg,#F09433,#DC2743 45%,#BC1888)}
+.social--wa:hover{background:#25D366}
+.social--tel:hover{background:var(--brass)}
+.social--mail:hover{background:#4A4740}
+.ftr__bar{
+  border-top:1px solid rgba(255,255,255,.1); padding:22px 0 28px;
+  display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
+  font-size:.8rem; color:rgba(255,255,255,.42);
+}
+
+/* ─────────── floating dock ─────────── */
+.dock{
+  position:fixed; z-index:70; right:max(18px,env(safe-area-inset-right));
+  bottom:max(18px,env(safe-area-inset-bottom));
+  display:flex; flex-direction:column; gap:10px;
+  opacity:0; transform:translateY(14px) scale(.94); pointer-events:none;
+  transition:opacity .4s var(--ease), transform .4s var(--ease);
+}
+.dock.is-on{opacity:1; transform:none; pointer-events:auto}
+.fab{
+  width:54px; height:54px; border-radius:50%; display:grid; place-items:center;
+  color:#fff; box-shadow:var(--shadow-m); position:relative;
+  transition:transform .28s var(--ease), box-shadow .28s var(--ease), width .28s var(--ease);
+}
+.fab svg{width:23px; height:23px}
+.fab:hover{transform:translateY(-3px) scale(1.06); box-shadow:var(--shadow-l)}
+.fab:active{transform:scale(.96); transition-duration:.08s}
+.fab--wa{background:#25D366}
+.fab--tel{background:var(--ink)}
+.fab--ig{background:linear-gradient(45deg,#F09433,#DC2743 45%,#BC1888)}
+.fab__tip{
+  position:absolute; right:calc(100% + 12px); top:50%; translate:0 -50%;
+  background:var(--ink); color:#fff; font-size:.78rem; font-weight:500;
+  padding:7px 13px; border-radius:8px; white-space:nowrap; pointer-events:none;
+  opacity:0; transform:translateX(6px); transition:opacity .25s var(--ease), transform .25s var(--ease);
+  box-shadow:var(--shadow-m);
+}
+.fab:hover .fab__tip{opacity:1; transform:none}
+.fab--wa::after{
+  content:""; position:absolute; inset:0; border-radius:50%; border:2px solid #25D366;
+  animation:pulse 2.6s var(--ease) infinite;
+}
+@keyframes pulse{0%{opacity:.55; transform:scale(1)}70%,100%{opacity:0; transform:scale(1.55)}}
+
+/* ─────────── reveal ─────────── */
+.rv{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.rv.in{opacity:1; transform:none}
+.rv-d1{transition-delay:.09s} .rv-d2{transition-delay:.18s} .rv-d3{transition-delay:.27s}
+
+/* ─────────── responsive ─────────── */
+@media (max-width:1000px){
+  .cards{grid-template-columns:1fr 1fr}
+  .trust__grid{grid-template-columns:1fr 1fr}
+  .contact__grid{grid-template-columns:1fr}
+  .contact h2{max-width:none}
+  .ftr__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .about__grid{grid-template-columns:1fr; gap:34px}
+  .about__media img{aspect-ratio:4/3.6}
+  .about__media::after{inset:10px -10px -10px 10px}
+}
+@media (max-width:760px){
+  .burger{display:flex}
+  .nav{
+    position:fixed; inset:var(--header-h) 0 auto; flex-direction:column; align-items:stretch; gap:2px;
+    background:rgba(247,244,239,.97); backdrop-filter:blur(20px);
+    padding:14px var(--gut) 26px; border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow-m);
+    opacity:0; transform:translateY(-10px); pointer-events:none;
+    transition:opacity .3s var(--ease), transform .3s var(--ease);
+  }
+  body.menu-open .nav{opacity:1; transform:none; pointer-events:auto}
+  .hdr:not(.is-stuck) .nav a{color:var(--ink)}
+  .nav a{padding:14px 4px; font-size:1.02rem; border-bottom:1px solid var(--line)}
+  .nav a::after{display:none}
+  .nav a:last-child{border-bottom:0}
+  .hdr .btn--hdr{display:none}
+  body.menu-open{overflow:hidden}
+  .hero{min-height:min(92svh,760px)}
+  .hero__cta .btn{flex:1 1 100%}
+  .cards{grid-template-columns:1fr}
+  .trust__grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .ftr__grid{grid-template-columns:1fr; gap:34px}
+  .scrollcue{display:none}
+  .fab{width:50px; height:50px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important}
+  html:focus-within{scroll-behavior:auto}
+  .rv{opacity:1; transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="btn" href="#main" style="position:absolute;left:-9999px;top:0;z-index:200" onfocus="this.style.left='12px';this.style.top='12px'" onblur="this.style.left='-9999px'">Skip to content</a>
+
+<!-- ══ HEADER ══ -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mian House &amp; Decor — home">
+      <img src="assets/img/logo.png" alt="Mian House &amp; Decor">
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#top">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--brass btn--hdr" href="#contact">Free Quote</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="top">
+  <div class="hero__bg"><img src="assets/img/svc-commercial.jpg" alt="Custom drapery framing a Miami patio" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="hero__inner">
+      <p class="eyebrow" style="color:#E4CE9E">Miami · Upholstery &amp; Drapery Workshop</p>
+      <h1>Bring your old sofa <em>back to life.</em></h1>
+      <p class="hero__sub">Custom upholstery, reupholstery and made-to-measure drapery — crafted in our Miami workshop. Free pickup, free quote in 24 hours. <strong style="font-weight:500;color:#fff">Se habla español.</strong></p>
+      <div class="hero__cta">
+        <a class="btn btn--brass btn--lg" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Get My Free Quote
+        </a>
+        <a class="btn btn--onDark btn--lg" href="tel:+17863488650">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          (786) 348-8650
+        </a>
+      </div>
+      <div class="trustbar">
+        <span><span class="stars">★★★★★</span> <b>5.0</b> on Google</span>
+        <span><b>10+ years</b> serving Miami-Dade</span>
+        <span><b>Free quote</b> in 24h</span>
+      </div>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"></div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">What we do</p>
+      <h2>Three things, done properly.</h2>
+      <p class="lede">Residential and commercial work out of our own Miami workshop — no middlemen, no outsourcing.</p>
+    </div>
+    <div class="cards">
+
+      <a class="card rv" href="#contact">
+        <div class="card__media">
+          <span class="card__tag">Drapery</span>
+          <img src="assets/img/svc-drapery.jpg" alt="Made-to-measure ivory drapery on a tall arched window" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3>Custom Drapery</h3>
+          <p>Curtains and drapes made-to-measure for any window. Wide selection of premium fabrics, sheers and blackouts — measured and installed by us.</p>
+          <span class="card__link">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card rv rv-d1" href="#contact">
+        <div class="card__media">
+          <span class="card__tag">Upholstery</span>
+          <img src="assets/img/svc-upholstery.jpg" alt="Reupholstered dining chairs in a Miami apartment" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3>Upholstery &amp; Reupholstery</h3>
+          <p>Reupholster your sofa, chair, dining set or headboard. New fabric and new foam on the furniture you already love — frames stay, comfort returns.</p>
+          <span class="card__link">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card rv rv-d2" href="#contact">
+        <div class="card__media">
+          <span class="card__tag">Commercial</span>
+          <img src="assets/img/about.jpg" alt="Fabric being cut in the Mian House &amp; Decor workshop" loading="lazy" style="transform:scaleX(-1)">
+        </div>
+        <div class="card__body">
+          <h3>Commercial Projects</h3>
+          <p>Restaurants, offices and hotels. Bulk upholstery and drapery handled on schedule, with contract-grade fabrics and volume pricing.</p>
+          <span class="card__link">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST ══ -->
+<section class="section trust">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Why Miami trusts us</p>
+      <h2>Six reasons people call us back.</h2>
+    </div>
+    <div class="trust__grid">
+
+      <div class="tcard rv">
+        <div class="tcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg></div>
+        <div><h4>10+ years in Miami-Dade</h4><p>A decade of sofas, dining sets and drapery across the county.</p></div>
+      </div>
+
+      <div class="tcard rv rv-d1">
+        <div class="tcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9z"/></svg></div>
+        <div><h4>5-star rated on Google</h4><p>A perfect 5.0 average from Miami homeowners and businesses.</p></div>
+      </div>
+
+      <div class="tcard rv rv-d2">
+        <div class="tcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.8"/></svg></div>
+        <div><h4>Local workshop</h4><p>Everything is made in-house at 1 NW 62 Street — nothing is shipped out.</p></div>
+      </div>
+
+      <div class="tcard rv">
+        <div class="tcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg></div>
+        <div><h4>Hablamos español</h4><p>Full service in English and Spanish, start to finish.</p></div>
+      </div>
+
+      <div class="tcard rv rv-d1">
+        <div class="tcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg></div>
+        <div><h4>Free 24h quotes</h4><p>Send photos and measurements — you get a written price the next day.</p></div>
+      </div>
+
+      <div class="tcard rv rv-d2">
+        <div class="tcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div>
+        <div><h4>Wide fabric selection</h4><p>Performance, outdoor, velvet, linen and contract-grade textiles in stock.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="about__grid">
+      <div class="about__media rv">
+        <img src="assets/img/about.jpg" alt="Mechis cutting fabric in the Mian House &amp; Decor workshop in Miami" loading="lazy">
+      </div>
+      <div class="about__body rv rv-d1">
+        <p class="eyebrow">About us</p>
+        <h2>Intentional, lasting work.</h2>
+        <p class="lede" style="margin-top:20px">At Mian House &amp; Decor we focus on work that lasts — from reupholstering a beloved sofa to custom curtains, drapery, cushions and furniture for residential and commercial spaces across Miami.</p>
+        <p class="lede" style="margin-top:18px">Every piece is measured, cut and sewn in our own workshop. You talk to the person doing the work.</p>
+
+        <ul class="infolist">
+          <li><a href="https://maps.google.com/?q=1+NW+62+Street+Unit+8+Miami+FL" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.8"/></svg>
+            <span><small>Showroom · by appointment</small><strong>1 NW 62 Street, Unit 8 — Miami, FL</strong></span>
+          </a></li>
+          <li><a href="tel:+17863488650">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <span><small>Call or WhatsApp</small><strong>+1 (786) 348-8650</strong></span>
+          </a></li>
+          <li><a href="mailto:Mianhousedecor@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><small>Email</small><strong>Mianhousedecor@gmail.com</strong></span>
+          </a></li>
+        </ul>
+
+        <p class="langnote">Atendemos clientes en inglés y español · We serve clients in English and Spanish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact__grid">
+
+      <div class="rv">
+        <p class="eyebrow">Contact us</p>
+        <h2>Get your free quote in 24 hours.</h2>
+        <p class="contact__lede">Tell us what you need reupholstered or measured. Send a photo on WhatsApp and we'll usually price it the same day.</p>
+
+        <div class="contact__quick">
+          <a class="btn btn--onDark btn--block" href="https://wa.me/17863488650?text=Hi%20Mian%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5v-.5c-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2"/></svg>
+            WhatsApp us now
+          </a>
+          <a class="btn btn--onDark btn--block" href="tel:+17863488650">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            Call (786) 348-8650
+          </a>
+          <a class="btn btn--onDark btn--block" href="https://www.instagram.com/mianhousedecor" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            See our work on Instagram
+          </a>
+        </div>
+      </div>
+
+      <form class="form rv rv-d1" id="quoteForm" novalidate>
+        <h3>Request a quote</h3>
+        <p class="form__note">Free · No obligation · Reply within 24 hours</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(786) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
+        </div>
+
+        <div class="field">
+          <label for="f-service">What do you need?</label>
+          <select id="f-service" name="service">
+            <option>Upholstery / Reupholstery</option>
+            <option>Custom drapery &amp; curtains</option>
+            <option>Commercial project</option>
+            <option>Cushions &amp; outdoor</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Comment or message</label>
+          <textarea id="f-msg" name="message" placeholder="Tell us about the piece — type of furniture, fabric idea, measurements…"></textarea>
+        </div>
+
+        <button class="btn btn--brass btn--lg btn--block" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+          Send my request
+        </button>
+        <p class="form__fine" id="formFine">Opens WhatsApp with your details ready to send.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <img class="ftr__logo" src="assets/img/logo.png" alt="Mian House &amp; Decor">
+        <p>Custom upholstery, reupholstery and made-to-measure drapery for homes and businesses across Miami-Dade.</p>
+        <div class="socials">
+          <a class="social social--ig" href="https://www.instagram.com/mianhousedecor" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social social--wa" href="https://wa.me/17863488650" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5v-.5c-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2"/></svg>
+          </a>
+          <a class="social social--tel" href="tel:+17863488650" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          </a>
+          <a class="social social--mail" href="mailto:Mianhousedecor@gmail.com" aria-label="Email us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Info</h4>
+        <ul>
+          <li><a href="mailto:Mianhousedecor@gmail.com">Mianhousedecor@gmail.com</a></li>
+          <li><a href="tel:+17863488650">+1 (786) 348-8650</a></li>
+          <li><a href="https://maps.google.com/?q=1+NW+62+Street+Unit+8+Miami+FL" target="_blank" rel="noopener">1 NW 62 Street, Unit 8<br>Miami, Florida</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bar">
+      <span>© <span id="yr">2026</span> Mian House &amp; Decor · Upholstery Miami</span>
+      <span>Custom Reupholstery &amp; Drapery · Hablamos español</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FLOATING DOCK ══ -->
+<div class="dock" id="dock">
+  <a class="fab fab--ig" href="https://www.instagram.com/mianhousedecor" target="_blank" rel="noopener" aria-label="Instagram">
+    <span class="fab__tip">Instagram</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a class="fab fab--tel" href="tel:+17863488650" aria-label="Call us">
+    <span class="fab__tip">(786) 348-8650</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+  </a>
+  <a class="fab fab--wa" href="https://wa.me/17863488650?text=Hi%20Mian%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="fab__tip">Chat on WhatsApp</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5v-.5c-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2"/></svg>
+  </a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Mian House & Decor","description":"Furniture reupholstery, sofa upholstery, and custom drapery in Miami · Hablamos español","telephone":"+1-786-348-8650","email":"Mianhousedecor@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"1 NW 62 Street, Unit 8","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"},"areaServed":"Miami-Dade County","sameAs":["https://www.instagram.com/mianhousedecor"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5"}}
+</script>
+
+<script>
+(() => {
+  'use strict';
+  const $ = s => document.querySelector(s);
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header state + floating dock, one rAF-throttled scroll listener
+  const hdr = $('#hdr'), dock = $('#dock');
+  let ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    hdr.classList.toggle('is-stuck', y > 40);
+    dock.classList.toggle('is-on', y > 520);
+    ticking = false;
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  onScroll();
+
+  // mobile menu
+  const burger = $('#burger'), nav = $('#nav');
+  const setMenu = open => {
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  };
+  burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  nav.addEventListener('click', e => { if (e.target.tagName === 'A') setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries, obs) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // quote form → prefilled WhatsApp (no backend needed)
+  const form = $('#quoteForm'), fine = $('#formFine');
+  const val = id => $('#' + id).value.trim();
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!val('f-name') || !val('f-phone')) {
+      form.reportValidity();
+      fine.textContent = 'Please add your name and phone so we can reply.';
+      fine.style.color = '#B0402F';
+      return;
+    }
+    const lines = [
+      'Hi Mian House & Decor, I would like a free quote.',
+      '',
+      'Name: ' + val('f-name'),
+      'Phone: ' + val('f-phone'),
+      val('f-email') && 'Email: ' + val('f-email'),
+      'Service: ' + $('#f-service').value,
+      val('f-msg') && ('Details: ' + val('f-msg'))
+    ].filter(Boolean);
+    window.open('https://wa.me/17863488650?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+    fine.textContent = 'Opening WhatsApp… if nothing happens, call (786) 348-8650.';
+    fine.style.color = '';
+  });
+})();
+</script>
+</body>
+</html>
