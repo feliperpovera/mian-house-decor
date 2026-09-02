@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 /* ─────────── tokens ─────────── */
 :root{
@@ -329,8 +330,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 @keyframes pulse{0%{opacity:.55; transform:scale(1)}70%,100%{opacity:0; transform:scale(1.55)}}
 
 /* ─────────── reveal ─────────── */
-.rv{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
-.rv.in{opacity:1; transform:none}
+.js .rv{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.js .rv.in{opacity:1; transform:none}
 .rv-d1{transition-delay:.09s} .rv-d2{transition-delay:.18s} .rv-d3{transition-delay:.27s}
 
 /* ─────────── responsive ─────────── */
@@ -387,7 +388,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 <header class="hdr" id="hdr">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Mian House &amp; Decor — home">
-      <img src="assets/img/logo.png" alt="Mian House &amp; Decor">
+      <img src="assets/img/wordmark.png" alt="Mian House &amp; Decor">
     </a>
     <nav class="nav" id="nav">
       <a href="#top">Home</a>
@@ -643,7 +644,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   <div class="wrap">
     <div class="ftr__grid">
       <div>
-        <img class="ftr__logo" src="assets/img/logo.png" alt="Mian House &amp; Decor">
+        <img class="ftr__logo" src="assets/img/wordmark.png" alt="Mian House &amp; Decor">
         <p>Custom upholstery, reupholstery and made-to-measure drapery for homes and businesses across Miami-Dade.</p>
         <div class="socials">
           <a class="social social--ig" href="https://www.instagram.com/mianhousedecor" target="_blank" rel="noopener" aria-label="Instagram">
