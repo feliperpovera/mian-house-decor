@@ -105,6 +105,7 @@ p{margin:0}
   transition:transform .3s var(--ease);
 }
 .nav a:hover::after{transform:scaleX(1)}
+.nav__cta{display:none}
 .hdr:not(.is-stuck) .nav a{color:#fff}
 .hdr:not(.is-stuck) .btn--hdr{--bg:rgba(255,255,255,.12); --fg:#fff; --bd:rgba(255,255,255,.45); backdrop-filter:blur(10px)}
 .btn--hdr{min-height:44px; padding:0 20px; font-size:.87rem}
@@ -362,6 +363,12 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   .nav a{padding:14px 4px; font-size:1.02rem; border-bottom:1px solid var(--line)}
   .nav a::after{display:none}
   .nav a:last-child{border-bottom:0}
+  .nav__cta{
+    display:flex; align-items:center; justify-content:center;
+    margin-top:16px; min-height:52px; border:1px solid var(--brass); border-radius:100px;
+    background:var(--brass); color:#fff!important; font-size:.95rem; font-weight:500;
+  }
+  .hdr:not(.is-stuck) .nav__cta{color:#fff!important}
   .hdr .btn--hdr{display:none}
   body.menu-open{overflow:hidden}
   .hero{min-height:min(92svh,760px)}
@@ -395,6 +402,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a class="nav__cta" href="#contact">Free Quote</a>
     </nav>
     <a class="btn btn--brass btn--hdr" href="#contact">Free Quote</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
