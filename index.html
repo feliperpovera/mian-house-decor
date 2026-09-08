@@ -352,8 +352,26 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .fab:hover{transform:translateY(-3px) scale(1.06); box-shadow:var(--shadow-l)}
 .fab:active{transform:scale(.96); transition-duration:.08s}
 .fab--wa{background:#25D366}
-.fab--tel{background:var(--marina)}
-.fab--ig{background:linear-gradient(45deg,#F09433,#DC2743 45%,#BC1888)}
+.fab--sms{background:var(--marina)}
+.fab--tel{background:var(--marina-l)}
+
+/* mobile sticky CTA bar — replaces the dock below 780px */
+.mbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:75; display:none; gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,245,224,.97); backdrop-filter:blur(14px) saturate(1.3);
+  -webkit-backdrop-filter:blur(14px) saturate(1.3);
+  border-top:1px solid var(--line); box-shadow:0 -2px 22px rgba(96,126,151,.12);
+}
+.mbar a{
+  flex:1; min-height:52px; display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  border:1px solid var(--marina); border-radius:100px; background:transparent; color:var(--marina);
+  font-family:inherit; font-size:.84rem; font-weight:500; text-decoration:none;
+  transition:transform .2s var(--ease), background .2s;
+}
+.mbar a svg{width:17px; height:17px; flex:none}
+.mbar a:active{transform:scale(.97)}
+.mbar a.is-primary{background:var(--marina); color:#fff; box-shadow:var(--shadow-s)}
 .fab__tip{
   position:absolute; right:calc(100% + 12px); top:50%; translate:0 -50%;
   background:var(--marina-d); color:#fff; font-size:.76rem; font-weight:400;
@@ -380,7 +398,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 }
 @media (max-width:940px){
   .hero__grid{grid-template-columns:1fr; gap:44px}
-  .hero .oval{order:-1; max-width:430px}
+  .hero .oval{max-width:430px}                 /* copy first: CTAs visible without scrolling */
   .mvp__grid{grid-template-columns:1fr; gap:34px}
   .mvp__rule{display:none}
   .about__grid{grid-template-columns:1fr; gap:36px}
@@ -391,6 +409,10 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 }
 @media (max-width:780px){
   .burger{display:flex}
+  .mbar{display:flex}
+  .dock{display:none}
+  body{padding-bottom:78px}                    /* clear the sticky bar */
+  .mvp{display:none}                           /* Mission/Vision/Purpose: desktop only */
   .nav{
     position:fixed; inset:var(--header-h) 0 auto; flex-direction:column; align-items:stretch; gap:9px;
     background:rgba(255,245,224,.98); backdrop-filter:blur(20px);
@@ -456,8 +478,12 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         <h1>From needs to solutions.</h1>
         <p class="hero__sub">From reupholstery to custom furniture, curtains and cushions — we deliver fast, precise solutions shaped around your needs. <strong>Hablamos español.</strong></p>
         <div class="hero__cta">
-          <a class="btn btn--lg btn--serif" href="#contact">Free Quote</a>
-          <a class="btn btn--lg btn--ghost" href="tel:+17863488650">
+          <a class="btn btn--lg" href="sms:+17863488650?&amp;body=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." data-cta="sms">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
+            Text us
+          </a>
+          <a class="btn btn--lg btn--sun btn--serif" href="#contact">Free Quote</a>
+          <a class="btn btn--lg btn--ghost" href="tel:+17863488650" data-cta="call">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
             (786) 348-8650
           </a>
@@ -617,7 +643,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         </div>
 
         <ul class="infolist">
-          <li><a href="https://maps.google.com/?q=1+NW+62+Street+Unit+8+Miami+FL" target="_blank" rel="noopener">
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+NW+62+Street+Unit+8+Miami+FL+33150" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.8"/></svg>
             <span><small>Workshop · by appointment</small><strong>1 NW 62 Street, Unit 8 — Miami, FL</strong></span>
           </a></li>
@@ -660,17 +686,17 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         <p class="lede" style="margin-top:20px">Tell us what you need reupholstered, built or measured. We reply within one business day.</p>
 
         <div class="contact__quick">
-          <a class="btn btn--ghost btn--block" href="https://wa.me/17863488650?text=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp us now
+          <a class="btn btn--block" href="sms:+17863488650?&amp;body=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." data-cta="sms">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
+            Text us — fastest reply
           </a>
-          <a class="btn btn--ghost btn--block" href="tel:+17863488650">
+          <a class="btn btn--ghost btn--block" href="tel:+17863488650" data-cta="call">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
             Call (786) 348-8650
           </a>
-          <a class="btn btn--ghost btn--block" href="https://www.instagram.com/mianhousedecor" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-            See our work on Instagram
+          <a class="btn btn--ghost btn--block" href="https://wa.me/17863488650?text=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" data-cta="whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
           </a>
         </div>
       </div>
@@ -778,7 +804,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         <ul>
           <li><a href="mailto:mianhousedecor@gmail.com">mianhousedecor@gmail.com</a></li>
           <li><a href="tel:+17863488650">+1 (786) 348-8650</a></li>
-          <li><a href="https://maps.google.com/?q=1+NW+62+Street+Unit+8+Miami+FL" target="_blank" rel="noopener">1 NW 62 Street, Unit 8<br>Miami, Florida</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+NW+62+Street+Unit+8+Miami+FL+33150" target="_blank" rel="noopener">1 NW 62 Street, Unit 8<br>Miami, Florida</a></li>
         </ul>
       </div>
     </div>
@@ -789,24 +815,122 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   </div>
 </footer>
 
+<!-- ═══ MOBILE STICKY CTA BAR — keeps Call/SMS/Quote in reach without scrolling ═══ -->
+<nav class="mbar" id="mbar" aria-label="Quick contact">
+  <a href="tel:+17863488650" data-cta="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>Call</a>
+  <a class="is-primary" href="sms:+17863488650?&amp;body=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." data-cta="sms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>Text us</a>
+  <a href="#contact" data-cta="quote">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+    Quote
+  </a>
+</nav>
+
 <!-- ═══ FLOATING DOCK ═══ -->
 <div class="dock" id="dock">
-  <a class="fab fab--ig" href="https://www.instagram.com/mianhousedecor" target="_blank" rel="noopener" aria-label="Instagram">
-    <span class="fab__tip">Instagram</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+  <a class="fab fab--wa" href="https://wa.me/17863488650?text=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" aria-label="WhatsApp" data-cta="whatsapp">
+    <span class="fab__tip">WhatsApp</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
-  <a class="fab fab--tel" href="tel:+17863488650" aria-label="Call us">
+  <a class="fab fab--tel" href="tel:+17863488650" aria-label="Call us" data-cta="call">
     <span class="fab__tip">(786) 348-8650</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
   </a>
-  <a class="fab fab--wa" href="https://wa.me/17863488650?text=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" aria-label="WhatsApp">
-    <span class="fab__tip">Chat on WhatsApp</span>
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a class="fab fab--sms" href="sms:+17863488650?&amp;body=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." aria-label="Text us" data-cta="sms">
+    <span class="fab__tip">Text us</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
   </a>
-</div>
 
+<!-- LocalBusiness schema. TODO at launch: swap every https://feliperpovera.github.io/mian-house-decor for https://mianhousedecor.com
+     Missing and needed from the client: opening hours (openingHoursSpecification) and the
+     real Google Business Profile URL (add to sameAs). aggregateRating is intentionally
+     omitted until real reviews are visible on the page — see the testimonials section. -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"MIAN House & Decor","description":"From needs to solutions. Reupholstery, custom furniture, curtains and cushions for residential and commercial spaces in Miami.","telephone":"+1-786-348-8650","email":"mianhousedecor@gmail.com","priceRange":"$$","founder":{"@type":"Person","name":"Mercedes Ruiz G.","jobTitle":"Creative Director"},"address":{"@type":"PostalAddress","streetAddress":"1 NW 62 Street, Unit 8","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"},"areaServed":"Miami-Dade County","sameAs":["https://www.instagram.com/mianhousedecor"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5"}}
+{
+ "@context": "https://schema.org",
+ "@type": "HomeAndConstructionBusiness",
+ "@id": "https://feliperpovera.github.io/mian-house-decor/#business",
+ "name": "MIAN House & Decor",
+ "alternateName": "MIAN House & Decor — Residential & Commercial",
+ "slogan": "From needs to solutions.",
+ "description": "Reupholstery, custom furniture, curtains and cushions for residential and commercial spaces in Miami. Free quote in 24 hours. Hablamos español.",
+ "url": "https://feliperpovera.github.io/mian-house-decor/",
+ "telephone": "+1-786-348-8650",
+ "email": "mianhousedecor@gmail.com",
+ "image": "https://feliperpovera.github.io/mian-house-decor/assets/img/svc-commercial.jpg",
+ "logo": "https://feliperpovera.github.io/mian-house-decor/assets/img/logo-mark.png",
+ "priceRange": "$$",
+ "currenciesAccepted": "USD",
+ "paymentAccepted": "Cash, Credit Card",
+ "knowsLanguage": [
+  "en",
+  "es"
+ ],
+ "founder": {
+  "@type": "Person",
+  "name": "Mercedes Ruiz G.",
+  "jobTitle": "Creative Director"
+ },
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "1 NW 62 Street, Unit 8",
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": "33150",
+  "addressCountry": "US"
+ },
+ "hasMap": "https://www.google.com/maps/search/?api=1&query=1+NW+62+Street+Unit+8+Miami+FL+33150",
+ "areaServed": [
+  {
+   "@type": "City",
+   "name": "Miami"
+  },
+  {
+   "@type": "AdministrativeArea",
+   "name": "Miami-Dade County"
+  }
+ ],
+ "sameAs": [
+  "https://www.instagram.com/mianhousedecor"
+ ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Services",
+  "itemListElement": [
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Curtains",
+     "description": "Made-to-measure drapery, sheers and blackouts."
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Fabrics",
+     "description": "Performance, outdoor, linen and contract-grade textiles."
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Custom furniture",
+     "description": "Custom pieces built to your dimensions."
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Reupholstery",
+     "description": "New fabric and new foam on your existing frame."
+    }
+   }
+  ]
+ }
+}
 </script>
 
 <script>
