@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MIAN House &amp; Decor | Upholstery, Curtains &amp; Custom Furniture in Miami</title>
-<meta name="description" content="From needs to solutions. Reupholstery, custom furniture, curtains and cushions for residential and commercial spaces in Miami. Free quote in 24h · Hablamos español.">
+<title>Upholstery &amp; Reupholstery in Miami | MIAN House &amp; Decor</title>
+<meta name="description" content="Furniture reupholstery, custom upholstery, curtains and cushions in Miami. Free quote in 24h · Se habla español · (786) 348-8650.">
 <link rel="icon" href="assets/img/logo-mark.png">
 <meta property="og:title" content="MIAN House &amp; Decor — Residential &amp; Commercial">
 <meta property="og:description" content="From needs to solutions. Reupholstery, custom furniture, curtains and cushions in Miami.">
@@ -262,6 +262,25 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .infolist a:hover{background:var(--paper); transform:translateX(4px)}
 .infolist svg{width:19px; height:19px; color:var(--marina); flex:none}
 .infolist small{display:block; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3)}
+.areas{
+  margin-top:26px; padding:14px 18px; border-left:2px solid var(--sunlight);
+  background:var(--paper); border-radius:0 var(--r) var(--r) 0;
+  font-size:.88rem; color:var(--ink-2);
+}
+
+/* Testimonials — markup is commented out below until the real review texts land */
+.revs{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2vw,24px)}
+.rev{
+  display:flex; flex-direction:column; gap:12px; padding:28px 26px;
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--r-l);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.rev:hover{transform:translateY(-4px); box-shadow:var(--shadow-m)}
+.rev__stars{color:#E9B949; letter-spacing:.1em; font-size:.82rem}
+.rev__q{font-family:"Cormorant Garamond",serif; font-size:1.18rem; line-height:1.45; color:var(--ink)}
+.rev__by{margin-top:auto; padding-top:8px; font-size:.82rem; color:var(--ink-3)}
+.rev__by b{display:block; font-weight:500; color:var(--walnut-d); font-size:.9rem}
+.revs__cta{display:flex; justify-content:center; margin-top:34px}
 .infolist strong{font-weight:500; font-size:.95rem}
 
 /* ═══════════ Express band ═══════════ */
@@ -398,7 +417,26 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 }
 @media (max-width:940px){
   .hero__grid{grid-template-columns:1fr; gap:44px}
-  .hero .oval{max-width:430px}                 /* copy first: CTAs visible without scrolling */
+  /* order on mobile: title -> subtitle -> image -> buttons */
+  .hero__grid{display:flex; flex-direction:column}
+  .hero__copy{display:contents}
+  .hero .eyebrow{order:1}
+  .hero h1{order:2}
+  .hero__sub{order:3}
+  .hero .oval{order:4; max-width:430px; margin-block:4px}
+  .hero__cta{order:5}
+  .hero__trust{order:6}
+
+  /* contact on mobile: the form comes before the Text/Call/WhatsApp buttons */
+  .contact__grid{display:flex; flex-direction:column}
+  .contact__grid > .rv:first-child{display:contents}
+  .contact .eyebrow{order:1}
+  .contact h2{order:2}
+  .contact__grid .lede{order:3}
+  .contact .form{order:4}
+  .contact__quick{order:5; max-width:none; margin-top:22px}
+
+  .hdr__ig{display:none}                       /* Instagram lives in the footer only */
   .mvp__grid{grid-template-columns:1fr; gap:34px}
   .mvp__rule{display:none}
   .about__grid{grid-template-columns:1fr; gap:36px}
@@ -475,7 +513,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
     <div class="hero__grid">
       <div class="hero__copy">
         <p class="eyebrow">Miami · Residential &amp; Commercial</p>
-        <h1>From needs to solutions.</h1>
+        <h1>Custom Upholstery &amp; Reupholstery in Miami</h1>
         <p class="hero__sub">From reupholstery to custom furniture, curtains and cushions — we deliver fast, precise solutions shaped around your needs. <strong>Hablamos español.</strong></p>
         <div class="hero__cta">
           <a class="btn btn--lg" href="sms:+17863488650?&amp;body=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." data-cta="sms">
@@ -505,7 +543,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 <section class="section" id="services">
   <div class="wrap">
     <div class="head head--c rv">
-      <h2>Our <span class="hl">Services</span></h2>
+      <h2>Upholstery &amp; Drapery <span class="hl">Services</span> in Miami</h2>
       <p class="lede">We work with curtains, cushions, custom furniture and upholstery — shaping pieces and spaces through attentive listening and precise execution.</p>
     </div>
     <div class="svc">
@@ -534,7 +572,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
             <path d="M22 26l12 14M74 26L62 40M22 78l12-16M74 78L62 62"/>
           </svg>
         </div>
-        <h3>Fabrics</h3>
+        <h3>Upholstery Fabrics</h3>
         <p>Performance, outdoor, linen and contract-grade textiles — advised, not guessed.</p>
       </a>
 
@@ -548,7 +586,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
             <path d="M26 64l-4 14M70 64l4 14"/>
           </svg>
         </div>
-        <h3>Furniture</h3>
+        <h3>Custom Furniture</h3>
         <p>Custom pieces built to your dimensions, from a single chair to a full room.</p>
       </a>
 
@@ -576,7 +614,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 <section class="section linen" style="padding-top:0">
   <div class="wrap">
     <div class="head head--c rv">
-      <h2>Recent <span class="hl">work</span></h2>
+      <h2>Recent Upholstery <span class="hl">Work</span> in Miami</h2>
     </div>
     <div class="work">
       <figure class="rv"><figcaption>Curtains</figcaption><img src="assets/img/svc-drapery.jpg" alt="Made-to-measure ivory drapery on a tall arched window" loading="lazy"></figure>
@@ -585,6 +623,31 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
     </div>
   </div>
 </section>
+
+<!-- ═══ TESTIMONIALS ═══
+     Styles are live (.revs / .rev). Uncomment and fill once RevUp sends the
+     Google review texts + names; then restore "aggregateRating" and add
+     "review" entries to the JSON-LD block at the bottom of this file.
+
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="head head--c rv">
+      <h2>What Miami <span class="hl">says</span></h2>
+    </div>
+    <div class="revs">
+      <article class="rev rv">
+        <div class="rev__stars">★★★★★</div>
+        <p class="rev__q">REVIEW TEXT</p>
+        <p class="rev__by"><b>CUSTOMER NAME</b>Google review</p>
+      </article>
+      (repeat for 3-5 reviews; add rv-d1 / rv-d2 for the stagger)
+    </div>
+    <div class="revs__cta">
+      <a class="btn btn--ghost" href="GOOGLE_BUSINESS_REVIEWS_URL" target="_blank" rel="noopener">Read all reviews on Google</a>
+    </div>
+  </div>
+</section>
+═══ END TESTIMONIALS ═══ -->
 
 <!-- ═══ MISSION / VISION / PURPOSE ═══ -->
 <section class="section mvp">
@@ -642,10 +705,11 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
           <span>Creative Director</span>
         </div>
 
+        <p class="areas">Serving Miami-Dade: Coral Gables, Doral, Brickell, Miami Beach, Kendall, North Miami &amp; more.</p>
         <ul class="infolist">
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+NW+62+Street+Unit+8+Miami+FL+33150" target="_blank" rel="noopener">
+          <li><a href="https://www.google.com/maps/place/Mian+House+and+Decor/@25.8329064,-80.2067052,15z" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.8"/></svg>
-            <span><small>Workshop · by appointment</small><strong>1 NW 62 Street, Unit 8 — Miami, FL</strong></span>
+            <span><small>Workshop · by appointment</small><strong>1 NW 62nd St, Unit 8, Miami, FL 33150</strong></span>
           </a></li>
           <li><a href="tel:+17863488650">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.4 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
@@ -804,7 +868,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         <ul>
           <li><a href="mailto:mianhousedecor@gmail.com">mianhousedecor@gmail.com</a></li>
           <li><a href="tel:+17863488650">+1 (786) 348-8650</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+NW+62+Street+Unit+8+Miami+FL+33150" target="_blank" rel="noopener">1 NW 62 Street, Unit 8<br>Miami, Florida</a></li>
+          <li><a href="https://www.google.com/maps/place/Mian+House+and+Decor/@25.8329064,-80.2067052,15z" target="_blank" rel="noopener">1 NW 62nd St, Unit 8<br>Miami, FL 33150</a></li>
         </ul>
       </div>
     </div>
@@ -872,24 +936,16 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
  },
  "address": {
   "@type": "PostalAddress",
-  "streetAddress": "1 NW 62 Street, Unit 8",
+  "streetAddress": "1 NW 62nd St, Unit 8",
   "addressLocality": "Miami",
   "addressRegion": "FL",
   "postalCode": "33150",
   "addressCountry": "US"
  },
- "hasMap": "https://www.google.com/maps/search/?api=1&query=1+NW+62+Street+Unit+8+Miami+FL+33150",
- "areaServed": [
-  {
-   "@type": "City",
-   "name": "Miami"
-  },
-  {
-   "@type": "AdministrativeArea",
-   "name": "Miami-Dade County"
-  }
- ],
+ "hasMap": "https://www.google.com/maps/place/Mian+House+and+Decor/@25.8329064,-80.2067052,15z",
+ "areaServed": "Miami-Dade County",
  "sameAs": [
+  "https://www.google.com/maps/place/Mian+House+and+Decor/@25.8329064,-80.2067052,15z",
   "https://www.instagram.com/mianhousedecor"
  ],
  "hasOfferCatalog": {
