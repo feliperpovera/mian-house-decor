@@ -49,13 +49,14 @@
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 html:focus-within{scroll-behavior:smooth}
+html{scroll-padding-top:96px}
 body{
   margin:0; background:var(--sand); color:var(--ink);
   font-family:Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-weight:300; font-size:clamp(15.5px,.4vw + 14.6px,16.8px); line-height:1.75;
   -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
-img{max-width:100%; display:block}
+img{max-width:100%; height:auto; display:block}   /* height:auto — else the width/height attrs beat aspect-ratio */
 a{color:inherit}
 h1,h2,h3,h4{font-family:"Cormorant Garamond",Garamond,Georgia,serif; font-weight:600; margin:0; line-height:1.08; letter-spacing:-.005em}
 p{margin:0}
@@ -310,11 +311,15 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .field{margin-bottom:16px}
 .field label{display:block; font-size:.7rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-3); margin-bottom:7px}
 .field input,.field textarea,.field select{
-  width:100%; font:inherit; font-size:.94rem; color:var(--ink);
+  width:100%; font:inherit; font-size:16px; color:var(--ink);   /* 16px min — under it, iOS zooms on focus */
   padding:13px 15px; border:1px solid var(--line); border-radius:12px;
   background:var(--sand); transition:border-color .2s, background .2s, box-shadow .2s;
 }
 .field textarea{resize:vertical; min-height:104px}
+.field select{min-height:54px; appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--marina) 50%),linear-gradient(135deg,var(--marina) 50%,transparent 50%);
+  background-position:calc(100% - 20px) center,calc(100% - 14px) center;
+  background-size:6px 6px,6px 6px; background-repeat:no-repeat; padding-right:44px}
 .field input:hover,.field textarea:hover,.field select:hover{border-color:var(--walnut)}
 .field input:focus,.field textarea:focus,.field select:focus{
   outline:none; border-color:var(--marina); background:#fff;
@@ -448,6 +453,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 @media (max-width:780px){
   .burger{display:flex}
   .mbar{display:flex}
+  body.typing .mbar{transform:translateY(120%); pointer-events:none}   /* get out of the keyboard's way */
+  .mbar{transition:transform .25s var(--ease)}
   .dock{display:none}
   body{padding-bottom:78px}                    /* clear the sticky bar */
   .mvp{display:none}                           /* Mission/Vision/Purpose: desktop only */
@@ -465,8 +472,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   body.menu-open{overflow:hidden}
   .hdr__ig{margin-left:auto}
   .hero__cta .btn{flex:1 1 100%}
-  .work{grid-template-columns:1fr 1fr; gap:10px}
-  .work figcaption{left:9px; bottom:9px; padding:5px 11px; font-size:.62rem}
+  .work{grid-template-columns:1fr; gap:14px}
+  .work img{aspect-ratio:4/3}
   .svc{grid-template-columns:1fr}
   .vals{grid-template-columns:1fr}
   .field-row{grid-template-columns:1fr}
@@ -617,15 +624,12 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       <h2>Recent Upholstery <span class="hl">Work</span> in Miami</h2>
     </div>
     <div class="work">
-      <figure class="rv"><figcaption>Curtains</figcaption><img src="assets/img/work-01.jpg" alt="Made-to-measure ivory drapery on a tall arched window in Miami" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv rv-d1"><figcaption>Furniture</figcaption><img src="assets/img/work-02.jpg" alt="Custom grey sectional and ottoman in an oceanfront Miami living room" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv rv-d2"><figcaption>Commercial</figcaption><img src="assets/img/work-03.jpg" alt="Restaurant banquette and leather dining chairs upholstered for a Miami venue" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv"><figcaption>Curtains</figcaption><img src="assets/img/work-04.jpg" alt="Pleated drapery framing a tall window in a Miami home" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv rv-d1"><figcaption>Furniture</figcaption><img src="assets/img/work-05.jpg" alt="Bouclé armchair with a dark wood frame, fully reupholstered" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv rv-d2"><figcaption>Marine</figcaption><img src="assets/img/work-06.jpg" alt="Navy striped outdoor cushions built for a yacht at a Miami marina" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv"><figcaption>Furniture</figcaption><img src="assets/img/work-07.jpg" alt="Dining chairs reupholstered in textured grey fabric" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv rv-d1"><figcaption>Furniture</figcaption><img src="assets/img/work-08.jpg" alt="Blue velvet sofa upholstered in our Miami workshop" loading="lazy" width="825" height="1100"></figure>
-      <figure class="rv rv-d2"><figcaption>Reupholstery</figcaption><img src="assets/img/work-09.jpg" alt="Tufted wingback settee being reupholstered in our workshop" loading="lazy" width="825" height="1100"></figure>
+      <figure class="rv"><figcaption>Curtains</figcaption>
+<img src="assets/img/work-curtains.jpg" alt="Made-to-measure ivory drapery on a tall arched window in Miami" loading="lazy" width="1000" height="1777"></figure>
+      <figure class="rv rv-d1"><figcaption>Furniture</figcaption>
+<img src="assets/img/work-furniture.jpg" alt="Custom grey sectional and ottoman in an oceanfront Miami living room" loading="lazy" width="1000" height="1333"></figure>
+      <figure class="rv rv-d2"><figcaption>Commercial</figcaption>
+<img src="assets/img/work-commercial.jpg" alt="Restaurant banquette and leather chairs upholstered for a Miami venue" loading="lazy" width="1000" height="1333"></figure>
     </div>
   </div>
 </section>
@@ -788,17 +792,17 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         <div class="field-row">
           <div class="field">
             <label for="f-name">Name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            <input id="f-name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder="Your name" required>
           </div>
           <div class="field">
             <label for="f-phone">Phone</label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(786) 000-0000" required>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder="(786) 000-0000" required>
           </div>
         </div>
 
         <div class="field">
           <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
+          <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="you@email.com">
         </div>
 
         <div class="field">
@@ -816,7 +820,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 
         <div class="field">
           <label for="f-msg">Comment or message</label>
-          <textarea id="f-msg" name="message" placeholder="Tell us about the piece — type of furniture, fabric idea, measurements…"></textarea>
+          <textarea id="f-msg" name="message" enterkeyhint="send" placeholder="Tell us about the piece — type of furniture, fabric idea, measurements…"></textarea>
         </div>
 
         <button class="btn btn--lg btn--block" type="submit" id="formBtn">
@@ -1023,6 +1027,15 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
   nav.addEventListener('click', e => { if (e.target.tagName === 'A') setMenu(false); });
   addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  // the sticky bar overlaps the field you're typing in on small screens
+  const form0 = $('#quoteForm');
+  form0.addEventListener('focusin', () => document.body.classList.add('typing'));
+  form0.addEventListener('focusout', () => {
+    setTimeout(() => {
+      if (!form0.contains(document.activeElement)) document.body.classList.remove('typing');
+    }, 120);
+  });
 
   // scroll reveal
   const io = new IntersectionObserver((entries, obs) => {
