@@ -786,7 +786,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       </div>
 
       <form class="form rv rv-d1" id="quoteForm"
-            action="https://formsubmit.co/mianhousedecor@gmail.com" method="POST">
+            action="https://formsubmit.co/mianhousedecor@gmail.com" method="POST"
+            data-endpoint="https://mian-quote.restless-sound-965e.workers.dev">
         <h3>Request a quote</h3>
         <p class="form__note">Free · No obligation · Reply within 24 hours</p>
 
@@ -794,7 +795,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         <input type="hidden" name="_subject" value="New quote request — mianhousedecor.com">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://feliperpovera.github.io/mian-house-decor/thanks.html">
+        <input type="hidden" name="_next" value="https://mianhousedecor.com/thanks.html">
         <!-- bots fill this; humans never see it -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
                style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
@@ -924,24 +925,23 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
   </a>
 
-<!-- LocalBusiness schema. TODO at launch: swap every https://feliperpovera.github.io/mian-house-decor for https://mianhousedecor.com
-     Missing and needed from the client: opening hours (openingHoursSpecification) and the
-     real Google Business Profile URL (add to sameAs). aggregateRating is intentionally
+<!-- LocalBusiness schema.
+     Still needed from the client: opening hours (openingHoursSpecification). aggregateRating is intentionally
      omitted until real reviews are visible on the page — see the testimonials section. -->
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "HomeAndConstructionBusiness",
- "@id": "https://feliperpovera.github.io/mian-house-decor/#business",
+ "@id": "https://mianhousedecor.com/#business",
  "name": "MIAN House & Decor",
  "alternateName": "MIAN House & Decor — Residential & Commercial",
  "slogan": "From needs to solutions.",
  "description": "Reupholstery, custom furniture, curtains and cushions for residential and commercial spaces in Miami. Free quote in 24 hours. Hablamos español.",
- "url": "https://feliperpovera.github.io/mian-house-decor/",
+ "url": "https://mianhousedecor.com/",
  "telephone": "+1-786-348-8650",
  "email": "mianhousedecor@gmail.com",
- "image": "https://feliperpovera.github.io/mian-house-decor/assets/img/hero.jpg",
- "logo": "https://feliperpovera.github.io/mian-house-decor/assets/img/logo-mark.png",
+ "image": "https://mianhousedecor.com/assets/img/hero.jpg",
+ "logo": "https://mianhousedecor.com/assets/img/logo-mark.png",
  "priceRange": "$$",
  "currenciesAccepted": "USD",
  "paymentAccepted": "Cash, Credit Card",
