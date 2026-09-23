@@ -446,7 +446,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   .contact h2{order:2}
   .contact__grid .lede{order:3}
   .contact .form{order:4}
-  .contact__quick{order:5; max-width:none; margin-top:22px}
+  .contact__quick{order:5; max-width:none; margin-top:22px; align-self:stretch}   /* same width as the form, centred under it */
 
   .hdr__ig{display:none}                       /* Instagram lives in the footer only */
   .mvp__grid{grid-template-columns:1fr; gap:34px}
@@ -786,7 +786,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       </div>
 
       <form class="form rv rv-d1" id="quoteForm"
-            action="https://formsubmit.co/mianhousedecor@gmail.com" method="POST">
+            action="https://formsubmit.co/mianhousedecor@gmail.com" method="POST"
+            data-endpoint="https://mian-quote.restless-sound-965e.workers.dev">
         <h3>Request a quote</h3>
         <p class="form__note">Free · No obligation · Reply within 24 hours</p>
 
@@ -1058,7 +1059,9 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   // address and FormSubmit redirects to thanks.html.
   const form = $('#quoteForm'), fine = $('#formFine');
   const btn = $('#formBtn'), btnText = $('#formBtnText');
-  const AJAX = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+  // data-endpoint on the <form> switches delivery to the Resend Worker;
+  // without it we fall back to FormSubmit.
+  const AJAX = form.dataset.endpoint || form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
   const val = id => $('#' + id).value.trim();
 
   const say = (msg, tone) => {
