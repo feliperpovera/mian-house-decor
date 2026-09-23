@@ -1058,7 +1058,9 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   // address and FormSubmit redirects to thanks.html.
   const form = $('#quoteForm'), fine = $('#formFine');
   const btn = $('#formBtn'), btnText = $('#formBtnText');
-  const AJAX = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+  // data-endpoint on the <form> switches delivery to our Resend function;
+  // without it we fall back to FormSubmit.
+  const AJAX = form.dataset.endpoint || form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
   const val = id => $('#' + id).value.trim();
 
   const say = (msg, tone) => {
