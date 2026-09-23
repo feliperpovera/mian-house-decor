@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>window.dataLayer=window.dataLayer||[];(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJ66VBNG');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Upholstery &amp; Reupholstery in Miami | MIAN House &amp; Decor</title>
@@ -488,6 +495,9 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ66VBNG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <a class="btn" href="#main" style="position:absolute;left:-9999px;top:0;z-index:200" onfocus="this.style.left='12px';this.style.top='12px'" onblur="this.style.left='-9999px'">Skip to content</a>
 
@@ -1090,6 +1100,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       const data = await res.json().catch(() => ({}));
       if (!res.ok || String(data.success) === 'false') throw new Error(data.message || 'rejected');
 
+      dataLayer.push({event:'generate_lead', form_id:'quote', method:'form', service:$('#f-service').value});
       form.reset();
       btnText.textContent = 'Request sent ✓';
       say('Thank you — we got it. Expect a reply within 24 hours.', 'good');
@@ -1105,6 +1116,11 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
     }
   });
 })();
+</script>
+<script>
+// Contact clicks -> dataLayer (event: cta_click, cta_type: sms|call|whatsapp|quote)
+document.addEventListener('click',function(e){var a=e.target.closest('[data-cta]');if(!a)return;
+dataLayer.push({event:'cta_click',cta_type:a.getAttribute('data-cta'),cta_location:(a.closest('section,nav,footer,.dock,main')||{}).id||a.closest('section,nav,footer,.dock,main')?.className||''});});
 </script>
 </body>
 </html>
