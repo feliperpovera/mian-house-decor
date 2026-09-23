@@ -1050,6 +1050,25 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
     }, 120);
   });
 
+  // After a call, text or WhatsApp tap, move this tab to the thank-you page —
+  // but only once the phone / messaging app has actually taken over (tab hidden).
+  // Navigating on the click itself cancels iOS's "Call?" sheet, and redirecting
+  // when no app opened (desktop without a handler) would log a fake conversion.
+  const THANKS = {call: 1, sms: 1, whatsapp: 1};
+  let pendingVia = null, pendingTimer;
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-cta]');
+    if (!a || !THANKS[a.dataset.cta]) return;
+    pendingVia = a.dataset.cta;
+    clearTimeout(pendingTimer);
+    pendingTimer = setTimeout(() => { pendingVia = null; }, 15000);   // user dismissed the prompt
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden || !pendingVia) return;
+    const via = pendingVia; pendingVia = null; clearTimeout(pendingTimer);
+    location.href = '/thanks.html?via=' + via + '&t=' + Date.now();
+  });
+
   // scroll reveal
   const io = new IntersectionObserver((entries, obs) => {
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
@@ -1105,10 +1124,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       const data = await res.json().catch(() => ({}));
       if (!res.ok || String(data.success) === 'false') throw new Error(data.message || 'rejected');
 
-      dataLayer.push({event:'generate_lead', form_id:'quote', method:'form', service:$('#f-service').value});
-      form.reset();
       btnText.textContent = 'Request sent ✓';
-      say('Thank you — we got it. Expect a reply within 24 hours.', 'good');
+      location.href = '/thanks.html?via=form&t=' + Date.now();   // generate_lead fires there
     } catch (err) {
       // Never lose the lead: hand them straight to WhatsApp instead.
       btn.disabled = false;
