@@ -80,10 +80,9 @@ p{margin:16px 0 0; color:var(--ink-2)}
   <div class="tick" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
   </div>
-  <!-- Default copy is the quote-form version, so the no-JS FormSubmit redirect still reads right. -->
-  <h1 id="ty-title">Thank you — we got it.</h1>
-  <p id="ty-body">Your request is in our inbox. We'll get back to you with a quote within 24 hours.</p>
-  <p class="small" id="ty-hint">In a hurry? Text us and we'll usually price it the same day.</p>
+  <h1>Thank you — we got it.</h1>
+  <p>We'll get back to you within 24 hours — usually the same day.</p>
+  <p class="small">Want a faster quote? Send us a photo of the piece and its measurements.</p>
   <div class="actions">
     <a class="btn btn--brass" href="sms:+17863488650?&amp;body=Hi%20MIAN%20House%20%26%20Decor%2C%20I%27d%20like%20a%20free%20quote." data-cta="sms">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
@@ -105,36 +104,10 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-cta]
 dataLayer.push({event:'cta_click',cta_type:a.getAttribute('data-cta'),cta_location:'thanks'});});
 </script>
 <script>
-// One thank-you page for every contact channel: ?via=form|call|sms|whatsapp
+// Same page for every channel. ?via=form|call|sms|whatsapp is only read for reporting.
 (function () {
   var q = new URLSearchParams(location.search);
   var via = ({form:1, call:1, sms:1, whatsapp:1})[q.get('via')] ? q.get('via') : 'form';
-  var COPY = {
-    form: ["Thank you — we got it.",
-           "Your request is in our inbox. We'll get back to you with a quote within 24 hours.",
-           "In a hurry? Text us and we'll usually price it the same day."],
-    call: ["Thanks for calling.",
-           "If we couldn't pick up, leave us a message or send a text — we reply within 24 hours.",
-           "A photo of the piece helps us price it faster."],
-    sms:  ["Thanks for your message.",
-           "We'll text you back within 24 hours — usually the same day.",
-           "Send a photo of the piece and its measurements to speed up your quote."],
-    whatsapp: ["Thanks for reaching out on WhatsApp.",
-           "Send us a photo of the piece and its measurements — we reply within 24 hours.",
-           "Prefer to talk? Call or text us any time."]
-  }[via];
-  document.getElementById('ty-title').textContent = COPY[0];
-  document.getElementById('ty-body').textContent  = COPY[1];
-  document.getElementById('ty-hint').textContent  = COPY[2];
-  document.title = COPY[0] + ' — MIAN House & Decor';
-
-  // Offer the other channels; the one they just used goes away.
-  var used = document.querySelector('.actions [data-cta="' + via + '"]');
-  if (used) used.remove();
-  var first = document.querySelector('.actions [data-cta]');
-  document.querySelectorAll('.actions .btn--brass').forEach(function (b) { b.classList.remove('btn--brass'); });
-  if (first) first.classList.add('btn--brass');
-
   // Count each lead once: a refresh or back-navigation must not fire it again.
   var key = 'mian-lead:' + via + ':' + (q.get('t') || 'direct');
   try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (e) {}
