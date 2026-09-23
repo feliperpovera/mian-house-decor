@@ -1,6 +1,6 @@
 // MIAN quote form -> Resend. Cloudflare Worker (module syntax).
 // Secret:    RESEND_API_KEY            (Settings > Variables and Secrets > Secret)
-// Variables: MAIL_TO   = mianhousedecor@gmail.com
+// Variables: MAIL_TO   = mianhousedecor@gmail.com, mianhousedecorads@gmail.com   (comma-separated)
 //            MAIL_FROM = MIAN House & Decor <quotes@mianhousedecor.com>
 
 const ALLOWED = [
@@ -52,7 +52,7 @@ export default {
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         from: env.MAIL_FROM,
-        to: [env.MAIL_TO],
+        to: String(env.MAIL_TO).split(",").map((s) => s.trim()).filter(Boolean),
         reply_to: email,
         subject: `New quote request — ${d.name} (${d.service || "general"})`,
         html: `<div style="font-family:Arial,sans-serif;color:#4A4238">
