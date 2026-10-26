@@ -138,44 +138,77 @@ PAGES = [
           "Sí. Atendemos en español e inglés, desde la cotización hasta la entrega.")],
   ),
   dict(
-    path="drapery", kind="service", service="Custom drapery and curtains",
-    title="Custom Drapery &amp; Curtains in Miami | Made to Measure | MIAN",
-    desc="Custom drapery and curtains made to measure in Miami: pleated drapes, sheers, blackout and outdoor curtains. Free quote in 24h. Se habla español. (786) 348-8650.",
+    path="drapery", kind="service", service="Custom drapes and curtains",
+    title="Custom Drapes in Miami | Euro &amp; Pinch Pleat Drapery | MIAN",
+    desc="Custom drapes made to measure in Miami: euro pleat, pinch pleat, sheer, blackout &amp; outdoor drapery, measured and installed by us. Free quote in 24h.",
     eyebrow="Drapery · Miami-Dade",
-    h1="Custom Drapery &amp; Curtains in Miami",
-    lede="Made-to-measure drapes, sheers and blackout curtains sewn in our Miami workshop — for tall windows, sliding doors and covered patios. Free quote in 24 hours.",
+    h1="Custom Drapes in Miami, Made to Measure",
+    lede="Euro pleat and pinch pleat drapes, sheers and blackout curtains sewn in our Miami workshop — for tall windows, sliding doors and covered patios. Measured and installed by us. Free quote in 24 hours.",
     hero_img=("work-curtains.jpg", "Made-to-measure ivory drapery on a tall arched window in Miami"),
     body="""
-<h2>Curtains made for your windows, not a catalogue size</h2>
-<p>Ready-made curtains rarely fit Miami windows: tall living-room glass, arched windows, sliding doors and wide patio openings. We measure each opening and sew the drapery to size, so it hangs straight, clears the floor the way you want and closes properly.</p>
-<h3>What we make</h3>
+<h2>Custom drapes made for your windows, not a catalogue size</h2>
+<p>Ready-made curtains rarely fit Miami windows: tall living-room glass, arched windows, sliding doors and wide patio openings. We measure each opening and sew the drapery to size in our own workshop, so it hangs straight, clears the floor the way you want and closes properly. Then we install it.</p>
+<p>You talk directly to the people who measure, sew and hang your drapes — in English or Spanish — from the first photo to the day they go up.</p>
+
+<h2>Drapery styles we make</h2>
+<p>The heading — how the fabric is gathered at the top — sets the look of a drape more than anything else. These are the styles we make most often in Miami homes.</p>
+<h3>Euro pleat drapes</h3>
+<p>Euro pleats are gathered and tacked right at the top edge, so each pleat fans out into soft, even folds below. The result is tailored but relaxed, and it suits contemporary rooms, condos and floor-to-ceiling glass where you want clean lines.</p>
+<h3>Pinch pleat and pleated drapes</h3>
+<p>Classic pinch pleats are stitched a few inches below the top, giving crisp, structured folds and a fuller drape. They work well in traditional and transitional rooms, dining rooms and bedrooms, and on large living-room windows.</p>
+<h3>Sheer drapes</h3>
+<p>Sheers soften glare and add daytime privacy while letting light through — a good fit for high-rise windows and sliding doors. They can be layered with a lined or blackout drape on a second track for full control.</p>
+<h3>Blackout and lined drapes</h3>
+<p>Blackout-lined drapery darkens bedrooms and media rooms. A standard lining protects the face fabric from Miami sun, improves privacy and helps the drape hang with more body.</p>
+<h3>Outdoor drapes</h3>
+<p>For covered patios, terraces and balconies we sew drapes in outdoor-rated fabrics that handle sun and humidity — often paired with <a href="/upholstery/">reupholstered outdoor cushions</a> in a coordinating fabric.</p>
+
+<h2>Fabrics and lining for Miami light</h2>
+<p>Light, heat and humidity matter here. We help you choose for each room:</p>
 <ul>
-  <li><b>Pleated drapery</b> — pinch pleat and similar classic headings</li>
-  <li><b>Sheers</b> for soft daylight and privacy on floor-to-ceiling glass</li>
-  <li><b>Blackout and lined curtains</b> for bedrooms and media rooms</li>
-  <li><b>Outdoor curtains</b> for covered patios and terraces</li>
-  <li><b>Coordinating cushions and pillows</b> in the same fabric</li>
+  <li><b>Sheers</b> to soften glare without darkening the room</li>
+  <li><b>Lined drapes</b> to protect fabric from fading and add privacy in sunny rooms</li>
+  <li><b>Blackout lining</b> for bedrooms, nurseries and media rooms</li>
+  <li><b>Outdoor-rated textiles</b> for patios, terraces and humid spaces</li>
+  <li><b>Coordinating cushions and pillows</b> sewn in the same fabric as your drapes</li>
 </ul>
-<h3>Choosing the fabric</h3>
-<p>Light, heat and humidity matter here. Lining protects fabric from Miami sun and improves privacy; sheers soften glare without darkening the room; outdoor-rated textiles handle humidity on patios. We bring samples so you can see each option against your own windows and furniture.</p>
+<p>We bring samples to your home so you can see each option against your own windows, walls and furniture before anything is cut.</p>
+
+<h2>Custom drapes across Miami</h2>
+<p>We measure, make and install drapery throughout Miami-Dade:</p>
+<ul>
+  <li><a href="/areas/brickell/"><b>Brickell</b></a> — sheers and blackout drapery for high-rise, floor-to-ceiling glass</li>
+  <li><a href="/areas/miami-beach/"><b>Miami Beach</b></a> — lined drapes for sun-facing rooms and outdoor curtains for terraces</li>
+  <li><a href="/areas/coral-gables/"><b>Coral Gables</b></a> — lined drapery for large living-room windows</li>
+  <li><a href="/areas/kendall/"><b>Kendall</b></a> — custom curtains for bedrooms and living rooms</li>
+  <li><a href="/areas/doral/"><b>Doral</b></a> — blackout curtains for bedrooms</li>
+  <li><a href="/areas/north-miami/"><b>North Miami</b></a> — close to our workshop at 1 NW 62nd St</li>
+</ul>
+<p>Updating more than the windows? We also do <a href="/upholstery/">furniture reupholstery and custom upholstery</a>, and <a href="/commercial/">drapery and seating for restaurants, hotels and event spaces</a>.</p>
 """,
     steps=[("Send a photo", "Share photos of the windows. You get a free quote within 24 hours."),
-           ("Measure", "We measure every opening and help you choose fabric and heading."),
+           ("Measure", "We measure every opening and help you choose fabric, lining and heading."),
            ("Made to size", "Your drapery is cut and sewn in our Miami workshop."),
-           ("Ready to hang", "Your curtains arrive finished and made for your windows.")],
+           ("Installed", "We hang your drapes, made to fit your windows.")],
     gallery=[("drapery-pleated.jpg", "Pleated drapery framing a tall window in a Miami home"),
              ("patio-drapery.jpg", "Outdoor drapery and reupholstered seating on a Miami patio"),
              ("work-curtains.jpg", "Ivory drapery on an arched window")],
-    faq=[("How much do custom curtains cost in Miami?",
+    faq=[("How much do custom drapes cost in Miami?",
           "It depends on window size, fabric, lining and heading style. Send us photos of your windows and we will send a free quote within 24 hours."),
-         ("Do you measure the windows?",
-          "Yes. We measure each opening so the drapery is sewn to fit."),
+         ("What is the difference between euro pleat and pinch pleat drapes?",
+          "Euro pleats are tacked at the very top edge and fan out into soft folds, for a cleaner, more contemporary look. Pinch pleats are stitched a few inches below the top, giving crisper, more structured folds and a more traditional look."),
+         ("Do you measure and install the drapes?",
+          "Yes. We measure each opening so the drapery is sewn to fit, and we install it in your home."),
          ("Should my curtains be lined?",
           "In Miami, usually yes for sunny rooms: lining protects the fabric from fading and improves privacy. Sheers are the exception, when you want light to pass through."),
          ("Can you make blackout curtains?",
           "Yes. Blackout-lined drapery works well for bedrooms and media rooms."),
          ("Do you make outdoor curtains?",
           "Yes, in outdoor-rated fabrics for covered patios and terraces."),
+         ("Can you make cushions or pillows to match my drapes?",
+          "Yes. We sew coordinating cushions and pillows in the same fabric as your drapery."),
+         ("Which areas do you serve?",
+          "All of Miami-Dade, including Brickell, Miami Beach, Coral Gables, Kendall, Doral and North Miami."),
          ("¿Hablan español?",
           "Sí. Atendemos en español e inglés.")],
   ),
@@ -242,6 +275,13 @@ AREA_COPY = {
     "North Miami is close to our workshop at 1 NW 62nd St, which makes pickup and delivery especially easy. Mid-century and vintage pieces are common here and are often worth reupholstering rather than replacing.",
     "Popular here: vintage and mid-century chair reupholstery, sofas, and made-to-measure drapery."),
 }
+# Per-area overrides (CTR tests on queries an area already ranks for).
+AREA_META = {
+  "north-miami": dict(
+    title="Custom Upholstery in North Miami, FL | Free Quote 24h | MIAN",
+    desc="Custom upholstery &amp; reupholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free pickup and a free quote in 24h from our nearby workshop.",
+    h1="Custom Upholstery &amp; Reupholstery in North Miami"),
+}
 AREA_IMG = {"coral-gables": "boucle-armchair.jpg", "doral": "dining-chairs.jpg", "brickell": "drapery-pleated.jpg",
             "miami-beach": "yacht-cushions.jpg", "kendall": "blue-velvet-sofa.jpg", "north-miami": "tufted-settee.jpg"}
 for slug, (name, p1, p2) in AREA_COPY.items():
@@ -270,6 +310,7 @@ for slug, (name, p1, p2) in AREA_COPY.items():
              ("How do I get a quote?", "Send a photo of the piece by text, WhatsApp or the form. You get a free quote within 24 hours."),
              ("¿Hablan español?", "Sí. Atendemos en español e inglés.")],
     ))
+    PAGES[-1].update(AREA_META.get(slug, {}))
 
 # ─────────────────────────── rendering ───────────────────────────
 
@@ -407,16 +448,24 @@ def render(pg):
 '''
 
 
+# sitemap lastmod: kept from the existing sitemap; bumped only for pages whose HTML changed.
+# The home page is not built here — bump its lastmod in sitemap.xml by hand when editing index.html.
+from datetime import date
+SITEMAP = os.path.join(ROOT, "sitemap.xml")
+lastmod = dict(re.findall(r"<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>", open(SITEMAP).read())) if os.path.exists(SITEMAP) else {}
+
 for pg in PAGES:
     out = os.path.join(ROOT, pg["path"], "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(render(pg))
+    page = render(pg)
+    url = f"{SITE}/{pg['path']}/"
+    if not os.path.exists(out) or open(out, encoding="utf-8").read() != page:
+        lastmod[url] = str(date.today())
+    open(out, "w", encoding="utf-8").write(page)
     print("built", "/" + pg["path"] + "/")
 
-# sitemap
-from datetime import date
 urls = [f"{SITE}/"] + [f"{SITE}/{pg['path']}/" for pg in PAGES]
-open(os.path.join(ROOT, "sitemap.xml"), "w").write(
+open(SITEMAP, "w").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    "".join(f"  <url><loc>{u}</loc><lastmod>{date.today()}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+    "".join(f"  <url><loc>{u}</loc><lastmod>{lastmod.get(u, date.today())}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 print("sitemap:", len(urls), "urls")
