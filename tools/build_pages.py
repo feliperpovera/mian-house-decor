@@ -153,9 +153,9 @@ PAGES = [
 <h2>Drapery styles we make</h2>
 <p>The heading — how the fabric is gathered at the top — sets the look of a drape more than anything else. These are the styles we make most often in Miami homes.</p>
 <h3>Euro pleat drapes</h3>
-<p>Euro pleats are gathered and tacked right at the top edge, so each pleat fans out into soft, even folds below. The result is tailored but relaxed, and it suits contemporary rooms, condos and floor-to-ceiling glass where you want clean lines.</p>
+<p>Euro pleats are gathered and tacked right at the top edge, so each pleat fans out into soft, even folds below. The result is tailored but relaxed, and it suits contemporary rooms, condos and floor-to-ceiling glass where you want clean lines. <a href="/drapery/euro-pleat-drapes-miami/">More about euro pleat drapes in Miami</a>.</p>
 <h3>Pinch pleat and pleated drapes</h3>
-<p>Classic pinch pleats are stitched a few inches below the top, giving crisp, structured folds and a fuller drape. They work well in traditional and transitional rooms, dining rooms and bedrooms, and on large living-room windows.</p>
+<p>Classic pinch pleats are stitched a few inches below the top, giving crisp, structured folds and a fuller drape. They work well in traditional and transitional rooms, dining rooms and bedrooms, and on large living-room windows. <a href="/drapery/pinch-pleat-drapes-miami/">More about pinch pleat drapes in Miami</a>.</p>
 <h3>Sheer drapes</h3>
 <p>Sheers soften glare and add daytime privacy while letting light through — a good fit for high-rise windows and sliding doors. They can be layered with a lined or blackout drape on a second track for full control.</p>
 <h3>Blackout and lined drapes</h3>
@@ -209,6 +209,120 @@ PAGES = [
           "Yes. We sew coordinating cushions and pillows in the same fabric as your drapery."),
          ("Which areas do you serve?",
           "All of Miami-Dade, including Brickell, Miami Beach, Coral Gables, Kendall, Doral and North Miami."),
+         ("¿Hablan español?",
+          "Sí. Atendemos en español e inglés.")],
+  ),
+  dict(
+    path="drapery/euro-pleat-drapes-miami", kind="service", service="Custom euro pleat drapes",
+    parent=("Drapery", "/drapery/"), crumb="Euro Pleat Drapes",
+    title="Euro Pleat Drapes in Miami | Custom Made &amp; Installed | MIAN",
+    desc="Custom euro pleat drapes in Miami, sewn to measure in our workshop and installed by us. Sheer, lined or blackout. Free quote in 24h. Se habla español.",
+    eyebrow="Drapery · Euro pleat",
+    h1="Euro Pleat Drapes in Miami, Made to Measure",
+    lede="Tailored euro pleat drapery for condos, tall windows and sliding doors — measured, sewn in our Miami workshop and installed by us. Free quote in 24 hours.",
+    hero_img=("drapery-pleated.jpg", "Custom pleated drapes framing a tall window in a Miami home"),
+    body="""
+<h2>What makes a euro pleat drape</h2>
+<p>A euro pleat — also called a top-tack or tailored pleat — gathers the fabric into small groups of folds and tacks them right at the top edge of the drape. Below the tack, each pleat opens freely into soft, even folds all the way to the floor. There is no stitched-down section under the heading, so the drape looks lighter and more relaxed than a classic pinch pleat, while still hanging in a neat, regular rhythm.</p>
+<p>That balance is why euro pleat drapes are one of the most requested styles in Miami: they look clean and modern on floor-to-ceiling glass, but still feel soft and finished in a bedroom or living room.</p>
+
+<h2>Where euro pleat drapes work best</h2>
+<ul>
+  <li><b>Condos and high-rise windows</b> — long, uninterrupted panels that frame the view without looking heavy</li>
+  <li><b>Sliding glass doors</b> — panels that stack neatly to the side when open</li>
+  <li><b>Contemporary and transitional living rooms</b> where you want clean lines</li>
+  <li><b>Bedrooms</b>, paired with blackout lining for sleep</li>
+  <li><b>Double-height and tall windows</b>, where a simple heading keeps the focus on the fabric</li>
+</ul>
+
+<h2>Sheer, lined or blackout</h2>
+<p>The heading sets the look; the fabric and lining decide how the drape performs. Miami sun is strong, so we help you choose for each room:</p>
+<ul>
+  <li><b>Sheer euro pleat drapes</b> soften glare and add daytime privacy while letting light through</li>
+  <li><b>Lined euro pleat drapes</b> protect the face fabric from fading and give the folds more body</li>
+  <li><b>Blackout-lined euro pleat drapes</b> darken bedrooms, nurseries and media rooms</li>
+  <li><b>Layered sheers and lined drapes</b> on two tracks, for light control from morning to night</li>
+</ul>
+<p>We bring samples to your home so you can compare fabrics against your own windows, walls and furniture before anything is cut.</p>
+
+<h2>Made in our Miami workshop, installed by us</h2>
+<p>Every opening is measured individually, and the drapery is cut and sewn to size in our workshop at 1 NW 62nd St, Miami. That is what lets the pleats fall evenly and the hem clear — or just kiss — the floor the way you want. We then install the drapes ourselves, so the fit is right on the day they go up.</p>
+<p>Not sure euro pleat is the right heading? Compare it with <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat drapes</a>, or see every style on our <a href="/drapery/">custom drapes in Miami</a> page. We serve all of Miami-Dade, including <a href="/areas/brickell/">Brickell</a>, <a href="/areas/miami-beach/">Miami Beach</a>, <a href="/areas/coral-gables/">Coral Gables</a> and <a href="/areas/north-miami/">North Miami</a>.</p>
+""",
+    steps=[("Send a photo", "Share photos of the windows. You get a free quote within 24 hours."),
+           ("Measure", "We measure every opening and bring fabric and lining samples."),
+           ("Made to size", "Your euro pleat drapes are cut and sewn in our Miami workshop."),
+           ("Installed", "We hang the drapes and check the fit.")],
+    gallery=[("drapery-pleated.jpg", "Pleated drapery framing a tall window in a Miami home"),
+             ("work-curtains.jpg", "Made-to-measure ivory drapery on an arched window"),
+             ("patio-drapery.jpg", "Outdoor drapery on a covered Miami patio")],
+    faq=[("What is a euro pleat drape?",
+          "A drape whose pleats are tacked only at the very top edge, so the folds open freely below. It looks tailored but softer and more contemporary than a pinch pleat."),
+         ("What is the difference between euro pleat and pinch pleat?",
+          "Euro pleats are tacked at the top edge and fan out into soft folds. Pinch pleats are stitched a few inches below the top, giving crisper, more structured folds and a more traditional look."),
+         ("Can euro pleat drapes be blackout?",
+          "Yes. We can line euro pleat drapery with blackout lining for bedrooms and media rooms, or with a standard lining for sunny rooms."),
+         ("How much do custom euro pleat drapes cost in Miami?",
+          "It depends on window size, fabric and lining. Send us photos of your windows and we will send a free quote within 24 hours."),
+         ("Do you measure and install?",
+          "Yes. We measure each opening, sew the drapes to size in our Miami workshop and install them in your home."),
+         ("¿Hablan español?",
+          "Sí. Atendemos en español e inglés.")],
+  ),
+  dict(
+    path="drapery/pinch-pleat-drapes-miami", kind="service", service="Custom pinch pleat drapes",
+    parent=("Drapery", "/drapery/"), crumb="Pinch Pleat Drapes",
+    title="Pinch Pleat Drapes in Miami | Custom Made &amp; Installed | MIAN",
+    desc="Custom pinch pleat drapes in Miami, sewn to measure in our workshop and installed by us. Lined, blackout or sheer. Free quote in 24h. Se habla español.",
+    eyebrow="Drapery · Pinch pleat",
+    h1="Pinch Pleat Drapes in Miami, Made to Measure",
+    lede="Classic pinch pleat drapery with crisp, structured folds — measured, sewn in our Miami workshop and installed by us. Free quote in 24 hours.",
+    hero_img=("work-curtains.jpg", "Made-to-measure ivory pleated drapery on a tall arched window in Miami"),
+    body="""
+<h2>What makes a pinch pleat drape</h2>
+<p>A pinch pleat gathers the fabric into groups of folds and stitches them together a few inches below the top of the drape, with a stiffened heading above. Because the pleat is held for that first stretch, the folds start crisp and structured and fall into deep, regular columns. The result is the classic, fuller drapery look you see in well-dressed traditional and transitional rooms.</p>
+<p>Pinch pleats are a timeless choice: they look formal in a dining room, refined in a bedroom and substantial on a large living-room window.</p>
+
+<h2>Where pinch pleat drapes work best</h2>
+<ul>
+  <li><b>Traditional and transitional living rooms</b> — full, tailored panels that frame large windows</li>
+  <li><b>Dining rooms</b>, where structured folds add a more formal finish</li>
+  <li><b>Bedrooms</b>, paired with blackout lining for sleep</li>
+  <li><b>Arched and tall windows</b> that call for a fuller, more substantial drape</li>
+  <li><b>Hospitality and event spaces</b> — see our <a href="/commercial/">commercial upholstery and drapery</a> work</li>
+</ul>
+
+<h2>Lined, blackout or sheer</h2>
+<p>Pinch pleats hold their shape best with some body in the fabric, so most of the pinch pleat drapes we make are lined. In Miami light, we help you choose for each room:</p>
+<ul>
+  <li><b>Lined pinch pleat drapes</b> protect the face fabric from fading, add privacy and help the pleats keep their form</li>
+  <li><b>Blackout-lined pinch pleat drapes</b> for bedrooms, nurseries and media rooms</li>
+  <li><b>Sheer pinch pleat drapes</b> for a softer, lighter version that still filters glare</li>
+  <li><b>Coordinating cushions and pillows</b> sewn in the same fabric as your drapes</li>
+</ul>
+<p>We bring fabric and lining samples to your home so you can see each option against your own windows, walls and furniture before anything is cut.</p>
+
+<h2>Made in our Miami workshop, installed by us</h2>
+<p>Each window is measured individually, and the drapes are cut and sewn to size in our workshop at 1 NW 62nd St, Miami, so the pleats are evenly spaced across the full width and the hem finishes exactly where you want it. Then we install them ourselves. You deal directly with the people who measure, sew and hang your drapery — in English or Spanish.</p>
+<p>Prefer a softer, more contemporary heading? Compare with <a href="/drapery/euro-pleat-drapes-miami/">euro pleat drapes</a>, or see every style on our <a href="/drapery/">custom drapes in Miami</a> page. We serve all of Miami-Dade, including <a href="/areas/coral-gables/">Coral Gables</a>, <a href="/areas/kendall/">Kendall</a>, <a href="/areas/doral/">Doral</a> and <a href="/areas/north-miami/">North Miami</a>.</p>
+""",
+    steps=[("Send a photo", "Share photos of the windows. You get a free quote within 24 hours."),
+           ("Measure", "We measure every opening and bring fabric and lining samples."),
+           ("Made to size", "Your pinch pleat drapes are cut and sewn in our Miami workshop."),
+           ("Installed", "We hang the drapes and check the fit.")],
+    gallery=[("work-curtains.jpg", "Ivory pleated drapery on an arched window in Miami"),
+             ("drapery-pleated.jpg", "Pleated drapery framing a tall window in a Miami home"),
+             ("work-commercial.jpg", "Upholstery and soft furnishings for a Miami restaurant")],
+    faq=[("What is a pinch pleat drape?",
+          "A drape whose pleats are stitched together a few inches below the top, giving crisp, structured folds and a fuller, more traditional look."),
+         ("Pinch pleat or euro pleat — which should I choose?",
+          "Pinch pleats suit traditional and transitional rooms and give a fuller, more formal drape. Euro pleats are tacked only at the top edge, for softer folds and a more contemporary look. We bring samples so you can decide at home."),
+         ("Can pinch pleat drapes be blackout?",
+          "Yes. We can add blackout lining for bedrooms and media rooms, or a standard lining for sunny rooms."),
+         ("How much do custom pinch pleat drapes cost in Miami?",
+          "It depends on window size, fabric and lining. Send us photos of your windows and we will send a free quote within 24 hours."),
+         ("Do you measure and install?",
+          "Yes. We measure each opening, sew the drapes to size in our Miami workshop and install them in your home."),
          ("¿Hablan español?",
           "Sí. Atendemos en español e inglés.")],
   ),
@@ -278,8 +392,8 @@ AREA_COPY = {
 # Per-area overrides (CTR tests on queries an area already ranks for).
 AREA_META = {
   "north-miami": dict(
-    title="Custom Upholstery in North Miami, FL | Free Quote 24h | MIAN",
-    desc="Custom upholstery &amp; reupholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free pickup and a free quote in 24h from our nearby workshop.",
+    title="North Miami Upholstery | Free In-Home Quote, Reply in 24h",
+    desc="Reupholstery &amp; custom upholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free in-home quote, reply within 24h, free pickup. Se habla español.",
     h1="Custom Upholstery &amp; Reupholstery in North Miami"),
 }
 AREA_IMG = {"coral-gables": "boucle-armchair.jpg", "doral": "dining-chairs.jpg", "brickell": "drapery-pleated.jpg",
@@ -328,6 +442,8 @@ def render(pg):
     crumbs = [("Home", "/")]
     if pg["kind"] == "area":
         crumbs += [("Areas", "/#about"), (pg["area"], f"/{pg['path']}/")]
+    elif pg.get("parent"):
+        crumbs += [pg["parent"], (pg["crumb"], f"/{pg['path']}/")]
     else:
         crumbs += [(plain(pg["h1"]).split(" in Miami")[0].split(":")[0], f"/{pg['path']}/")]
 
