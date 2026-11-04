@@ -140,6 +140,12 @@ p{margin:0}
 }
 .hdr__ig svg{width:24px; height:24px}
 .hdr__ig:hover{background:var(--sand-2); color:var(--walnut-d); transform:translateY(-2px)}
+.lang{font-size:.78rem; font-weight:500; color:var(--marina-d); text-decoration:none; padding:6px 10px; border:1px solid var(--marina-l); border-radius:100px; white-space:nowrap}
+.lang:hover{background:var(--marina); border-color:var(--marina); color:#fff}
+.chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+.chips--c{justify-content:center; margin-top:30px}
+.chips a{padding:9px 18px; border:1px solid var(--marina-l); border-radius:100px; color:var(--marina-d); text-decoration:none; font-size:.85rem}
+.chips a:hover{background:var(--marina); color:#fff; border-color:var(--marina)}
 .burger{
   display:none; width:44px; height:44px; border:0; background:transparent; cursor:pointer;
   align-items:center; justify-content:center; border-radius:10px; padding:0;
