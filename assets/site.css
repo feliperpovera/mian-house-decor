@@ -144,6 +144,8 @@ p{margin:0}
 .lang:hover{background:var(--marina); border-color:var(--marina); color:#fff}
 .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
 .chips--c{justify-content:center; margin-top:30px}
+.es-link{margin-top:14px; font-size:.92rem}
+.es-link a{color:var(--marina-d); font-weight:500}
 .chips a{padding:9px 18px; border:1px solid var(--marina-l); border-radius:100px; color:var(--marina-d); text-decoration:none; font-size:.85rem}
 .chips a:hover{background:var(--marina); color:#fff; border-color:var(--marina)}
 .burger{
@@ -383,6 +385,8 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
   transition:transform .2s var(--ease), background .2s;
 }
 .mbar a svg{width:17px; height:17px; flex:none}
+.mbar{gap:6px; padding-inline:8px}
+.mbar a{flex-direction:column; gap:2px; min-height:54px; border-radius:14px; font-size:.72rem}
 .mbar a:active{transform:scale(.97)}
 .mbar a.is-primary{background:var(--marina); color:#fff; box-shadow:var(--shadow-s)}
 .fab__tip{

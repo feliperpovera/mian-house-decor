@@ -10,17 +10,21 @@ ES = {}
 ES["upholstery"] = dict(
   path="es/tapiceria", service="Tapicería y retapizado de muebles", crumb="Tapicería",
   title="Tapicería de Muebles en Miami | Tapicero y Retapizado | MIAN",
-  desc="Tapicería de muebles en Miami: tu tapicero para retapizar sofás, seccionales, sillas de comedor, cabeceros y antigüedades. Recogida gratis y cotización gratis en 24 horas. (786) 348-8650.",
+  desc="Tapicería de muebles en Miami: tu tapicero para retapizar sofás, seccionales, sillas de comedor, cabeceros y antigüedades. Recogida y entrega disponibles. Cotización gratis en 24 horas. (786) 348-8650.",
   eyebrow="Tapicería · Miami-Dade",
   h1="Tapicería de Muebles en Miami",
-  lede="Conserva el sofá, la silla o el cabecero que te gusta: tu tapicero en Miami lo reconstruye con espuma y tela nuevas en nuestro taller. Recogida gratis, cotización gratis en 24 horas y atención en español.",
+  lede="Conserva el sofá, la silla o el cabecero que te gusta: tu tapicero en Miami lo reconstruye con espuma y tela nuevas en nuestro taller. Recogida y entrega disponibles, cotización gratis en 24 horas y atención en español.",
   hero_alt="Sofá capitoné con orejas retapizándose en el taller de MIAN en Miami",
   body="""
 <h2>Retapizado que le devuelve la vida a un buen mueble</h2>
 <p>Una estructura bien hecha dura décadas más que su tela. Retapizar conserva esa estructura y cambia todo lo que se desgasta: la tela, la espuma y el relleno y, cuando hace falta, los resortes y las cinchas. El resultado es un mueble que encaja con tu espacio y tu gusto, listo para durar muchos años más.</p>
 <p>Cada pieza se mide, se corta y se cose en nuestro propio taller en 1 NW 62nd St, Miami. Hablas directamente con quienes hacen el trabajo, desde la primera foto hasta la entrega.</p>
+<h2>Retapizar sofás</h2>
+<p>Retapizar un sofá conserva la estructura y cambia la tela y la espuma, desde un sofá de dos puestos hasta un seccional. Envía una foto y te decimos si la estructura vale la pena. <a href="/es/tapiceria/tapizar-sofa-miami/">Ver cómo tapizar tu sofá en Miami</a>.</p>
+<h2>Tapizado de sillas de comedor</h2>
+<p>Una silla o el juego completo, además de butacas y sillones de orejas. Envía una foto de la silla y dinos cuántas tienes. <a href="/es/tapiceria/tapizar-sillas-miami/">Ver tapizado de sillas en Miami</a>.</p>
 <h2>¿Dónde tapizar muebles en Miami?</h2>
-<p>Si buscas un tapicero cerca de ti, quieres un taller local que vea la pieza. El nuestro está en 1 NW 62nd St, y hacemos el tapizado de muebles con recogida a domicilio gratis en todo Miami-Dade, desde <a href="/es/zonas/hialeah/">Hialeah</a> y <a href="/es/zonas/north-miami/">North Miami</a> hasta <a href="/es/zonas/kendall/">Kendall</a> y <a href="/es/zonas/miami-beach/">Miami Beach</a>.</p>
+<p>Si buscas un tapicero cerca de ti, quieres un taller local que vea la pieza. El nuestro está en 1 NW 62nd St, y hacemos el tapizado de muebles con recogida a domicilio en todo Miami-Dade, desde <a href="/es/zonas/hialeah/">Hialeah</a> y <a href="/es/zonas/north-miami/">North Miami</a> hasta <a href="/es/zonas/kendall/">Kendall</a> y <a href="/es/zonas/miami-beach/">Miami Beach</a>.</p>
 <h3>Qué tapizamos</h3>
 <ul>
   <li><a href="/es/tapiceria/tapizar-sofa-miami/"><b>Sofás y seccionales</b></a>, incluso modulares y de gran tamaño</li>
@@ -36,7 +40,7 @@ ES["upholstery"] = dict(
 """,
   steps=[("Envía una foto", "Manda por texto o WhatsApp una foto de la pieza. Recibes tu cotización gratis en 24 horas."),
          ("Medimos y eliges", "Medimos y llevamos muestras de tela para que elijas en casa."),
-         ("Recogida gratis", "Recogemos la pieza y la reconstruimos en nuestro taller de Miami."),
+         ("Recogida", "Recogemos la pieza y la reconstruimos en nuestro taller de Miami."),
          ("Entrega", "Tu mueble regresa terminado y listo para usar.")],
   gallery_alt=["Butaca de bouclé con estructura de madera oscura, retapizada por completo",
                "Sillas de comedor retapizadas en tela gris texturizada en Miami",
@@ -48,7 +52,7 @@ ES["upholstery"] = dict(
        ("¿Cuánto tarda el retapizado?",
         "Depende de la pieza y de la disponibilidad de la tela; te damos una fecha junto con la cotización. Un cliente reciente tuvo su sofá listo dos semanas después de nuestra primera visita."),
        ("¿Hacen tapizado de muebles a domicilio?",
-        "Recogemos a domicilio gratis en todo Miami-Dade, tapizamos la pieza en nuestro taller y te la entregamos terminada."),
+        "Recogemos a domicilio en todo Miami-Dade, tapizamos la pieza en nuestro taller y te la entregamos terminada."),
        ("¿Reparan muebles?",
         "Reparamos lo que va debajo de la tela: espuma, resortes y cinchas. Envía una foto del daño y te decimos qué necesita la pieza."),
        ("¿Van a medir y a mostrar telas?",
@@ -248,7 +252,7 @@ ES["commercial"] = dict(
   title="Tapicería Comercial en Miami | Restaurantes y Hoteles | MIAN",
   desc="Tapicería comercial en Miami-Dade: banquetas y booths de restaurante, sillas, asientos de hotel y oficina, y cojines náuticos. Telas contract. Cotización gratis en 24 horas.",
   eyebrow="Comercial · Miami-Dade",
-  h1="Tapicería Comercial en Miami: Restaurantes, Hoteles y Oficinas",
+  h1="Tapicería Comercial en Miami",
   lede="Tapizamos banquetas, booths, sillas de comedor y asientos de lounge con telas de grado contract y espuma resistente, hechos en nuestro taller de Miami. Cotización gratis en 24 horas.",
   hero_alt="Banqueta de restaurante y sillas de cuero tapizadas para un local de Miami",
   body="""
@@ -288,10 +292,10 @@ ES["upholstery/sofa-reupholstery-miami"] = dict(
   path="es/tapiceria/tapizar-sofa-miami", service="Retapizado de sofás y seccionales",
   parent=("Tapicería", "/upholstery/"), crumb="Tapizar Sofás",
   title="Tapizar Sofá en Miami | Retapizar Sofás y Seccionales | MIAN",
-  desc="Tapizar o forrar tu sofá en Miami: tela nueva, espuma nueva y la misma estructura. Medimos en casa, recogida gratis y cotización en 24 horas.",
+  desc="Tapizar o forrar tu sofá en Miami: tela nueva, espuma nueva y la misma estructura. Medimos en casa y cotizamos en 24 horas.",
   eyebrow="Tapicería · Sofás",
   h1="Tapizar Sofás en Miami",
-  lede="Tela y espuma nuevas para el sofá o seccional que ya tienes, reconstruido en nuestro taller de Miami. Medimos en tu casa, recogemos gratis y cotizamos en 24 horas.",
+  lede="Tela y espuma nuevas para el sofá o seccional que ya tienes, reconstruido en nuestro taller de Miami. Medimos en tu casa y cotizamos en 24 horas. Recogida y entrega disponibles.",
   hero_alt="Sofá de terciopelo azul tapizado en el taller de MIAN en Miami",
   body="""
 <h2>Cuándo vale la pena retapizar un sofá</h2>
@@ -312,7 +316,7 @@ ES["upholstery/sofa-reupholstery-miami"] = dict(
 """,
   steps=[("Envía una foto", "Manda una foto del sofá. Recibes tu cotización gratis en 24 horas."),
          ("Medimos y eliges", "Medimos en tu casa y llevamos muestras de tela."),
-         ("Recogida gratis", "Recogemos el sofá y lo reconstruimos en nuestro taller de Miami."),
+         ("Recogida", "Recogemos el sofá y lo reconstruimos en nuestro taller de Miami."),
          ("Entrega", "Tu sofá regresa con tela y espuma nuevas.")],
   gallery_alt=["Sofá de terciopelo azul tapizado en Miami",
                "Seccional gris con otomana en una sala frente al mar en Miami",
@@ -326,7 +330,7 @@ ES["upholstery/sofa-reupholstery-miami"] = dict(
        ("¿Cambian la espuma?",
         "Sí. La espuma nueva es lo que recupera un sofá cansado, y la incluimos en la cotización cuando hace falta."),
        ("¿Recogen el sofá?",
-        "Sí. La recogida es gratis en todo Miami-Dade y te entregamos el sofá terminado."),
+        "Sí. Recogemos en Miami-Dade y te entregamos el sofá terminado."),
        (_SP, _SP_A)],
 )
 
@@ -334,10 +338,10 @@ ES["upholstery/chair-reupholstery-miami"] = dict(
   path="es/tapiceria/tapizar-sillas-miami", service="Retapizado de sillas",
   parent=("Tapicería", "/upholstery/"), crumb="Tapizar Sillas",
   title="Tapizar Sillas de Comedor en Miami | Tapizado de Sillas | MIAN",
-  desc="Tapizado de sillas en Miami: sillas de comedor, butacas, sillones de orejas y piezas vintage, una sola o el juego completo. Recogida gratis y cotización en 24 horas.",
+  desc="Tapizado de sillas en Miami: sillas de comedor, butacas, sillones de orejas y piezas vintage, una sola o el juego completo. Cotización gratis en 24 horas.",
   eyebrow="Tapicería · Sillas",
   h1="Tapizar Sillas de Comedor en Miami",
-  lede="Sillas de comedor, butacas, sillones de orejas y piezas vintage, una sola o el juego completo, reconstruidas en nuestro taller de Miami. Recogida gratis y cotización gratis en 24 horas.",
+  lede="Sillas de comedor, butacas, sillones de orejas y piezas vintage, una sola o el juego completo, reconstruidas en nuestro taller de Miami. Recogida y entrega disponibles. Cotización gratis en 24 horas.",
   hero_alt="Butaca de bouclé con estructura de madera oscura retapizada en Miami",
   body="""
 <h2>Sillas que tapizamos</h2>
@@ -358,7 +362,7 @@ ES["upholstery/chair-reupholstery-miami"] = dict(
 """,
   steps=[("Envía fotos", "Frente y parte de atrás de una silla, y cuántas tienes."),
          ("Eliges la tela", "Llevamos muestras y te ayudamos a elegir según el uso."),
-         ("Recogida gratis", "Recogemos las sillas y las reconstruimos en el taller."),
+         ("Recogida", "Recogemos las sillas y las reconstruimos en el taller."),
          ("Entrega", "Tus sillas regresan iguales y listas para usar.")],
   gallery_alt=["Sillas de comedor retapizadas en tela gris texturizada en Miami",
                "Butaca de bouclé retapizada en Miami",
@@ -575,10 +579,10 @@ ES["upholstery/leather-reupholstery-miami"] = dict(
   path="es/tapiceria/tapiceria-cuero-miami", service="Tapicería y retapizado en cuero",
   parent=("Tapicería", "/upholstery/"), crumb="Tapicería en Cuero",
   title="Tapicería en Cuero en Miami | Sofás y Sillas | MIAN",
-  desc="Tapicería en cuero en Miami: retapizamos sofás y sillas de cuero en nuestro taller. Recogida gratis y cotización gratis en 24 horas. Atendemos en español.",
+  desc="Tapicería en cuero en Miami: retapizamos sofás y sillas de cuero en nuestro taller. Recogida y entrega disponibles. Cotización gratis en 24 horas. Atendemos en español.",
   eyebrow="Tapicería · Cuero",
   h1="Tapicería en Cuero en Miami",
-  lede="¿Cuero agrietado, pelado o gastado sobre una estructura que sigue buena? Retapizamos sofás, sillas y booths de cuero en nuestro taller de Miami. Recogida gratis y cotización gratis en 24 horas.",
+  lede="¿Cuero agrietado, pelado o gastado sobre una estructura que sigue buena? Retapizamos sofás, sillas y booths de cuero en nuestro taller de Miami. Recogida y entrega disponibles. Cotización gratis en 24 horas.",
   hero_alt="Banqueta de restaurante y sillas de cuero tapizadas para un local de Miami",
   body="""
 <h2>Retapizar un sofá o una silla de cuero</h2>
@@ -596,7 +600,7 @@ ES["upholstery/leather-reupholstery-miami"] = dict(
 """,
   steps=[("Envía una foto", "El daño y la pieza completa. Recibes tu cotización gratis en 24 horas."),
          ("Eliges el material", "Llevamos muestras y te ayudamos a elegir según el uso."),
-         ("Recogida gratis", "Recogemos la pieza y la reconstruimos en nuestro taller de Miami."),
+         ("Recogida", "Recogemos la pieza y la reconstruimos en nuestro taller de Miami."),
          ("Entrega", "Tu pieza regresa terminada y lista para usar.")],
   gallery_alt=["Banqueta de restaurante en cuero marrón en Miami", "Sillas de comedor tapizadas en Miami", "Settee capitoné en el taller de MIAN"],
   faq=[("¿Pueden retapizar un sofá de cuero?",
@@ -605,7 +609,7 @@ ES["upholstery/leather-reupholstery-miami"] = dict(
         "Envía una foto del daño. Te decimos si se puede rehacer la sección gastada o si conviene retapizar toda la silla."),
        (_C+" la tapicería en cuero?",
         "Depende del tamaño de la pieza, el material y el trabajo de espuma. Envía una foto y recibes una cotización gratis en 24 horas."),
-       ("¿Recogen la pieza?", "Sí. La recogida es gratis en todo Miami-Dade."),
+       ("¿Recogen la pieza?", "Sí. Recogida y entrega disponibles en Miami-Dade."),
        (_SP, _SP_A)],
 )
 
@@ -661,7 +665,7 @@ AREA_ES = {
     "Lo más pedido aquí: cojines de exterior y náuticos, cortinas para terrazas y asientos para hoteles y restaurantes."),
   "kendall": ("En las casas familiares de Kendall, cada sofá y silla de comedor se usa a diario. Retapizar con una tela de alto rendimiento devuelve asientos cómodos y fáciles de limpiar sin cambiar muebles que ya te gustan.",
     "Lo más pedido aquí: sofás y seccionales de sala familiar, juegos completos de sillas de comedor y cortinas a medida para habitaciones y salas."),
-  "hialeah": ("Los hogares de Hialeah conservan sus muebles por años, y un buen sofá o juego de comedor casi siempre vale la pena reconstruirlo. Nuestro tapicero recoge gratis en Hialeah, reconstruye la pieza en el taller de Miami y te la devuelve terminada.",
+  "hialeah": ("Los hogares de Hialeah conservan sus muebles por años, y un buen sofá o juego de comedor casi siempre vale la pena reconstruirlo. Nuestro tapicero recoge en Hialeah, reconstruye la pieza en el taller de Miami y te la devuelve terminada.",
     "Lo más pedido aquí: tapicería de muebles para sofás y sillas de comedor, retapizado en cuero y cojines de patio de reemplazo."),
   "north-miami": ("North Miami está cerca de nuestro taller en 1 NW 62nd St, lo que facilita mucho la recogida y la entrega. Las piezas vintage y mid-century son comunes aquí y muchas veces vale más retapizarlas que reemplazarlas.",
     "Lo más pedido aquí: retapizado de sillas vintage y mid-century, sofás y cortinas a medida."),
@@ -672,10 +676,10 @@ def area_es(slug, name):
     return dict(
       path=f"es/zonas/{slug}", service="Tapicería y cortinas a medida", crumb=name,
       title=f"Tapicería en {name}, FL | Tapicero de Muebles | MIAN",
-      desc=f"Tapicería, retapizado de muebles y cortinas a medida en {name}, FL. Recogida gratis y cotización gratis en 24 horas. Atención en español. (786) 348-8650.",
+      desc=f"Tapicería, retapizado de muebles y cortinas a medida en {name}, FL. Recogida y entrega disponibles. Cotización gratis en 24 horas. Atención en español. (786) 348-8650.",
       eyebrow=f"Servimos {name}",
       h1=f"Tapicería de Muebles en {name}",
-      lede=f"Retapizado, tapicería a medida y cortinas para hogares y negocios en {name}. Recogida gratis y cotización gratis en 24 horas.",
+      lede=f"Retapizado, tapicería a medida y cortinas para hogares y negocios en {name}. Recogida y entrega disponibles. Cotización gratis en 24 horas.",
       hero_alt=f"Mueble tapizado por MIAN House &amp; Decor para un cliente en {name}",
       body=f"""
 <h2>Tapicería y cortinas en {name}</h2>
@@ -687,9 +691,9 @@ def area_es(slug, name):
   <li><a href="/es/cortinas/"><b>Cortinas a medida</b></a>: cortinas plisadas, visillos, blackout y de exterior</li>
   <li><a href="/es/comercial/"><b>Tapicería comercial</b></a>: restaurantes, hoteles, oficinas y embarcaciones</li>
 </ul>
-<p>Todo se hace en nuestro taller en 1 NW 62nd St, Miami. La recogida es gratis y recibes una cotización por escrito en 24 horas después de enviarnos una foto.</p>
+<p>Todo se hace en nuestro taller en 1 NW 62nd St, Miami. Hay recogida y entrega disponibles, y recibes una cotización por escrito en 24 horas después de enviarnos una foto.</p>
 """,
-      faq=[(f"¿Recogen muebles en {name}?", f"Sí. La recogida es gratis en {name} y en todo Miami-Dade."),
+      faq=[(f"¿Recogen muebles en {name}?", f"Sí. Recogida y entrega disponibles en {name} y en todo Miami-Dade."),
            ("¿Cómo pido una cotización?", "Envía una foto de la pieza por texto, WhatsApp o el formulario. Recibes una cotización gratis en 24 horas."),
            (_SP, _SP_A)],
     )
@@ -704,16 +708,18 @@ PAIRS = [
   ('>Home<', '>Inicio<'), ('>Services<', '>Servicios<'), ('>About us<', '>Nosotros<'), ('>Contact<', '>Contacto<'),
   ('>Free Quote<', '>Cotización gratis<'), ('Free Quote', 'Cotización gratis'),
   ('Miami · Residential &amp; Commercial', 'Miami · Residencial y comercial'),
-  ('Custom Upholstery &amp; Reupholstery in Miami', 'Tapicería y Tapizado de Muebles en Miami'),
-  ('From reupholstery to custom furniture, curtains and cushions — we deliver fast, precise solutions shaped around your needs. <strong>Hablamos español.</strong>',
-   'Del retapizado a los muebles a medida, cortinas y cojines: soluciones rápidas y precisas, hechas según lo que necesitas. <strong>Atendemos en español.</strong>'),
+  ('Upholstery in Miami – Furniture Upholstery &amp; Reupholstery', 'Tapicería de muebles en Miami – Tapicero cerca de ti'),
+  ('Upholstery Miami homes and businesses count on: furniture and upholstery, curtains and cushions, made in our own workshop. <strong>Hablamos español.</strong>',
+   'Tapicería en Miami para hogares y negocios: tapizar muebles, retapizar sofás, cortinas y cojines, en nuestro propio taller. <strong>Atendemos en español.</strong>'),
+  ('Upholsterers near you in Miami-Dade', 'Tapicero cerca de mí en Miami-Dade'),
+  ('Searching for upholsterers near me or furniture upholstery near me? Our Miami upholstery shop serves:', '¿Buscas tapicería near me o un tapicero cerca de mí? Nuestra tapicería de muebles en Miami atiende:'),
   ('Text us — fastest reply', 'Escríbenos: respuesta rápida'),
   ('Text us', 'Escríbenos'),
   (' · 12 Google reviews', ' · 12 reseñas en Google'),
   ('<b>10+ years</b> in Miami-Dade', '<b>Más de 10 años</b> en Miami-Dade'),
   ('<b>Free quote</b> in 24h', '<b>Cotización gratis</b> en 24 h'),
-  ('<b>Free pickup</b> in Miami-Dade', '<b>Recogida gratis</b> en Miami-Dade'),
-  ('Upholstery &amp; Drapery <span class="hl">Services</span> in Miami', 'Tapicería y <span class="hl">cortinas</span> en Miami'),
+  ('<b>Pickup &amp; delivery</b> available in Miami-Dade', '<b>Recogida y entrega</b> disponibles en Miami-Dade'),
+  ('Furniture Upholstery <span class="hl">Services</span> in Miami', 'Servicios de <span class="hl">tapicería de muebles</span> en Miami'),
   ('We work with curtains, cushions, custom furniture and upholstery — shaping pieces and spaces through attentive listening and precise execution.',
    'Trabajamos con cortinas, cojines, muebles a medida y tapicería, y damos forma a piezas y espacios escuchando con atención y ejecutando con precisión.'),
   ('<h3>Curtains</h3>', '<h3>Cortinas</h3>'),
@@ -731,9 +737,9 @@ PAIRS = [
   ('<figcaption>Furniture</figcaption>', '<figcaption>Muebles</figcaption>'),
   ('<figcaption>Commercial</figcaption>', '<figcaption>Comercial</figcaption>'),
   ('alt="Made-to-measure ivory drapery on a tall arched window in Miami"', 'alt="Cortina marfil a medida en una ventana alta en arco en Miami"'),
-  ('alt="Custom grey sectional and ottoman in an oceanfront Miami living room"', 'alt="Seccional gris con otomana en una sala frente al mar en Miami"'),
-  ('alt="Restaurant banquette and leather chairs upholstered for a Miami venue"', 'alt="Banqueta de restaurante y sillas de cuero tapizadas en Miami"'),
-  ('alt="Miami living room with a reupholstered sofa and cushions by MIAN House &amp; Decor"', 'alt="Sala en Miami con sofá retapizado y cojines de MIAN House &amp; Decor"'),
+  ('alt="Furniture upholstery Miami – custom grey sectional and ottoman in an oceanfront living room"', 'alt="Tapicería de muebles en Miami: seccional gris con otomana en una sala frente al mar"'),
+  ('alt="Furniture upholstery Miami – restaurant banquette and leather chairs"', 'alt="Tapicería de muebles en Miami: banqueta de restaurante y sillas de cuero"'),
+  ('alt="Furniture upholstery Miami – reupholstered sofa and cushions by MIAN House &amp; Decor"', 'alt="Tapicería de muebles en Miami: sofá retapizado y cojines de MIAN House &amp; Decor"'),
   ('alt="Mercedes Ruiz cutting fabric in the MIAN workshop in Miami"', 'alt="Mercedes Ruiz cortando tela en el taller de MIAN en Miami"'),
   ('What Miami <span class="hl">says</span>', 'Lo que dice <span class="hl">Miami</span>'),
   ('4.7 out of 5 from 12 reviews on Google.', '4.7 de 5 en 12 reseñas de Google. Las reseñas se muestran en su idioma original.'),
@@ -841,8 +847,8 @@ PAIRS = [
 ]
 
 HOME_META = [
-  ('<title>Custom Upholstery North Miami &amp; Miami | Free Quote | MIAN</title>', '<title>Tapicería en Miami | Tapicero de Muebles y Cortinas | MIAN</title>'),
-  ('content="Custom Upholstery North Miami &amp; Miami | Free Quote | MIAN"', 'content="Tapicería en Miami | Tapicero de Muebles y Cortinas | MIAN"'),
+  ('<title>Upholstery Miami | Furniture Upholstery &amp; Reupholstery | MIAN</title>', '<title>Tapicería en Miami | Tapicero de Muebles Cerca de Ti | MIAN</title>'),
+  ('content="Upholstery Miami | Furniture Upholstery &amp; Reupholstery | MIAN"', 'content="Tapicería en Miami | Tapicero de Muebles Cerca de Ti | MIAN"'),
   ('<link rel="canonical" href="https://mianhousedecor.com/">', '<link rel="canonical" href="https://mianhousedecor.com/es/">'),
   ('<meta property="og:url" content="https://mianhousedecor.com/">', '<meta property="og:url" content="https://mianhousedecor.com/es/">'),
   ('"url": "https://mianhousedecor.com/"', '"url": "https://mianhousedecor.com/es/"'),
@@ -856,4 +862,12 @@ HOME_META += [
   ('"description": "Custom pieces built to your dimensions."', '"description": "Piezas hechas a tus medidas."'),
   ('"description": "New fabric and new foam on your existing frame."', '"description": "Tela y espuma nuevas sobre tu estructura."'),
 ]
-HOME_DESC = "Tapicería de muebles en Miami: tu tapicero para tapizar sofás y sillas, más cortinas a medida y cojines. Recogida gratis y cotización gratis en 24 horas. Atendemos en español."
+HOME_DESC = "Tapicería de muebles en Miami: sofás, sillas, cojines y cortinas. Cotización gratis en 24 horas."
+HOME_EXTRA = """<section class="section"><div class="wrap"><div class="prose rv">
+<h2>Retapizar sofás</h2>
+<p>Retapizar un sofá conserva la estructura y cambia la tela y la espuma, desde un sofá de dos puestos hasta un seccional. Envía una foto y te decimos si vale la pena. <a href="/es/tapiceria/tapizar-sofa-miami/">Ver cómo tapizar tu sofá en Miami</a>.</p>
+<h2>Tapizado de sillas de comedor</h2>
+<p>Hacemos el tapizado de sillas de comedor, una sola o el juego completo, y también butacas y sillones. <a href="/es/tapiceria/tapizar-sillas-miami/">Ver tapizado de sillas en Miami</a>.</p>
+</div></div></section>
+
+<!-- ═══ NEAR ═══ -->"""

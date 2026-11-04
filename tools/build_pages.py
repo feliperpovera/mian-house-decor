@@ -40,6 +40,10 @@ FONTS = re.search(r'(<link rel="preconnect"[\s\S]*?display=swap" rel="stylesheet
 SVG_SMS = re.search(r'data-cta="sms">\s*(<svg[\s\S]*?</svg>)', src).group(1)
 SVG_TEL = re.search(r'href="tel:\+17863488650" data-cta="call">\s*(<svg[\s\S]*?</svg>)', src).group(1)
 SVG_WA = re.search(r'data-cta="whatsapp">\s*(<svg[\s\S]*?</svg>)', src).group(1)
+CONTACT = rootify(block('<section class="section contact" id="contact">', "</section>"))
+FORM_JS = "<script>(() => {\n  const $ = s => document.querySelector(s);\n  " + \
+    re.search(r"(// Quote form[\s\S]*?)\n\}\)\(\);\n</script>", src).group(1) + "\n})();\n</script>"
+FORM_PAGES = ("upholstery", "drapery", "commercial")
 
 EXTRA_CSS = """
 /* ═══ landing pages ═══ */
@@ -95,18 +99,22 @@ AREAS = [("Coral Gables", "coral-gables"), ("Doral", "doral"), ("Brickell", "bri
 PAGES = [
   dict(
     path="upholstery", kind="service", service="Furniture reupholstery and custom upholstery",
-    title="Upholstery in Miami | Furniture Reupholstery Shop | MIAN",
-    desc="Upholstery in Miami: furniture reupholstery and custom upholstery for sofas, sectionals, dining chairs, headboards and antiques. Free pickup, free quote in 24h. Se habla español.",
+    title="Furniture Reupholstery Miami | Sofas &amp; Chairs | MIAN",
+    desc="Furniture reupholstery in Miami: sofas, sectionals, dining chairs, headboards and antiques. Free quote in 24h. Se habla español.",
     eyebrow="Upholstery · Miami-Dade",
-    h1="Upholstery &amp; Furniture Reupholstery in Miami", crumb="Upholstery",
-    lede="Keep the sofa, chair or headboard you love — we rebuild it with new foam and new fabric in our Miami workshop. Free pickup, a free quote in 24 hours, and service in English or Spanish.",
+    h1="Furniture Reupholstery in Miami", crumb="Upholstery",
+    lede="Keep the sofa, chair or headboard you love — we rebuild it with new foam and new fabric in our Miami workshop. Pickup and delivery available, a free quote in 24 hours, and service in English or Spanish.",
     hero_img=("tufted-settee.jpg", "Tufted wingback settee being reupholstered in the MIAN workshop in Miami"),
     body="""
 <h2>Reupholstery that brings good furniture back</h2>
 <p>A well-built frame outlasts its fabric by decades. Reupholstering keeps that frame and replaces everything that wears out: the fabric, the foam and padding, and — where they need it — the springs and webbing. You end up with a piece that fits your room and your taste, built to last another long run.</p>
 <p>Every piece is measured, cut and sewn in our own workshop at 1 NW 62nd St in Miami. You talk directly to the people doing the work, from the first photo to delivery.</p>
+<h2>Sofa &amp; Couch Reupholstery</h2>
+<p>Sofa reupholstery keeps the frame and replaces the fabric and foam, from a two-seat couch to a modular sectional. If you are looking for couch reupholstery near me, send a photo and we will tell you whether the frame is worth it. <a href="/upholstery/sofa-reupholstery-miami/">See sofa reupholstery in Miami</a>.</p>
+<h2>Chair &amp; Dining Chair Upholstery</h2>
+<p>Dining chairs, one chair or a full set, plus armchairs and wingbacks. For chair upholstery near me anywhere in Miami-Dade, send a photo of the chair and tell us how many you have. <a href="/upholstery/chair-reupholstery-miami/">See chair upholstery in Miami</a>.</p>
 <h2>An upholstery shop near you in Miami-Dade</h2>
-<p>If you are looking for upholstery near you, you want a local shop that can see the piece. Ours is at 1 NW 62nd St, and we pick up for free across Miami-Dade, from <a href="/areas/north-miami/">North Miami</a> and <a href="/areas/hialeah/">Hialeah</a> to <a href="/areas/kendall/">Kendall</a> and <a href="/areas/miami-beach/">Miami Beach</a>.</p>
+<p>If you are searching for reupholstery near me, you want a local shop that can see the piece. Ours is at 1 NW 62nd St, with pickup and delivery available across Miami-Dade, from <a href="/areas/north-miami/">North Miami</a> and <a href="/areas/hialeah/">Hialeah</a> to <a href="/areas/kendall/">Kendall</a> and <a href="/areas/miami-beach/">Miami Beach</a>.</p>
 <h3>What we reupholster</h3>
 <ul>
   <li><a href="/upholstery/sofa-reupholstery-miami/"><b>Sofas and sectionals</b></a> — including modular and oversized pieces</li>
@@ -122,7 +130,7 @@ PAGES = [
 """,
     steps=[("Send a photo", "Text or WhatsApp a photo of the piece. You get a free quote within 24 hours."),
            ("Measure &amp; choose", "We measure and bring fabric swatches so you can choose at home."),
-           ("Free pickup", "We collect the piece and rebuild it in our Miami workshop."),
+           ("Pickup", "We collect the piece and rebuild it in our Miami workshop."),
            ("Delivery", "Your finished piece comes back, ready to use.")],
     gallery=[("boucle-armchair.jpg", "Bouclé armchair with a dark wood frame, fully reupholstered"),
              ("dining-chairs.jpg", "Dining chairs reupholstered in textured grey fabric in Miami"),
@@ -136,7 +144,7 @@ PAGES = [
          ("Do you do furniture repair?",
           "We repair what sits under the fabric: foam, springs and webbing. Send a photo of the damage and we will tell you what the piece needs."),
          ("Do you pick up and deliver?",
-          "Yes. Pickup is free across Miami-Dade, and we deliver the finished piece back to you."),
+          "Yes. Pickup and delivery are available in Miami-Dade, and we bring the finished piece back to you."),
          ("Do you come to measure and show fabrics?",
           "Yes. We measure the piece and bring swatches so you can choose fabrics at home."),
          ("¿Hablan español?",
@@ -147,8 +155,8 @@ PAGES = [
     title="Custom Drapes in Miami | Euro &amp; Pinch Pleat Drapery | MIAN",
     desc="Custom drapes made to measure in Miami: euro pleat, pinch pleat, sheer, blackout &amp; outdoor drapery, measured and installed by us. Free quote in 24h.",
     eyebrow="Drapery · Miami-Dade",
-    h1="Custom Drapes in Miami, Made to Measure",
-    lede="Euro pleat and pinch pleat drapes, sheers and blackout curtains sewn in our Miami workshop — for tall windows, sliding doors and covered patios. Measured and installed by us. Free quote in 24 hours.",
+    h1="Custom Drapes &amp; Curtains in Miami",
+    lede="Custom drapes and custom curtains in Miami: euro pleat and pinch pleat drapes, sheers and blackouts sewn in our workshop for tall windows, sliding doors and covered patios. Made to measure curtains, installed by us. Free quote in 24 hours.",
     hero_img=("work-curtains.jpg", "Made-to-measure ivory drapery on a tall arched window in Miami"),
     body="""
 <h2>Custom drapes made for your windows, not a catalogue size</h2>
@@ -336,7 +344,7 @@ PAGES = [
     title="Commercial Upholstery in Miami | Restaurants, Hotels &amp; Offices | MIAN",
     desc="Commercial upholstery in Miami-Dade: restaurant banquettes and booths, dining chairs, hotel and office seating, marine cushions. Contract-grade fabrics. Free quote in 24h.",
     eyebrow="Commercial · Miami-Dade",
-    h1="Commercial Upholstery in Miami: Restaurants, Hotels &amp; Offices",
+    h1="Commercial Upholstery in Miami",
     lede="We upholster banquettes, booths, dining chairs and lounge seating with contract-grade fabrics and durable foam, made in our Miami workshop. Free quote in 24 hours.",
     hero_img=("work-commercial.jpg", "Restaurant banquette and leather dining chairs upholstered for a Miami venue"),
     body="""
@@ -344,9 +352,9 @@ PAGES = [
 <p>Restaurant and hospitality seating takes more wear in a month than a home sofa does in a year. We rebuild it with contract-grade fabrics and durable foam so it holds its shape and cleans easily — and we make it in our own workshop in Miami, so you deal directly with the people doing the work.</p>
 <h3>What we upholster for businesses</h3>
 <ul>
-  <li><b>Restaurant banquettes and booths</b></li>
+  <li><b>Restaurant booth upholstery</b> and banquettes</li>
   <li><b>Dining and bar chairs</b> — matched sets</li>
-  <li><b>Lounge and lobby seating</b> for hotels and offices</li>
+  <li><b>Hotel furniture upholstery</b>: lounge and lobby seating, also for offices</li>
   <li><b>Headboards and soft furnishings</b> for hospitality</li>
   <li><b>Marine and outdoor cushions</b> for yachts and terraces</li>
   <li><b>Custom drapery</b> for dining rooms and event spaces</li>
@@ -394,14 +402,14 @@ AREA_COPY = {
     "North Miami is close to our workshop at 1 NW 62nd St, which makes pickup and delivery especially easy. Mid-century and vintage pieces are common here and are often worth reupholstering rather than replacing.",
     "Popular here: vintage and mid-century chair reupholstery, sofas, and made-to-measure drapery."),
   "hialeah": ("Hialeah",
-    "Hialeah homes keep their furniture for years, and a good sofa or dining set is usually worth rebuilding. We pick up in Hialeah for free, rebuild the piece in our Miami workshop and bring it back finished. Atendemos en español.",
+    "Hialeah homes keep their furniture for years, and a good sofa or dining set is usually worth rebuilding. We pick up in Hialeah, rebuild the piece in our Miami workshop and bring it back finished. Atendemos en español.",
     "Popular here: furniture upholstery for sofas and dining chairs, leather reupholstery, and replacement patio cushions."),
 }
 # Per-area overrides (CTR tests on queries an area already ranks for).
 AREA_META = {
   "north-miami": dict(
     title="North Miami Upholstery | Free In-Home Quote, Reply in 24h",
-    desc="Reupholstery &amp; custom upholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free in-home quote, reply within 24h, free pickup. Se habla español.",
+    desc="Reupholstery &amp; custom upholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free in-home quote, reply within 24h. Se habla español.",
     h1="Custom Upholstery &amp; Reupholstery in North Miami"),
 }
 AREA_IMG = {"coral-gables": "boucle-armchair.jpg", "doral": "dining-chairs.jpg", "brickell": "drapery-pleated.jpg",
@@ -411,10 +419,10 @@ for slug, (name, p1, p2) in AREA_COPY.items():
     PAGES.append(dict(
         path=f"areas/{slug}", kind="area", area=name,
         title=f"Upholstery &amp; Reupholstery in {name}, FL | MIAN House &amp; Decor",
-        desc=f"Furniture reupholstery, custom upholstery and made-to-measure drapery in {name}, FL. Free pickup, free quote in 24h, se habla español. (786) 348-8650.",
+        desc=f"Furniture reupholstery, custom upholstery and made-to-measure drapery in {name}, FL. Free quote in 24h, se habla español. (786) 348-8650.",
         eyebrow=f"Serving {name}",
         h1=f"Upholstery &amp; Reupholstery in {name}",
-        lede=f"Reupholstery, custom upholstery and made-to-measure drapery for homes and businesses in {name}. Free pickup and a free quote within 24 hours.",
+        lede=f"Reupholstery, custom upholstery and made-to-measure drapery for homes and businesses in {name}. Pickup and delivery available, plus a free quote within 24 hours.",
         hero_img=(AREA_IMG[slug], f"Furniture upholstered by MIAN House &amp; Decor for a client in {name}"),
         body=f"""
 <h2>Upholstery and drapery for {name}</h2>
@@ -426,17 +434,17 @@ for slug, (name, p1, p2) in AREA_COPY.items():
   <li><a href="/drapery/"><b>Custom drapery &amp; curtains</b></a> — pleated drapes, sheers, blackout and outdoor curtains</li>
   <li><a href="/commercial/"><b>Commercial upholstery</b></a> — restaurants, hotels, offices and boats</li>
 </ul>
-<p>Everything is made in our workshop at 1 NW 62nd St, Miami. Pickup is free, and you get a written quote within 24 hours of sending us a photo.</p>
+<p>Everything is made in our workshop at 1 NW 62nd St, Miami. Pickup and delivery are available, and you get a written quote within 24 hours of sending us a photo.</p>
 """,
         steps=None, gallery=None,
-        faq=[(f"Do you pick up furniture in {name}?", f"Yes. Pickup is free in {name} and across Miami-Dade."),
+        faq=[(f"Do you pick up furniture in {name}?", f"Yes. Pickup and delivery are available in {name} and across Miami-Dade."),
              ("How do I get a quote?", "Send a photo of the piece by text, WhatsApp or the form. You get a free quote within 24 hours."),
              ("¿Hablan español?", "Sí. Atendemos en español e inglés.")],
     ))
     PAGES[-1].update(AREA_META.get(slug, {}))
 
 from content_new import NEW_PAGES
-from content_es import ES, PAIRS, HOME_META, HOME_DESC, area_es
+from content_es import ES, PAIRS, HOME_META, HOME_DESC, HOME_EXTRA, area_es
 PAGES += NEW_PAGES
 for name_, slug_ in AREAS:
     ES[f"areas/{slug_}"] = area_es(slug_, name_)
@@ -520,8 +528,12 @@ def render(pg):
 <a class="btn btn--lg btn--onBlue" href="/#contact" data-cta="quote">Quote form</a>
 </div></div></div></section>'''
 
+    form_js = ""
+    if key in FORM_PAGES:
+        cta, form_js = CONTACT, FORM_JS
+
     crumb_html = " · ".join(f'<a href="{u}">{n}</a>' if i < len(crumbs) - 1 else f"<span>{n}</span>" for i, (n, u) in enumerate(crumbs))
-    return f'''<!DOCTYPE html>
+    page = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 {GTM_HEAD}
@@ -565,7 +577,7 @@ def render(pg):
         </div>
         <div class="hero__trust">
           <a class="hero__rating" href="{GBP}" target="_blank" rel="noopener"><span class="stars">★★★★★</span> <b>4.7</b> · 12 Google reviews</a>
-          <span><b>Free pickup</b> in Miami-Dade</span>
+          <span><b>Pickup &amp; delivery</b> available in Miami-Dade</span>
           <span><b>Free quote</b> in 24h</span>
         </div>
       </div>
@@ -585,10 +597,12 @@ def render(pg):
 {FOOTER}
 {MBAR}
 {DOCK}
+{form_js}
 <script src="/assets/site.js" defer></script>
 </body>
 </html>
 '''
+    return page.replace('href="/#contact"', 'href="#contact"') if key in FORM_PAGES else page
 
 
 def es_page(pg):
@@ -626,6 +640,7 @@ def es_home():
         assert a in page, a
         page = page.replace(a, b)
     page = re.sub(r'(<meta (?:name="description"|property="og:description") content=")[^"]*', lambda m: m.group(1) + HOME_DESC, page)
+    page = re.sub(r'\s*<p class="es-link">.*?</p>', "", page).replace("<!-- ═══ NEAR ═══ -->", HOME_EXTRA)
     return to_es(rootify(page).replace("url(assets/", "url(/assets/"), "/")
 
 
@@ -655,6 +670,17 @@ for pg in PAGES:
     emit(ES[pg["path"]]["path"], to_es(render(es_page(pg)), f"/{pg['path']}/"))
 emit("es", es_home())
 emit("es/gracias", es_thanks())
+
+# Old URLs that still get traffic. GitHub Pages has no server redirects.
+for path, target in (("contact", "/#contact"), ("about", "/#about")):
+    os.makedirs(os.path.join(ROOT, path), exist_ok=True)
+    open(os.path.join(ROOT, path, "index.html"), "w", encoding="utf-8").write(
+        f'''<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>MIAN House &amp; Decor</title>
+<meta name="robots" content="noindex"><link rel="canonical" href="{SITE}/">
+<meta http-equiv="refresh" content="0; url={target}"><script>location.replace("{target}")</script>
+</head><body><a href="{target}">MIAN House &amp; Decor</a></body></html>
+''')
 
 urls = [f"{SITE}/", f"{SITE}/es/"] + [f"{SITE}/{p}/" for pg in PAGES for p in (pg["path"], ES[pg["path"]]["path"])]
 open(SITEMAP, "w").write(
