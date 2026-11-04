@@ -89,30 +89,33 @@ REVIEWS = [
 
 SERVICES = [("Upholstery &amp; Reupholstery", "/upholstery/"), ("Custom Drapery", "/drapery/"), ("Commercial Upholstery", "/commercial/")]
 AREAS = [("Coral Gables", "coral-gables"), ("Doral", "doral"), ("Brickell", "brickell"),
-         ("Miami Beach", "miami-beach"), ("Kendall", "kendall"), ("North Miami", "north-miami")]
+         ("Miami Beach", "miami-beach"), ("Kendall", "kendall"), ("North Miami", "north-miami"), ("Hialeah", "hialeah")]
 
 # ─────────────────────────── page content ───────────────────────────
 PAGES = [
   dict(
     path="upholstery", kind="service", service="Furniture reupholstery and custom upholstery",
-    title="Furniture Reupholstery in Miami | Sofas, Chairs &amp; Headboards | MIAN",
-    desc="Furniture reupholstery and custom upholstery in Miami: sofas, sectionals, dining chairs, headboards and antiques. Free pickup, free quote in 24h. Se habla español.",
+    title="Upholstery in Miami | Furniture Reupholstery Shop | MIAN",
+    desc="Upholstery in Miami: furniture reupholstery and custom upholstery for sofas, sectionals, dining chairs, headboards and antiques. Free pickup, free quote in 24h. Se habla español.",
     eyebrow="Upholstery · Miami-Dade",
-    h1="Furniture Reupholstery &amp; Custom Upholstery in Miami",
+    h1="Upholstery &amp; Furniture Reupholstery in Miami", crumb="Upholstery",
     lede="Keep the sofa, chair or headboard you love — we rebuild it with new foam and new fabric in our Miami workshop. Free pickup, a free quote in 24 hours, and service in English or Spanish.",
     hero_img=("tufted-settee.jpg", "Tufted wingback settee being reupholstered in the MIAN workshop in Miami"),
     body="""
 <h2>Reupholstery that brings good furniture back</h2>
 <p>A well-built frame outlasts its fabric by decades. Reupholstering keeps that frame and replaces everything that wears out: the fabric, the foam and padding, and — where they need it — the springs and webbing. You end up with a piece that fits your room and your taste, built to last another long run.</p>
 <p>Every piece is measured, cut and sewn in our own workshop at 1 NW 62nd St in Miami. You talk directly to the people doing the work, from the first photo to delivery.</p>
+<h2>An upholstery shop near you in Miami-Dade</h2>
+<p>If you are looking for upholstery near you, you want a local shop that can see the piece. Ours is at 1 NW 62nd St, and we pick up for free across Miami-Dade, from <a href="/areas/north-miami/">North Miami</a> and <a href="/areas/hialeah/">Hialeah</a> to <a href="/areas/kendall/">Kendall</a> and <a href="/areas/miami-beach/">Miami Beach</a>.</p>
 <h3>What we reupholster</h3>
 <ul>
-  <li><b>Sofas and sectionals</b> — including modular and oversized pieces</li>
-  <li><b>Dining chairs</b> — single chairs or full sets</li>
-  <li><b>Headboards and beds</b> — tufted, channelled or plain</li>
+  <li><a href="/upholstery/sofa-reupholstery-miami/"><b>Sofas and sectionals</b></a> — including modular and oversized pieces</li>
+  <li><a href="/upholstery/chair-reupholstery-miami/"><b>Dining chairs</b></a> — single chairs or full sets</li>
+  <li><a href="/upholstery/headboard-upholstery-miami/"><b>Headboards and beds</b></a> — tufted, channelled or plain</li>
+  <li><a href="/upholstery/leather-reupholstery-miami/"><b>Leather sofas and chairs</b></a></li>
   <li><b>Armchairs, wingbacks and settees</b></li>
   <li><b>Antique and vintage pieces</b> worth preserving</li>
-  <li><b>Ottomans, benches and cushions</b>, indoor and outdoor</li>
+  <li><b>Ottomans and benches</b>, plus <a href="/upholstery/custom-cushions-miami/"><b>custom cushions</b></a> for indoors and outdoors</li>
 </ul>
 <h3>Fabrics for Miami homes</h3>
 <p>We help you choose for how the piece will be used: performance fabrics for kids and pets, outdoor-rated textiles for patios and sun, and linen, velvet, bouclé or leather-look options for living rooms. We bring swatches to you so you can see them in your own light.</p>
@@ -129,7 +132,9 @@ PAGES = [
          ("How much does reupholstery cost in Miami?",
           "It depends on the size of the piece, the fabric and how much foam or spring work it needs. Send us a photo by text or WhatsApp and we will send a free quote within 24 hours."),
          ("How long does reupholstery take?",
-          "It depends on the piece and on fabric availability; we give you a date with the quote. One recent client had her sofa back two weeks after our first visit."),
+          "It depends on the piece and on fabric availability; we give you a date with the quote. One recent client had the sofa back two weeks after our first visit."),
+         ("Do you do furniture repair?",
+          "We repair what sits under the fabric: foam, springs and webbing. Send a photo of the damage and we will tell you what the piece needs."),
          ("Do you pick up and deliver?",
           "Yes. Pickup is free across Miami-Dade, and we deliver the finished piece back to you."),
          ("Do you come to measure and show fabrics?",
@@ -388,6 +393,9 @@ AREA_COPY = {
   "north-miami": ("North Miami",
     "North Miami is close to our workshop at 1 NW 62nd St, which makes pickup and delivery especially easy. Mid-century and vintage pieces are common here and are often worth reupholstering rather than replacing.",
     "Popular here: vintage and mid-century chair reupholstery, sofas, and made-to-measure drapery."),
+  "hialeah": ("Hialeah",
+    "Hialeah homes keep their furniture for years, and a good sofa or dining set is usually worth rebuilding. We pick up in Hialeah for free, rebuild the piece in our Miami workshop and bring it back finished. Atendemos en español.",
+    "Popular here: furniture upholstery for sofas and dining chairs, leather reupholstery, and replacement patio cushions."),
 }
 # Per-area overrides (CTR tests on queries an area already ranks for).
 AREA_META = {
@@ -397,7 +405,8 @@ AREA_META = {
     h1="Custom Upholstery &amp; Reupholstery in North Miami"),
 }
 AREA_IMG = {"coral-gables": "boucle-armchair.jpg", "doral": "dining-chairs.jpg", "brickell": "drapery-pleated.jpg",
-            "miami-beach": "yacht-cushions.jpg", "kendall": "blue-velvet-sofa.jpg", "north-miami": "tufted-settee.jpg"}
+            "miami-beach": "yacht-cushions.jpg", "kendall": "blue-velvet-sofa.jpg", "north-miami": "tufted-settee.jpg",
+            "hialeah": "dining-chairs.jpg"}
 for slug, (name, p1, p2) in AREA_COPY.items():
     PAGES.append(dict(
         path=f"areas/{slug}", kind="area", area=name,
@@ -426,6 +435,13 @@ for slug, (name, p1, p2) in AREA_COPY.items():
     ))
     PAGES[-1].update(AREA_META.get(slug, {}))
 
+from content_new import NEW_PAGES
+from content_es import ES, PAIRS, HOME_META, HOME_DESC, area_es
+PAGES += NEW_PAGES
+for name_, slug_ in AREAS:
+    ES[f"areas/{slug_}"] = area_es(slug_, name_)
+assert not [p["path"] for p in PAGES if p["path"] not in ES]
+
 # ─────────────────────────── rendering ───────────────────────────
 
 def esc_json(obj):
@@ -445,7 +461,7 @@ def render(pg):
     elif pg.get("parent"):
         crumbs += [pg["parent"], (pg["crumb"], f"/{pg['path']}/")]
     else:
-        crumbs += [(plain(pg["h1"]).split(" in Miami")[0].split(":")[0], f"/{pg['path']}/")]
+        crumbs += [(pg.get("crumb") or plain(pg["h1"]).split(" in Miami")[0].split(":")[0], f"/{pg['path']}/")]
 
     schema = [
       {"@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -482,10 +498,17 @@ def render(pg):
     faq = '<section class="section linen"><div class="wrap"><div class="head head--c rv"><h2>Frequently asked <span class="hl">questions</span></h2></div><div class="faq">' + \
         "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in pg["faq"]) + "</div></div></section>"
 
-    others = SERVICES if pg["kind"] == "area" else [s for s in SERVICES if s[1] != f"/{pg['path']}/"]
+    key = pg.get("en", pg["path"])
+    hub = f"/{key}/" if not pg.get("parent") else pg["parent"][1]
+    kids = [p for p in PAGES if p.get("parent") and p["parent"][1] == hub and p["path"] != key]
+    label = (lambda p: ES[p["path"]]["crumb"]) if pg.get("en") else (lambda p: p["crumb"])
+    specialties = "" if not kids else '<section class="section" style="padding-top:0"><div class="wrap"><div class="prose"><h2>Our specialties</h2></div><div class="chips">' + \
+        "".join(f'<a href="/{p["path"]}/">{label(p)}</a>' for p in kids) + "</div></div></section>"
+
+    others = SERVICES if pg["kind"] == "area" else [s for s in SERVICES if s[1] != f"/{key}/"]
     nearby = '<section class="section" style="padding-top:0"><div class="wrap"><div class="prose"><h2>More from MIAN</h2></div><div class="chips">' + \
         "".join(f'<a href="{u}">{n}</a>' for n, u in others) + \
-        "".join(f'<a href="/areas/{s}/">{n}</a>' for n, s in AREAS if f"areas/{s}" != pg["path"]) + "</div></div></section>"
+        "".join(f'<a href="/areas/{s}/">{n}</a>' for n, s in AREAS if f"areas/{s}" != key) + "</div></div></section>"
 
     cta = f'''<section class="section express"><div class="wrap"><div class="express__in rv">
 <h2>Get your free quote <em>in 24 hours</em></h2>
@@ -507,6 +530,9 @@ def render(pg):
 <title>{pg["title"]}</title>
 <meta name="description" content="{pg["desc"]}">
 <link rel="canonical" href="{url}">
+<link rel="alternate" hreflang="en" href="{SITE}/{key}/">
+<link rel="alternate" hreflang="es" href="{SITE}/{ES[key]["path"]}/">
+<link rel="alternate" hreflang="x-default" href="{SITE}/{key}/">
 <meta property="og:title" content="{pg["title"]}">
 <meta property="og:description" content="{pg["desc"]}">
 <meta property="og:url" content="{url}">
@@ -548,6 +574,7 @@ def render(pg):
   </div>
 </section>
 <section class="section"><div class="wrap"><div class="prose rv">{pg["body"]}</div></div></section>
+{specialties}
 {steps}
 {gallery}
 {reviews}
@@ -564,23 +591,72 @@ def render(pg):
 '''
 
 
+def es_page(pg):
+    e = ES[pg["path"]]
+    m = {**pg, **{k: v for k, v in e.items() if k not in ("hero_alt", "gallery_alt")}, "en": pg["path"]}
+    m["hero_img"] = (pg["hero_img"][0], e["hero_alt"])
+    if pg.get("gallery"):
+        m["gallery"] = [(f, a) for (f, _), a in zip(pg["gallery"], e["gallery_alt"])]
+    return m
+
+
+LANG_LINK = r'<a class="lang"[^>]*>[^<]*</a>'
+SWAPS = sorted(PAIRS + [(f'>{p["crumb"]}</a>', f'>{ES[p["path"]]["crumb"]}</a>') for p in PAGES if p.get("parent")],
+               key=lambda x: -len(x[0]))
+
+
+def to_es(page, en_href):
+    """Spanish chrome: exact-string swaps, then every internal link to its /es/ counterpart."""
+    for a, b in SWAPS:
+        page = page.replace(a, b)
+    for p in PAGES:
+        es = ES[p["path"]]["path"]
+        page = page.replace(f'href="/{p["path"]}/"', f'href="/{es}/"').replace(f'"item": "{SITE}/{p["path"]}/"', f'"item": "{SITE}/{es}/"')
+    page = page.replace('href="/"', 'href="/es/"').replace('href="/#', 'href="/es/#')
+    return re.sub(LANG_LINK, f'<a class="lang" href="{en_href}" hreflang="en" lang="en">English</a>', page)
+
+
+def to_en(page, es_path):
+    return re.sub(LANG_LINK, f'<a class="lang" href="/{es_path}/" hreflang="es" lang="es">Español</a>', page)
+
+
+def es_home():
+    page = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+    for a, b in HOME_META:
+        assert a in page, a
+        page = page.replace(a, b)
+    page = re.sub(r'(<meta (?:name="description"|property="og:description") content=")[^"]*', lambda m: m.group(1) + HOME_DESC, page)
+    return to_es(rootify(page).replace("url(assets/", "url(/assets/"), "/")
+
+
+def es_thanks():
+    page = open(os.path.join(ROOT, "thanks.html"), encoding="utf-8").read()
+    return to_es(page.replace('src="assets/', 'src="/assets/').replace('href="assets/', 'href="/assets/'), "/thanks.html")
+
+
 # sitemap lastmod: kept from the existing sitemap; bumped only for pages whose HTML changed.
 # The home page is not built here — bump its lastmod in sitemap.xml by hand when editing index.html.
 from datetime import date
 SITEMAP = os.path.join(ROOT, "sitemap.xml")
 lastmod = dict(re.findall(r"<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>", open(SITEMAP).read())) if os.path.exists(SITEMAP) else {}
 
-for pg in PAGES:
-    out = os.path.join(ROOT, pg["path"], "index.html")
+def emit(path, page):
+    out = os.path.join(ROOT, path, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    page = render(pg)
-    url = f"{SITE}/{pg['path']}/"
+    url = f"{SITE}/{path}/"
     if not os.path.exists(out) or open(out, encoding="utf-8").read() != page:
         lastmod[url] = str(date.today())
     open(out, "w", encoding="utf-8").write(page)
-    print("built", "/" + pg["path"] + "/")
+    print("built", "/" + path + "/")
 
-urls = [f"{SITE}/"] + [f"{SITE}/{pg['path']}/" for pg in PAGES]
+
+for pg in PAGES:
+    emit(pg["path"], to_en(render(pg), ES[pg["path"]]["path"]))
+    emit(ES[pg["path"]]["path"], to_es(render(es_page(pg)), f"/{pg['path']}/"))
+emit("es", es_home())
+emit("es/gracias", es_thanks())
+
+urls = [f"{SITE}/", f"{SITE}/es/"] + [f"{SITE}/{p}/" for pg in PAGES for p in (pg["path"], ES[pg["path"]]["path"])]
 open(SITEMAP, "w").write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     "".join(f"  <url><loc>{u}</loc><lastmod>{lastmod.get(u, date.today())}</lastmod></url>\n" for u in urls) + "</urlset>\n")

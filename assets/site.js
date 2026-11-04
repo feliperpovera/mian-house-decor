@@ -42,6 +42,6 @@
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden || !pendingVia) return;
     const via = pendingVia; pendingVia = null; clearTimeout(pendingTimer);
-    location.href = '/thanks.html?via=' + via + '&t=' + Date.now();
+    location.href = (document.documentElement.lang === 'es' ? '/es/gracias/?via=' : '/thanks.html?via=') + via + '&t=' + Date.now();
   });
 })();
