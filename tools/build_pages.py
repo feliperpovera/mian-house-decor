@@ -75,9 +75,13 @@ EXTRA_CSS = """
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .chips a{padding:9px 18px;border:1px solid var(--marina-l);border-radius:100px;color:var(--marina-d);text-decoration:none;font-size:.86rem;background:var(--paper)}
 .chips a:hover{background:var(--marina);color:#fff;border-color:var(--marina)}
+.tbl{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:.92rem}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+.tbl th{color:var(--walnut-d);font-weight:500}
+.tbl td:first-child{white-space:nowrap}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
 @media (max-width:940px){.split{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.steps{grid-template-columns:1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.tbl{font-size:.84rem}.tbl th,.tbl td{padding:8px 6px}.tbl td:first-child{white-space:normal}}
 """
 
 css = re.search(r"<style>([\s\S]*?)</style>", src).group(1)
@@ -153,8 +157,8 @@ PAGES = [
   ),
   dict(
     path="drapery", kind="service", service="Custom drapes and curtains",
-    title="Custom Drapes in Miami | Euro &amp; Pinch Pleat Drapery | MIAN",
-    desc="Custom drapes made to measure in Miami: euro pleat, pinch pleat, sheer, blackout &amp; outdoor drapery, measured and installed by us. Free quote in 24h.",
+    title="Custom Drapes Miami | Made to Measure &amp; Installed | MIAN",
+    desc="Drapes in Miami, sewn to measure in our own workshop: euro pleat, pinch pleat, sheer, blackout &amp; outdoor. We measure and install. Free quote in 24h.",
     eyebrow="Drapery · Miami-Dade",
     h1="Custom Drapes &amp; Curtains in Miami",
     lede="Custom drapes and custom curtains in Miami: euro pleat and pinch pleat drapes, sheers and blackouts sewn in our workshop for tall windows, sliding doors and covered patios. Made to measure curtains, installed by us. Free quote in 24 hours.",
@@ -163,6 +167,18 @@ PAGES = [
 <h2>Custom drapes in Miami, made for your windows — not a catalogue size</h2>
 <p>Ready-made curtains rarely fit Miami windows: tall living-room glass, arched windows, sliding doors and wide patio openings. We measure each opening and sew the drapery to size in our own workshop, so it hangs straight, clears the floor the way you want and closes properly. Then we install it.</p>
 <p>You talk directly to the people who measure, sew and hang your drapes — in English or Spanish — from the first photo to the day they go up.</p>
+
+<h2>Drapery styles at a glance</h2>
+<table class="tbl">
+  <thead><tr><th>Style</th><th>Look</th><th>Good for</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/drapery/euro-pleat-drapes-miami/">Euro pleat</a></td><td>Pleats tacked at the top edge, soft fanned folds</td><td>Condos, contemporary rooms, floor-to-ceiling glass</td></tr>
+    <tr><td><a href="/drapery/pinch-pleat-drapes-miami/">Pinch pleat</a></td><td>Pleats stitched below the top, crisp structured folds</td><td>Traditional and transitional rooms, dining rooms, bedrooms</td></tr>
+    <tr><td>Sheer</td><td>Light-filtering fabric, softens glare</td><td>High-rise windows, sliding doors, layering with a lined drape</td></tr>
+    <tr><td><a href="/drapery/blackout-curtains-miami/">Blackout-lined</a></td><td>Any heading with a blackout lining</td><td>Bedrooms, nurseries, media rooms</td></tr>
+    <tr><td><a href="/drapery/outdoor-curtains-miami/">Outdoor</a></td><td>Outdoor-rated fabric for sun and humidity</td><td>Covered patios, terraces, balconies</td></tr>
+  </tbody>
+</table>
 
 <h2>Drapery styles we make</h2>
 <p>The heading — how the fabric is gathered at the top — sets the look of a drape more than anything else. These are the styles we make most often in Miami homes.</p>
@@ -175,7 +191,7 @@ PAGES = [
 <h3>Blackout and lined drapes</h3>
 <p>Blackout-lined drapery darkens bedrooms and media rooms. A standard lining protects the face fabric from Miami sun, improves privacy and helps the drape hang with more body. <a href="/drapery/blackout-curtains-miami/">More about blackout drapes in Miami</a>.</p>
 <h3>Outdoor drapes</h3>
-<p>For covered patios, terraces and balconies we sew drapes in outdoor-rated fabrics that handle sun and humidity — often paired with <a href="/upholstery/">reupholstered outdoor cushions</a> in a coordinating fabric.</p>
+<p>For covered patios, terraces and balconies we sew drapes in outdoor-rated fabrics that handle sun and humidity — often paired with <a href="/upholstery/custom-cushions-miami/">custom outdoor cushions</a> in a coordinating fabric. <a href="/drapery/outdoor-curtains-miami/">More about outdoor curtains in Miami</a>.</p>
 
 <h2>Fabrics and lining for Miami light</h2>
 <p>Light, heat and humidity matter here. We help you choose for each room:</p>
@@ -187,6 +203,27 @@ PAGES = [
   <li><b>Coordinating cushions and pillows</b> sewn in the same fabric as your drapes</li>
 </ul>
 <p>We bring samples to your home so you can see each option against your own windows, walls and furniture before anything is cut.</p>
+
+<h2>How we measure and install your drapes</h2>
+<p>Drapes made to measure only look right if the measurements are taken for the way they will hang. At the visit we measure every opening and settle the details that change the result:</p>
+<ul>
+  <li><b>Mounting height</b> — just above the frame, or close to the ceiling to make the window feel taller</li>
+  <li><b>Length</b> — just off the floor, touching it, or with a slight break, depending on the room and how often the drapes move</li>
+  <li><b>Width and stack-back</b> — how far the drapery extends past the glass, so it can open fully without blocking the view or a sliding door</li>
+  <li><b>Layers</b> — a single drape, or a sheer and a lined drape on separate tracks</li>
+</ul>
+<p>The drapery is then cut and sewn to those numbers in our Miami workshop, and we come back to hang it.</p>
+
+<h2>What sets the price of custom drapes</h2>
+<p>We don't publish a flat price, because two windows of the same width can need very different drapery. The quote depends on:</p>
+<ul>
+  <li><b>Size</b> — the width and height of each opening, and how many panels it takes</li>
+  <li><b>Fabric</b> — the fabric you choose and how much of it the heading needs</li>
+  <li><b>Lining</b> — unlined, standard lining or blackout lining</li>
+  <li><b>Heading</b> — euro pleat, pinch pleat or another style</li>
+  <li><b>Installation</b> — the number of windows and how high they are</li>
+</ul>
+<p>Send photos of your windows by text or WhatsApp and you get a free written quote within 24 hours.</p>
 
 <h2>Custom drapes across Miami</h2>
 <p>We measure, make and install drapery throughout Miami-Dade:</p>
@@ -214,6 +251,8 @@ PAGES = [
           "Euro pleats are tacked at the very top edge and fan out into soft folds, for a cleaner, more contemporary look. Pinch pleats are stitched a few inches below the top, giving crisper, more structured folds and a more traditional look."),
          ("Do you measure and install the drapes?",
           "Yes. We measure each opening so the drapery is sewn to fit, and we install it in your home."),
+         ("Can you make drapes for sliding doors and floor-to-ceiling windows?",
+          "Yes. Tall glass, arched windows and sliding doors are most of what we make. We plan the width so the drapes clear the door or the view when they are open."),
          ("Should my curtains be lined?",
           "In Miami, usually yes for sunny rooms: lining protects the fabric from fading and improves privacy. Sheers are the exception, when you want light to pass through."),
          ("Can you make blackout curtains?",
@@ -413,7 +452,84 @@ AREA_META = {
   "north-miami": dict(
     title="North Miami Upholstery | Free In-Home Quote, Reply in 24h",
     desc="Reupholstery &amp; custom upholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free in-home quote, reply within 24h. Se habla español.",
-    h1="Custom Upholstery &amp; Reupholstery in North Miami"),
+    h1="Custom Upholstery &amp; Reupholstery in North Miami",
+    lede="Custom upholstery, furniture reupholstery and made-to-measure drapes for North Miami homes, condos and businesses, made in our workshop a short drive south at 1 NW 62nd St. Pickup and delivery available, plus a free quote within 24 hours.",
+    body="""
+<h2>Custom upholstery for North Miami</h2>
+<p>North Miami is one of the closest areas to our workshop at 1 NW 62nd St, Miami, a short drive down Biscayne Boulevard or NE 2nd Avenue — so measuring visits, pickup and delivery are easy to schedule. Mid-century and vintage pieces are common in North Miami homes, and a well-built frame is usually worth reupholstering rather than replacing.</p>
+<p>You deal directly with the people who measure, cut and sew your furniture, in English or Spanish, from the first photo to delivery.</p>
+
+<h3>Furniture upholstery and reupholstery</h3>
+<p>We strip the old fabric, replace the foam and padding, repair springs and webbing where they need it, and finish the piece in the fabric you choose. Typical North Miami jobs:</p>
+<ul>
+  <li><a href="/upholstery/sofa-reupholstery-miami/"><b>Sofas and sectionals</b></a> — new foam and fabric on the frame you already own</li>
+  <li><a href="/upholstery/chair-reupholstery-miami/"><b>Dining chairs, armchairs and wingbacks</b></a> — one chair or the full set</li>
+  <li><b>Vintage and mid-century pieces</b> — kept true to their original shape</li>
+  <li><a href="/upholstery/headboard-upholstery-miami/"><b>Headboards</b></a> — reupholstered or made to size</li>
+  <li><a href="/upholstery/leather-reupholstery-miami/"><b>Leather sofas and chairs</b></a></li>
+  <li><a href="/upholstery/custom-cushions-miami/"><b>Custom cushions</b></a> — for benches, window seats and patios</li>
+</ul>
+
+<h3>Custom upholstery: changing more than the fabric</h3>
+<p>Custom upholstery is for when you want the piece to change, not just look new: a different seat firmness, new welting, buttons or tufting, a skirt added or removed, or a cushion style that suits the room better. Tell us what you want to change and we tell you what the frame allows.</p>
+
+<h3>Fabrics for daily use and Florida sun</h3>
+<p>Performance fabrics hold up to kids, pets and daily use; outdoor-rated textiles suit patios and sun-facing rooms; linen, velvet and bouclé suit a quieter living room. We bring swatches to your home so you can compare them in your own light.</p>
+
+<h3>Drapes for North Miami homes</h3>
+<p>Ready-made curtains rarely fit tall windows and sliding doors. We measure each opening, sew the drapery to size and install it: <a href="/drapery/euro-pleat-drapes-miami/">euro pleat</a> or <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat</a> headings, sheers and <a href="/drapery/blackout-curtains-miami/">blackout drapes</a>. See every style on our <a href="/drapery/">custom drapes in Miami</a> page.</p>
+
+<h3>How it works</h3>
+<p>Send a photo of the piece by text, WhatsApp or the form, and you get a free quote within 24 hours. We come to measure and bring swatches, rebuild the piece in our workshop and deliver it back to your North Miami home. Further north-east? See <a href="/areas/north-miami-beach/">upholstery in North Miami Beach</a>.</p>
+""",
+    faq=[("Do you do custom upholstery in North Miami?",
+          "Yes. We reupholster and custom-upholster sofas, chairs, headboards and vintage pieces for North Miami homes and businesses, with pickup and delivery available."),
+         ("Where is your upholstery shop?",
+          "Our workshop is at 1 NW 62nd St, Unit 8, Miami, FL 33150, a short drive south of North Miami."),
+         ("Do you pick up furniture in North Miami?",
+          "Yes. We pick up the piece, rebuild it in our workshop and deliver it back to you."),
+         ("Do you come to measure and show fabrics?",
+          "Yes. We measure the piece and bring swatches so you can choose at home."),
+         ("How do I get a quote?",
+          "Send a photo of the piece by text, WhatsApp or the form. You get a free quote within 24 hours."),
+         ("¿Hablan español?", "Sí. Atendemos en español e inglés.")]),
+  "kendall": dict(
+    title="Upholstery Services in Kendall &amp; Kendale Lakes, FL | MIAN",
+    desc="Upholstery services in Kendall and Kendale Lakes: sofa, chair &amp; headboard reupholstery, custom cushions and drapes. Pickup &amp; delivery, free quote in 24h.",
+    h1="Upholstery Services in Kendall &amp; Kendale Lakes",
+    lede="Furniture reupholstery, custom upholstery and made-to-measure drapery for homes across Kendall, Kendale Lakes and West Kendall. We pick up, rebuild the piece in our Miami workshop and deliver it back. Free quote within 24 hours.",
+    body="""
+<h2>Upholstery for Kendall and Kendale Lakes homes</h2>
+<p>Kendall and Kendale Lakes family homes get daily use from every sofa and dining chair. Reupholstering in a performance fabric brings back comfortable, easy-to-clean seating without replacing furniture you already like — and a solid frame rebuilt with new foam usually outlasts a new budget sofa.</p>
+<p>Our workshop is at 1 NW 62nd St, Miami. We cover Kendall, Kendale Lakes and West Kendall with pickup and delivery, so you don't need to bring anything in: send a photo, we come to measure, and the finished piece comes back to your home.</p>
+
+<h3>Upholstery services in Kendall</h3>
+<ul>
+  <li><a href="/upholstery/sofa-reupholstery-miami/"><b>Sofa and sectional reupholstery</b></a> — family-room sofas with new foam and fabric</li>
+  <li><a href="/upholstery/chair-reupholstery-miami/"><b>Dining chair sets</b></a> — one chair or the whole set, in a fabric that cleans easily</li>
+  <li><a href="/upholstery/headboard-upholstery-miami/"><b>Headboards</b></a> — reupholstered or made to size</li>
+  <li><a href="/upholstery/leather-reupholstery-miami/"><b>Leather sofas and chairs</b></a></li>
+  <li><a href="/upholstery/custom-cushions-miami/"><b>Custom cushions</b></a> — replacement patio and pool-deck cushions in outdoor fabric</li>
+</ul>
+
+<h3>Fabrics for kids, pets and the patio</h3>
+<p>For family rooms we usually recommend performance fabrics that resist stains and wear; for patios and screened porches, outdoor-rated textiles that handle sun and humidity. We bring swatches to your home so you can see them in your own light.</p>
+
+<h3>Custom curtains in Kendall</h3>
+<p>We also measure, sew and install drapery for Kendall bedrooms and living rooms: <a href="/drapery/blackout-curtains-miami/">blackout drapes</a> for bedrooms, <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat</a> drapes for living and dining rooms, and sheers for sliding doors. See all styles on our <a href="/drapery/">custom drapes in Miami</a> page.</p>
+
+<h3>How it works</h3>
+<p>Send a photo of the piece by text, WhatsApp or the form and you get a free quote within 24 hours. We measure and bring swatches, rebuild the piece in our workshop and deliver it back to Kendall or Kendale Lakes. Atendemos en español.</p>
+""",
+    faq=[("Do you offer upholstery services in Kendale Lakes?",
+          "Yes. We reupholster sofas, dining chairs, headboards and cushions for homes in Kendale Lakes, Kendall and West Kendall, with pickup and delivery."),
+         ("Do you pick up furniture in Kendall?",
+          "Yes. We pick up the piece, rebuild it in our Miami workshop and deliver it back to you."),
+         ("Do you come to measure and show fabrics?",
+          "Yes. We measure the piece and bring swatches so you can choose at home."),
+         ("How do I get a quote?",
+          "Send a photo of the piece by text, WhatsApp or the form. You get a free quote within 24 hours."),
+         ("¿Hablan español?", "Sí. Atendemos en español e inglés.")]),
   "north-miami-beach": dict(
     title="Upholstery Services in North Miami Beach, FL | MIAN",
     desc="Upholstery services in North Miami Beach: sofa, chair &amp; headboard reupholstery and custom drapes. Pickup &amp; delivery, free quote in 24h. Se habla español.",

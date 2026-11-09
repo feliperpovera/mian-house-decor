@@ -512,6 +512,10 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .chips a{padding:9px 18px;border:1px solid var(--marina-l);border-radius:100px;color:var(--marina-d);text-decoration:none;font-size:.86rem;background:var(--paper)}
 .chips a:hover{background:var(--marina);color:#fff;border-color:var(--marina)}
+.tbl{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:.92rem}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+.tbl th{color:var(--walnut-d);font-weight:500}
+.tbl td:first-child{white-space:nowrap}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
 @media (max-width:940px){.split{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.steps{grid-template-columns:1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.tbl{font-size:.84rem}.tbl th,.tbl td{padding:8px 6px}.tbl td:first-child{white-space:normal}}
