@@ -134,30 +134,48 @@ NEW_PAGES = [
          (_SP, _SP_A)],
   ),
   dict(
-    path="drapery/blackout-curtains-miami", kind="service", service="Custom blackout curtains",
-    parent=("Drapery", "/drapery/"), crumb="Blackout Curtains",
-    title="Custom Blackout Curtains in Miami | Made to Measure | MIAN",
-    desc="Custom blackout curtains in Miami, sewn to measure and installed by us, for bedrooms, nurseries and media rooms. Free quote in 24h. Se habla español.",
+    path="drapery/blackout-curtains-miami", kind="service", service="Custom blackout drapes and curtains",
+    parent=("Drapery", "/drapery/"), crumb="Blackout Drapes",
+    title="Blackout Drapes &amp; Curtains in Miami | Custom Made | MIAN",
+    desc="Custom blackout drapes and curtains in Miami, sewn to measure and installed by us for bedrooms, nurseries and media rooms. Free quote in 24h. Se habla español.",
     eyebrow="Drapery · Blackout",
-    h1="Custom Blackout Curtains in Miami",
+    h1="Blackout Drapes &amp; Curtains in Miami, Made to Measure",
     lede="Made-to-measure blackout drapes for bedrooms, nurseries and media rooms, sewn in our Miami workshop and installed by us. Free quote within 24 hours.",
     hero_img=("drapery-pleated.jpg", "Lined pleated drapery on a tall window in a Miami home"),
     body="""
 <h2>Why made-to-measure matters for blackout</h2>
 <p>The lining blocks the light, but the fit decides how dark the room gets. Light comes in at the sides, the top and the floor. A ready-made panel leaves those gaps. We measure each window and size the drape to overlap the frame, which is what makes a Miami bedroom properly dark at 7 AM.</p>
-<h2>Where blackout works best</h2>
+<p>That is the real difference between a store-bought blackout curtain and custom blackout drapes: the same kind of lining, but cut to your opening instead of a catalogue size. Tall condo glass, sliding doors and arched windows are exactly where standard panels fall short.</p>
+
+<h2>Where blackout drapes work best</h2>
 <ul>
-  <li><b>Bedrooms</b> — especially east-facing rooms and high-rise condos</li>
+  <li><b>Bedrooms</b> — especially east-facing rooms and high-rise condos that catch the sunrise</li>
   <li><b>Nurseries</b> — daytime naps need a dark room</li>
   <li><b>Media rooms</b> — no glare on the screen</li>
   <li><b>Shift workers' bedrooms</b> — sleep during the day</li>
+  <li><b>Guest rooms</b> that face a street light or a neighbouring building</li>
 </ul>
+
 <h2>Blackout without a heavy look</h2>
-<p>The blackout lining goes behind the fabric you choose, so the room keeps its style. It works with <a href="/drapery/euro-pleat-drapes-miami/">euro pleat</a> and <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat</a> headings. For light control from morning to night, we can layer a sheer on a second track, so you keep daylight and privacy, then close the blackout at night.</p>
-<p>Lining also helps fabric last: it protects the face fabric from Miami sun. See every style on our <a href="/drapery/">custom drapes in Miami</a> page.</p>
+<p>The blackout lining goes behind the fabric you choose, so the room keeps its style: linen, a textured weave or a plain solid all work. From the room, you see the face fabric; from the window side, the lining does the work. Lining also helps fabric last, because it protects the face fabric from Miami sun.</p>
+<!-- TODO-DATO: lining types or brands used (e.g. 3-pass, thermal), and colour options for the lining -->
+
+<h2>Choose the heading: euro pleat or pinch pleat</h2>
+<p>Blackout is a lining, not a style, so it works with the pleated headings we make most. <a href="/drapery/euro-pleat-drapes-miami/">Euro pleat blackout drapes</a> are tacked at the top edge and fall into soft, even folds — clean and contemporary for condos and floor-to-ceiling glass. <a href="/drapery/pinch-pleat-drapes-miami/">Pinch pleat blackout drapes</a> are stitched a few inches below the top for crisper, fuller folds that suit traditional and transitional bedrooms. The extra body of the lining helps both pleat styles keep their shape.</p>
+
+<h2>Layer a sheer for day and night</h2>
+<p>For light control from morning to night, we can layer a sheer on a second track. During the day the sheer softens glare and keeps privacy while letting light in; at night you close the blackout drape. It is the most flexible setup for a primary bedroom in Miami.</p>
+
+<h2>Match the rest of the room</h2>
+<p>Because everything is sewn in the same workshop, we can make coordinating cushions and pillows in the drapery fabric, or <a href="/upholstery/headboard-upholstery-miami/">upholster a headboard</a> to match your blackout drapes.</p>
+
+<h2>Measured, sewn and installed in Miami</h2>
+<p>Every opening is measured individually, and your blackout drapes are cut and sewn to size in our workshop at 1 NW 62nd St, Miami. We bring fabric and lining samples to your home so you can see them against your own windows before anything is cut, then we install the drapes ourselves and check for light gaps. You deal directly with the people who do the work, in English or Spanish.</p>
+<!-- TODO-DATO: typical price range or starting price per window; typical lead time from measure to install -->
+<p>See every style on our <a href="/drapery/">custom drapes in Miami</a> page, or browse <a href="/drapery/outdoor-curtains-miami/">outdoor curtains</a> for patios and terraces. We serve all of Miami-Dade, including <a href="/areas/brickell/">Brickell</a>, <a href="/areas/doral/">Doral</a>, <a href="/areas/north-miami/">North Miami</a> and <a href="/areas/north-miami-beach/">North Miami Beach</a>.</p>
 """,
     steps=[("Send a photo", "Photos of the windows. Free quote within 24 hours."),
-           ("Measure", "We measure each opening and bring fabric samples."),
+           ("Measure", "We measure each opening and bring fabric and lining samples."),
            ("Made to size", "Your drapes are sewn with blackout lining in our workshop."),
            ("Installed", "We hang them and check for light gaps.")],
     gallery=[("drapery-pleated.jpg", "Pleated drapery on a tall window in Miami"),
@@ -165,11 +183,15 @@ NEW_PAGES = [
              ("patio-drapery.jpg", "Custom drapery in a Miami home")],
     faq=[("Do blackout curtains make a room completely dark?",
           "The lining blocks the light that hits it. How dark the room gets depends on the fit around the window, which is why we measure each opening and size the drape to overlap the frame."),
+         ("Are blackout drapes and blackout curtains the same thing?",
+          "In practice, yes: both are fabric panels with a blackout lining. We usually say drapes for floor-length, pleated panels, which is what most of our blackout work is."),
          ("Can I keep my fabric and add blackout?",
           "Yes. The blackout lining goes behind the fabric you choose."),
+         ("Can blackout drapes be euro pleat or pinch pleat?",
+          "Yes. Blackout lining works with both headings, and its extra body helps the pleats hold their shape."),
          ("Can blackout be combined with sheers?",
           "Yes, on two tracks: the sheer for daytime and the blackout drape for night."),
-         ("How much do custom blackout curtains cost in Miami?",
+         ("How much do custom blackout drapes cost in Miami?",
           "It depends on window size, fabric and heading. Send photos and we will send a free quote within 24 hours."),
          (_SP, _SP_A)],
   ),

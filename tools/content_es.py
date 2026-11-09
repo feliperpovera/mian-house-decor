@@ -668,7 +668,52 @@ AREA_ES = {
   "hialeah": ("Los hogares de Hialeah conservan sus muebles por años, y un buen sofá o juego de comedor casi siempre vale la pena reconstruirlo. Nuestro tapicero recoge en Hialeah, reconstruye la pieza en el taller de Miami y te la devuelve terminada.",
     "Lo más pedido aquí: tapicería de muebles para sofás y sillas de comedor, retapizado en cuero y cojines de patio de reemplazo."),
   "north-miami": ("North Miami está cerca de nuestro taller en 1 NW 62nd St, lo que facilita mucho la recogida y la entrega. Las piezas vintage y mid-century son comunes aquí y muchas veces vale más retapizarlas que reemplazarlas.",
-    "Lo más pedido aquí: retapizado de sillas vintage y mid-century, sofás y cortinas a medida."),
+    "Lo más pedido aquí: retapizado de sillas vintage y mid-century, sofás y cortinas a medida. ¿Un poco más al noreste? Mira la <a href=\"/es/zonas/north-miami-beach/\">tapicería en North Miami Beach</a>."),
+  "north-miami-beach": ("", ""),  # cuerpo y FAQ en AREA_ES_META
+}
+
+AREA_ES_META = {
+  "north-miami-beach": dict(
+    title="Tapicería en North Miami Beach, FL | Tapicero y Cortinas | MIAN",
+    desc="Tapicería en North Miami Beach: retapizado de sofás, sillas y cabeceros y cortinas a medida. Recogida y entrega, cotización gratis en 24 h. Se habla español.",
+    h1="Tapicería en North Miami Beach",
+    lede="Retapizado, tapicería a medida y cortinas para casas, condominios y negocios en North Miami Beach, hechos en nuestro taller de Miami. Recogida y entrega disponibles. Cotización gratis en 24 horas.",
+    body="""
+<h2>Tapicería y cortinas en North Miami Beach</h2>
+<p>North Miami Beach combina condominios frente a la bahía sobre Biscayne Boulevard con casas, townhouses y una zona activa de restaurantes y oficinas. Eso se nota en el trabajo: seccionales y sillas de comedor de uso diario, cabeceros y cortinas para condominios, y asientos para negocios locales. Lo atendemos todo desde nuestro taller en 1 NW 62nd St, Miami, a poca distancia al sur, así que la recogida y la entrega son fáciles de coordinar.</p>
+<p>Hablas directamente con quienes miden, cosen y tapizan tus piezas, en español o en inglés, desde la primera foto hasta la entrega.</p>
+
+<h3>Retapizado de muebles</h3>
+<p>Si la estructura está sana, retapizar casi siempre conviene más que reemplazar. Quitamos la tela vieja, cambiamos la espuma y el relleno, reparamos resortes y cinchas donde haga falta y terminamos la pieza en la tela que elijas:</p>
+<ul>
+  <li><a href="/es/tapiceria/tapizar-sofa-miami/"><b>Sofás y seccionales</b></a>: espuma y tela nuevas sobre tu estructura</li>
+  <li><a href="/es/tapiceria/tapizar-sillas-miami/"><b>Sillas de comedor</b></a>: una sola o el juego completo</li>
+  <li><b>Cabeceros</b> retapizados o hechos a medida</li>
+  <li><b>Muebles de cuero</b>, vintage y mid-century que vale la pena conservar</li>
+</ul>
+
+<h3>Telas para sol, salitre y uso diario</h3>
+<p>Cerca de la bahía, el sol y la humedad castigan las telas. Para balcones y patios recomendamos textiles de exterior, y para la sala familiar, telas de alto rendimiento que aguantan niños y mascotas. Llevamos muestras a tu casa para que las compares con tu propia luz.</p>
+
+<h3>Cortinas a medida para condominios y casas</h3>
+<p>Los ventanales de piso a techo y las puertas corredizas casi nunca calzan con cortinas de tienda. Medimos cada abertura, cosemos la cortina a medida y la instalamos: <a href="/es/cortinas/cortinas-euro-pleat-miami/">euro pleat</a> o <a href="/es/cortinas/cortinas-pinch-pleat-miami/">pinch pleat</a>, visillos para el resplandor y <a href="/es/cortinas/cortinas-blackout-miami/">cortinas blackout</a> para habitaciones. Mira todos los estilos en <a href="/es/cortinas/">cortinas a medida en Miami</a>.</p>
+
+<h3>Tapicería comercial</h3>
+<p>Restaurantes, oficinas y espacios de hospitalidad reciben <a href="/es/comercial/">tapicería comercial</a> con telas grado contract y espuma resistente. Cuéntanos tu horario y planificamos la recogida y la entrega según él.</p>
+
+<h3>Cómo funciona</h3>
+<p>Envía una foto de la pieza o de las ventanas por texto, WhatsApp o el formulario y recibes una cotización gratis en 24 horas. Vamos a medir con muestras, hacemos todo en nuestro taller de Miami y lo entregamos o instalamos en North Miami Beach. ¿Estás en <a href="/es/zonas/north-miami/">North Miami</a>? Lo atendemos igual.</p>
+<!-- TODO-DATO: un proyecto real en North Miami Beach (pieza, tela, vecindario) si se puede compartir -->
+""",
+    faq=[("¿Ofrecen servicios de tapicería en North Miami Beach?",
+          "Sí. Retapizamos muebles, hacemos cortinas a medida y tapizamos asientos comerciales para casas, condominios y negocios en North Miami Beach, con recogida y entrega disponibles."),
+         ("¿Recogen muebles en North Miami Beach?",
+          "Sí. Recogemos la pieza, la reconstruimos en nuestro taller en 1 NW 62nd St, Miami, y te la devolvemos."),
+         ("¿Van a medir y a mostrar telas?",
+          "Sí. Medimos la pieza o las ventanas y llevamos muestras para que elijas en casa."),
+         ("¿Cómo pido una cotización?",
+          "Envía una foto de la pieza por texto, WhatsApp o el formulario. Recibes una cotización gratis en 24 horas."),
+         (_SP, _SP_A)]),
 }
 
 def area_es(slug, name):
@@ -696,7 +741,7 @@ def area_es(slug, name):
       faq=[(f"¿Recogen muebles en {name}?", f"Sí. Recogida y entrega disponibles en {name} y en todo Miami-Dade."),
            ("¿Cómo pido una cotización?", "Envía una foto de la pieza por texto, WhatsApp o el formulario. Recibes una cotización gratis en 24 horas."),
            (_SP, _SP_A)],
-    )
+    ) | AREA_ES_META.get(slug, {})
 
 # Exact-string swaps applied to shared chrome, the home page and the thank-you page.
 # Longest strings are applied first. Anything left in English is a bug: see the audit in the build.
@@ -775,6 +820,8 @@ PAIRS = [
   ('From reupholstery to fully crafted furniture, we approach every project with care, transforming complex requests into clear, tailored results that feel right, last over time and truly support the way our clients live and work.',
    'Del retapizado a los muebles hechos por completo, abordamos cada proyecto con cuidado y convertimos solicitudes complejas en resultados claros y a la medida, que se sienten bien, duran en el tiempo y acompañan de verdad la forma en que nuestros clientes viven y trabajan.'),
   ('<span>Creative Director</span>', '<span>Directora creativa</span>'),
+  ('Custom drapery: <a href="/drapery/">pleated drapes</a> made to measure, in <a href="/drapery/euro-pleat-drapes-miami/">euro pleat</a> for soft, modern folds or <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat</a> for a fuller, classic look.',
+   'Cortinas a medida: <a href="/drapery/">cortinas plisadas</a> hechas a medida, en <a href="/drapery/euro-pleat-drapes-miami/">euro pleat</a> para pliegues suaves y modernos o en <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat</a> para una caída más llena y clásica.'),
   ('Serving Miami-Dade:', 'Servimos Miami-Dade:'), (' &amp; more.', ' y más.'),
   ('<small>Workshop · by appointment</small>', '<small>Taller · con cita previa</small>'),
   ('<small>Call or WhatsApp</small>', '<small>Llamada o WhatsApp</small>'),
@@ -847,8 +894,8 @@ PAIRS = [
 ]
 
 HOME_META = [
-  ('<title>Upholstery Miami | Furniture Upholstery &amp; Reupholstery | MIAN</title>', '<title>Tapicería en Miami | Tapicero de Muebles Cerca de Ti | MIAN</title>'),
-  ('content="Upholstery Miami | Furniture Upholstery &amp; Reupholstery | MIAN"', 'content="Tapicería en Miami | Tapicero de Muebles Cerca de Ti | MIAN"'),
+  ('<title>Upholstery Miami: Furniture Upholstery &amp; Reupholstery | MIAN</title>', '<title>Tapicería en Miami | Tapicero de Muebles Cerca de Ti | MIAN</title>'),
+  ('content="Upholstery Miami: Furniture Upholstery &amp; Reupholstery | MIAN"', 'content="Tapicería en Miami | Tapicero de Muebles Cerca de Ti | MIAN"'),
   ('<link rel="canonical" href="https://mianhousedecor.com/">', '<link rel="canonical" href="https://mianhousedecor.com/es/">'),
   ('<meta property="og:url" content="https://mianhousedecor.com/">', '<meta property="og:url" content="https://mianhousedecor.com/es/">'),
   ('"url": "https://mianhousedecor.com/"', '"url": "https://mianhousedecor.com/es/"'),

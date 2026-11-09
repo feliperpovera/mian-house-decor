@@ -93,7 +93,8 @@ REVIEWS = [
 
 SERVICES = [("Upholstery &amp; Reupholstery", "/upholstery/"), ("Custom Drapery", "/drapery/"), ("Commercial Upholstery", "/commercial/")]
 AREAS = [("Coral Gables", "coral-gables"), ("Doral", "doral"), ("Brickell", "brickell"),
-         ("Miami Beach", "miami-beach"), ("Kendall", "kendall"), ("North Miami", "north-miami"), ("Hialeah", "hialeah")]
+         ("Miami Beach", "miami-beach"), ("Kendall", "kendall"), ("North Miami", "north-miami"),
+         ("North Miami Beach", "north-miami-beach"), ("Hialeah", "hialeah")]
 
 # ─────────────────────────── page content ───────────────────────────
 PAGES = [
@@ -159,7 +160,7 @@ PAGES = [
     lede="Custom drapes and custom curtains in Miami: euro pleat and pinch pleat drapes, sheers and blackouts sewn in our workshop for tall windows, sliding doors and covered patios. Made to measure curtains, installed by us. Free quote in 24 hours.",
     hero_img=("work-curtains.jpg", "Made-to-measure ivory drapery on a tall arched window in Miami"),
     body="""
-<h2>Custom drapes made for your windows, not a catalogue size</h2>
+<h2>Custom drapes in Miami, made for your windows — not a catalogue size</h2>
 <p>Ready-made curtains rarely fit Miami windows: tall living-room glass, arched windows, sliding doors and wide patio openings. We measure each opening and sew the drapery to size in our own workshop, so it hangs straight, clears the floor the way you want and closes properly. Then we install it.</p>
 <p>You talk directly to the people who measure, sew and hang your drapes — in English or Spanish — from the first photo to the day they go up.</p>
 
@@ -172,7 +173,7 @@ PAGES = [
 <h3>Sheer drapes</h3>
 <p>Sheers soften glare and add daytime privacy while letting light through — a good fit for high-rise windows and sliding doors. They can be layered with a lined or blackout drape on a second track for full control.</p>
 <h3>Blackout and lined drapes</h3>
-<p>Blackout-lined drapery darkens bedrooms and media rooms. A standard lining protects the face fabric from Miami sun, improves privacy and helps the drape hang with more body.</p>
+<p>Blackout-lined drapery darkens bedrooms and media rooms. A standard lining protects the face fabric from Miami sun, improves privacy and helps the drape hang with more body. <a href="/drapery/blackout-curtains-miami/">More about blackout drapes in Miami</a>.</p>
 <h3>Outdoor drapes</h3>
 <p>For covered patios, terraces and balconies we sew drapes in outdoor-rated fabrics that handle sun and humidity — often paired with <a href="/upholstery/">reupholstered outdoor cushions</a> in a coordinating fabric.</p>
 
@@ -196,6 +197,7 @@ PAGES = [
   <li><a href="/areas/kendall/"><b>Kendall</b></a> — custom curtains for bedrooms and living rooms</li>
   <li><a href="/areas/doral/"><b>Doral</b></a> — blackout curtains for bedrooms</li>
   <li><a href="/areas/north-miami/"><b>North Miami</b></a> — close to our workshop at 1 NW 62nd St</li>
+  <li><a href="/areas/north-miami-beach/"><b>North Miami Beach</b></a> — condo and family-home drapery north along Biscayne Bay</li>
 </ul>
 <p>Updating more than the windows? We also do <a href="/upholstery/">furniture reupholstery and custom upholstery</a>, and <a href="/commercial/">drapery and seating for restaurants, hotels and event spaces</a>.</p>
 """,
@@ -253,7 +255,7 @@ PAGES = [
 <ul>
   <li><b>Sheer euro pleat drapes</b> soften glare and add daytime privacy while letting light through</li>
   <li><b>Lined euro pleat drapes</b> protect the face fabric from fading and give the folds more body</li>
-  <li><b>Blackout-lined euro pleat drapes</b> darken bedrooms, nurseries and media rooms</li>
+  <li><a href="/drapery/blackout-curtains-miami/"><b>Blackout-lined euro pleat drapes</b></a> darken bedrooms, nurseries and media rooms</li>
   <li><b>Layered sheers and lined drapes</b> on two tracks, for light control from morning to night</li>
 </ul>
 <p>We bring samples to your home so you can compare fabrics against your own windows, walls and furniture before anything is cut.</p>
@@ -309,7 +311,7 @@ PAGES = [
 <p>Pinch pleats hold their shape best with some body in the fabric, so most of the pinch pleat drapes we make are lined. In Miami light, we help you choose for each room:</p>
 <ul>
   <li><b>Lined pinch pleat drapes</b> protect the face fabric from fading, add privacy and help the pleats keep their form</li>
-  <li><b>Blackout-lined pinch pleat drapes</b> for bedrooms, nurseries and media rooms</li>
+  <li><a href="/drapery/blackout-curtains-miami/"><b>Blackout-lined pinch pleat drapes</b></a> for bedrooms, nurseries and media rooms</li>
   <li><b>Sheer pinch pleat drapes</b> for a softer, lighter version that still filters glare</li>
   <li><b>Coordinating cushions and pillows</b> sewn in the same fabric as your drapes</li>
 </ul>
@@ -400,7 +402,8 @@ AREA_COPY = {
     "Popular here: family-room sofas and sectionals, full dining-chair sets, and custom curtains for bedrooms and living rooms."),
   "north-miami": ("North Miami",
     "North Miami is close to our workshop at 1 NW 62nd St, which makes pickup and delivery especially easy. Mid-century and vintage pieces are common here and are often worth reupholstering rather than replacing.",
-    "Popular here: vintage and mid-century chair reupholstery, sofas, and made-to-measure drapery."),
+    "Popular here: vintage and mid-century chair reupholstery, sofas, and made-to-measure drapery. Further north-east? See <a href=\"/areas/north-miami-beach/\">upholstery in North Miami Beach</a>."),
+  "north-miami-beach": ("North Miami Beach", "", ""),  # body and FAQ in AREA_META
   "hialeah": ("Hialeah",
     "Hialeah homes keep their furniture for years, and a good sofa or dining set is usually worth rebuilding. We pick up in Hialeah, rebuild the piece in our Miami workshop and bring it back finished. Atendemos en español.",
     "Popular here: furniture upholstery for sofas and dining chairs, leather reupholstery, and replacement patio cushions."),
@@ -411,10 +414,54 @@ AREA_META = {
     title="North Miami Upholstery | Free In-Home Quote, Reply in 24h",
     desc="Reupholstery &amp; custom upholstery in North Miami: sofas, chairs, headboards &amp; drapes. Free in-home quote, reply within 24h. Se habla español.",
     h1="Custom Upholstery &amp; Reupholstery in North Miami"),
+  "north-miami-beach": dict(
+    title="Upholstery Services in North Miami Beach, FL | MIAN",
+    desc="Upholstery services in North Miami Beach: sofa, chair &amp; headboard reupholstery and custom drapes. Pickup &amp; delivery, free quote in 24h. Se habla español.",
+    h1="Upholstery Services in North Miami Beach",
+    lede="Reupholstery, custom upholstery and made-to-measure drapery for North Miami Beach homes, condos and businesses, made in our Miami workshop. Pickup and delivery available, plus a free quote within 24 hours.",
+    body="""
+<h2>Upholstery and drapery for North Miami Beach</h2>
+<p>North Miami Beach mixes bayfront condos along Biscayne Boulevard with single-family homes, townhouses and a busy stretch of restaurants and offices. That mix shows up in the work: sectionals and dining chairs that get used every day, headboards and bedroom drapes for condos, and seating for local businesses. We cover all of it from our workshop at 1 NW 62nd St, Miami, a short drive south — so pickup and delivery are easy to schedule.</p>
+<p>You deal directly with the people who measure, sew and upholster your pieces, in English or Spanish, from the first photo to delivery.</p>
+
+<h3>Furniture reupholstery</h3>
+<p>If the frame is solid, reupholstering is usually the better move than replacing it. We strip the old fabric, replace the foam and padding, repair springs and webbing where they need it and finish the piece in the fabric you choose. Typical North Miami Beach jobs:</p>
+<ul>
+  <li><a href="/upholstery/sofa-reupholstery-miami/"><b>Sofas and sectionals</b></a> — new foam and fabric on the frame you already own</li>
+  <li><a href="/upholstery/chair-reupholstery-miami/"><b>Dining chairs</b></a> — one chair or the full set</li>
+  <li><a href="/upholstery/headboard-upholstery-miami/"><b>Headboards</b></a> — reupholstered or made to size for the bedroom</li>
+  <li><a href="/upholstery/leather-reupholstery-miami/"><b>Leather sofas and chairs</b></a></li>
+  <li><b>Vintage and mid-century pieces</b> worth keeping</li>
+</ul>
+
+<h3>Fabrics for sun, salt air and daily use</h3>
+<p>Close to the bay, sun and humidity are hard on fabric. For balconies and patios we recommend outdoor-rated textiles, and for family rooms, performance fabrics that stand up to kids and pets. Linen, velvet and bouclé suit a quieter living room. We bring swatches to your home so you can compare them in your own light. For terraces, see <a href="/upholstery/custom-cushions-miami/">custom cushions</a>.</p>
+
+<h3>Custom drapes for condos and homes</h3>
+<p>Floor-to-ceiling glass and sliding doors rarely fit ready-made curtains. We measure every opening, sew the drapery to size and install it ourselves: <a href="/drapery/euro-pleat-drapes-miami/">euro pleat</a> or <a href="/drapery/pinch-pleat-drapes-miami/">pinch pleat</a> headings, sheers for glare and <a href="/drapery/blackout-curtains-miami/">blackout drapes</a> for bedrooms. See every style on our <a href="/drapery/">custom drapes in Miami</a> page.</p>
+
+<h3>Commercial upholstery in North Miami Beach</h3>
+<p>Restaurants, offices and hospitality spaces get <a href="/commercial/">commercial upholstery</a> with contract-grade fabrics and durable foam — booths, banquettes, dining chairs and lounge seating. Tell us your schedule and we plan pickup and delivery around it.</p>
+
+<h3>How it works</h3>
+<p>Send a photo of the piece or the windows by text, WhatsApp or the form, and you get a free quote within 24 hours. We come to measure and bring samples, rebuild or sew everything in our Miami workshop, and deliver or install it in North Miami Beach. Next door in <a href="/areas/north-miami/">North Miami</a>? We cover it the same way.</p>
+<!-- TODO-DATO: a real North Miami Beach project (piece, fabric, neighbourhood) if one can be shared -->
+""",
+    faq=[("Do you offer upholstery services in North Miami Beach?",
+          "Yes. We reupholster furniture, make custom drapery and upholster commercial seating for homes, condos and businesses in North Miami Beach, with pickup and delivery available."),
+         ("Do you pick up furniture in North Miami Beach?",
+          "Yes. We pick up the piece, rebuild it in our workshop at 1 NW 62nd St, Miami, and deliver it back to you."),
+         ("Do you come to measure and show fabrics?",
+          "Yes. We measure the piece or the windows and bring swatches so you can choose at home."),
+         ("Do you make custom drapes for condos?",
+          "Yes. We measure each opening, sew the drapes to size and install them, including sheers and blackout-lined drapery for bedrooms."),
+         ("How do I get a quote?",
+          "Send a photo of the piece by text, WhatsApp or the form. You get a free quote within 24 hours."),
+         ("¿Hablan español?", "Sí. Atendemos en español e inglés.")]),
 }
 AREA_IMG = {"coral-gables": "boucle-armchair.jpg", "doral": "dining-chairs.jpg", "brickell": "drapery-pleated.jpg",
             "miami-beach": "yacht-cushions.jpg", "kendall": "blue-velvet-sofa.jpg", "north-miami": "tufted-settee.jpg",
-            "hialeah": "dining-chairs.jpg"}
+            "hialeah": "dining-chairs.jpg", "north-miami-beach": "boucle-armchair.jpg"}
 for slug, (name, p1, p2) in AREA_COPY.items():
     PAGES.append(dict(
         path=f"areas/{slug}", kind="area", area=name,
