@@ -26,16 +26,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:description" content="Tapicería de muebles en Miami: sofás, sillas, cojines y cortinas. Cotización gratis en 24 horas.">
 <meta property="og:image" content="https://mianhousedecor.com/assets/img/hero.jpg">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" href="/assets/img/hero-828.webp" imagesrcset="/assets/img/hero-828.webp 828w, /assets/img/hero-1200.webp 1200w" imagesizes="(max-width:940px) 430px, 620px" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-400-700-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-200-500-latin.woff2" crossorigin>
 <script>document.documentElement.classList.add('js')</script>
 <style>
+/* Brand fonts, self-hosted (OFL) */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-i600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-i600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400 700;font-display:swap;src:url(/assets/fonts/cormorant-garamond-400-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400 700;font-display:swap;src:url(/assets/fonts/cormorant-garamond-400-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200 500;font-display:swap;src:url(/assets/fonts/montserrat-200-500-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200 500;font-display:swap;src:url(/assets/fonts/montserrat-200-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 /* ═══════════ MIAN brand tokens — Brandbook MIAN (corregido) ═══════════ */
 :root{
   /* Palette — exact hex from the brandbook "Color Shades" page */
   --marina:#607e97;      /* primary */
   --marina-d:#4C6679;
+  --marina-a:#59768e;    /* primary, darkened just enough for white text (AA) */
   --marina-l:#8AA3B8;
   --sea:#c1d5e6;         /* Sea Breeze */
   --sea-soft:#E3EDF5;
@@ -108,6 +116,8 @@ p{margin:0}
 
 /* ═══════════ Logo lockup (brand fonts, not a bitmap) ═══════════ */
 .lockup{display:inline-flex; flex-direction:column; align-items:center; line-height:1; text-decoration:none; color:var(--marina)}
+.lockup__s{color:var(--marina-d)}
+.ftr .lockup__s{color:inherit}
 .lockup__m{
   font-family:"Cormorant Garamond",serif; font-weight:500;
   font-size:var(--lk,30px); letter-spacing:.055em; line-height:.94;
@@ -125,7 +135,7 @@ p{margin:0}
 
 /* ═══════════ Buttons ═══════════ */
 .btn{
-  --bg:var(--marina); --fg:#fff; --bd:var(--marina);
+  --bg:var(--marina-a); --fg:#fff; --bd:var(--marina-a);
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
   min-height:54px; padding:0 30px; border-radius:100px; border:1px solid var(--bd);
   background:var(--bg); color:var(--fg); text-decoration:none; cursor:pointer;
@@ -138,7 +148,7 @@ p{margin:0}
 .btn svg{width:18px; height:18px; flex:none}
 .btn--lg{min-height:60px; padding:0 36px; font-size:1rem}
 .btn--block{width:100%}
-.btn--ghost{--bg:transparent; --fg:var(--marina); --bd:var(--marina-l)}
+.btn--ghost{--bg:transparent; --fg:var(--marina-d); --bd:var(--marina-l)}
 .btn--ghost:hover{--bg:var(--sea-soft); --bd:var(--marina)}
 .btn--sun{--bg:var(--sunlight); --bd:var(--sunlight); --fg:var(--walnut-d)}
 .btn--sun:hover{--bg:#FFE288; --bd:#FFE288}
@@ -262,7 +272,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 
 /* ═══════════ Values ═══════════ */
 .vals{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(18px,2.4vw,34px)}
-.val h4{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.5rem; color:var(--walnut-d)}
+.val h3{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.5rem; color:var(--walnut-d)}
 .val p{margin-top:10px; color:var(--ink-2); font-size:.88rem; line-height:1.65}
 .val__bar{width:34px; height:2px; background:var(--sunlight); margin-top:14px; border-radius:2px}
 
@@ -354,7 +364,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .form__fine{margin-top:14px; font-size:.75rem; color:var(--ink-3); text-align:center; line-height:1.55}
 
 /* ═══════════ Footer ═══════════ */
-.ftr{background:var(--marina-d); color:rgba(255,255,255,.66); padding:clamp(56px,6vw,80px) 0 0; font-size:.9rem}
+.ftr{background:var(--marina-d); color:rgba(255,255,255,.86); padding:clamp(56px,6vw,80px) 0 0; font-size:.9rem}
 .ftr__grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:clamp(28px,4vw,56px); padding-bottom:48px}
 .ftr .lockup{--lk:34px; color:#fff; margin-bottom:20px}
 .ftr p{max-width:34ch; line-height:1.75}
@@ -379,7 +389,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .ftr__bar{
   border-top:1px solid rgba(255,255,255,.13); padding:22px 0 28px;
   display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
-  font-size:.78rem; color:rgba(255,255,255,.45);
+  font-size:.78rem; color:rgba(255,255,255,.82);
 }
 
 /* ═══════════ Floating dock ═══════════ */
@@ -413,7 +423,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 }
 .mbar a{
   flex:1; min-height:52px; display:inline-flex; align-items:center; justify-content:center; gap:7px;
-  border:1px solid var(--marina); border-radius:100px; background:transparent; color:var(--marina);
+  border:1px solid var(--marina); border-radius:100px; background:transparent; color:var(--marina-d);
   font-family:inherit; font-size:.84rem; font-weight:500; text-decoration:none;
   transition:transform .2s var(--ease), background .2s;
 }
@@ -421,7 +431,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
 .mbar{gap:6px; padding-inline:8px}
 .mbar a{flex-direction:column; gap:2px; min-height:54px; border-radius:14px; font-size:.72rem}
 .mbar a:active{transform:scale(.97)}
-.mbar a.is-primary{background:var(--marina); color:#fff; box-shadow:var(--shadow-s)}
+.mbar a.is-primary{background:var(--marina-a); color:#fff; box-shadow:var(--shadow-s)}
 .fab__tip{
   position:absolute; right:calc(100% + 12px); top:50%; translate:0 -50%;
   background:var(--marina-d); color:#fff; font-size:.76rem; font-weight:400;
@@ -574,7 +584,7 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
         </div>
       </div>
       <div class="oval">
-        <div class="oval__img"><img src="/assets/img/hero.jpg" alt="Tapicería de muebles en Miami: sofá retapizado y cojines de MIAN House &amp; Decor" fetchpriority="high" width="1500" height="1125"></div>
+        <div class="oval__img"><img src="/assets/img/hero-1200.webp" srcset="/assets/img/hero-828.webp 828w, /assets/img/hero-1200.webp 1200w" sizes="(max-width:940px) 430px, 620px" alt="Tapicería de muebles en Miami: sofá retapizado y cojines de MIAN House &amp; Decor" fetchpriority="high" width="1500" height="1125"></div>
       </div>
     </div>
   </div>
@@ -730,10 +740,10 @@ body.menu-open .burger span::after{top:0; transform:rotate(-45deg); background:v
       <h2>Nuestros <span class="hl">valores</span></h2>
     </div>
     <div class="vals">
-      <div class="val rv"><h4>Conocer al cliente</h4><p>Empezamos escuchando. Nos tomamos el tiempo de entender las necesidades, el estilo de vida y el contexto de cada cliente antes de sugerir algo.</p><div class="val__bar"></div></div>
-      <div class="val rv rv-d1"><h4>Agilidad</h4><p>Respondemos rápido, nos ajustamos con facilidad y mantenemos los proyectos en marcha, siempre respaldando la calidad de lo que entregamos.</p><div class="val__bar"></div></div>
-      <div class="val rv rv-d2"><h4>Oficio</h4><p>Nos importa cómo se hacen las cosas. De la tapicería a los acabados, aseguramos una ejecución precisa y una calidad duradera.</p><div class="val__bar"></div></div>
-      <div class="val rv rv-d3"><h4>Eficiencia</h4><p>Buscamos formas inteligentes de lograr impacto: procesos claros, flujos organizados y el mínimo de fricción para el cliente.</p><div class="val__bar"></div></div>
+      <div class="val rv"><h3>Client Insight</h3><p>Empezamos escuchando. Nos tomamos el tiempo de entender las necesidades, el estilo de vida y el contexto de cada cliente antes de sugerir algo.</p><div class="val__bar"></div></div>
+      <div class="val rv rv-d1"><h3>Agility</h3><p>Respondemos rápido, nos ajustamos con facilidad y mantenemos los proyectos en marcha, siempre respaldando la calidad de lo que entregamos.</p><div class="val__bar"></div></div>
+      <div class="val rv rv-d2"><h3>Craftsmanship</h3><p>Nos importa cómo se hacen las cosas. De la tapicería a los acabados, aseguramos una ejecución precisa y una calidad duradera.</p><div class="val__bar"></div></div>
+      <div class="val rv rv-d3"><h3>Efficiency</h3><p>Buscamos formas inteligentes de lograr impacto: procesos claros, flujos organizados y el mínimo de fricción para el cliente.</p><div class="val__bar"></div></div>
     </div>
   </div>
 </section>
